@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.border-img {
+  border-image-slice:
+    42 42 42 42 fill;
+  border-image-width:
+    25px 25px 25px 25px;
+  border-image-outset:
+    10px 10px 10px 10px;
+  border-image-repeat:
+    round round;
+  border-image-source:
+    url("https://mdn.github.io/css-examples/tools/border-image-generator/border-image-6.svg");
+  border-style:
+    solid;
+}
+
+.border-img1 {
+  border-image-slice:
+    13 13 13 13 fill;
+  border-image-width:
+    13px 13px 13px 13px;
+  border-image-outset:
+    13px 13px 13px 13px;
+  border-image-repeat:
+    repeat repeat;
+  border-image-source:
+    url("https://mdn.github.io/css-examples/tools/border-image-generator/border-image-4.png");
+  border-style:
+    solid;
+}
+
+.border-img2 {
+  border-image-slice:
+    27 27 27 27 fill;
+  border-image-width:
+    20px 20px 20px 20px;
+  border-image-outset:
+    5px 10px 5px 10px;
+  border-image-repeat:
+    stretch repeat;
+  border-image-source:
+    url("https://mdn.github.io/css-examples/tools/border-image-generator/border-image-1.png");
+  border-style:
+    solid;
+}
+
+@media screen and (max-width: 768px) {
+  .border-img2 {
+    border-image-slice:
+      27 27 27 27 fill;
+    border-image-width:
+      12px 12px 12px 12px;
+    border-image-outset:
+      5px 10px 5px 10px;
+    border-image-repeat:
+      stretch repeat;
+    border-image-source:
+      url("https://mdn.github.io/css-examples/tools/border-image-generator/border-image-1.png");
+    border-style:
+      solid;
+  }
+}
+
+
+::-webkit-scrollbar {
+  width: .3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background: #797979;
+  transition: all 0.5s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #222224;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+.swiper_container {
+  width: 60rem;
+}
+
+
+.footer-social:hover .trans-icon{
+  color:blue;
+  z-index: 999;
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+:root {
+  --card-height: 300px;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+.card {
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 36px;
+  perspective: 2500px;
+  margin: 0 1rem;
+}
+
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wrapper {
+  transition: all 0.5s;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.card:hover .wrapper {
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  opacity: 0;
+  width: 100%;
+  height: 80px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 0;
+}
+.wrapper::before {
+  top: 0;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+.wrapper::after {
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+
+.card:hover .wrapper::before,
+.wrapper::after {
+  opacity: 1;
+}
+
+.card:hover .wrapper::after {
+  height: 120px;
+}
+.title {
+  width: 100%;
+  transition: transform 0.5s;
+}
+.card:hover .title {
+  transform: translate3d(0%, -50px, 100px);
+}
+
+.character {
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  z-index: -1;
+}
+
+.card:hover .character {
+  opacity: 1;
+  transform: translate3d(0%, -30%, 100px);
+}
+
+
+.banner{
+  background-image: url("/images/painting.png");
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height: 600px;
+  padding:0 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.1s linear;
+}
