@@ -16,7 +16,6 @@ const Home = () => {
   document.title = "KAIZEN 2024"
   return (
     <div className="w-[100%] overflow-hidden">
-      <NavBar />
       <ParallaxComponent />
       <Timer />
       <EventCategory />

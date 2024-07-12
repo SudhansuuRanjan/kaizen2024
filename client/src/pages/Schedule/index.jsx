@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { day1, day2, day3, day4, day5 } from '../../utils/Schedule'
 import { MdLocationPin, MdAccessTimeFilled } from 'react-icons/md'
+import "./Schedule.scss"
 
 
 const Schedule = () => {

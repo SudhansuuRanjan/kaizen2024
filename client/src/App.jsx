@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, Suspense } from 'react'
 import './App.css'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify';
@@ -7,21 +7,23 @@ import { ParallaxProvider } from 'react-scroll-parallax'
 import AOS from 'aos';
 import "aos/dist/aos.css";
 import Routes from './routes'
+import ScrollToTop from './hooks/useScrollToTop';
 
 const App = () => {
 
-    // load razorpay script
     useEffect(() => {
         AOS.init();
         AOS.refresh();
-        // loadScript('https://checkout.razorpay.com/v1/checkout.js')
     }, [])
 
     return (
         <ParallaxProvider>
             <Router>
+                <ScrollToTop />
                 <ToastContainer />
-                <Routes/>
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Routes />
+                </Suspense>
             </Router>
         </ParallaxProvider>
     )

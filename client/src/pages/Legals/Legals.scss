@@ -1,0 +1,51 @@
+.legal-banner {
+    background: url('https://ragam.co.in/_next/image?url=%2Fimages%2Ffemaledancer.jpeg&w=1920&q=75');
+    height: 100vh;
+    background-position: 0 75%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+
+.legal-banner::after {
+    content: "";
+    position: absolute;
+    height: 50vh;
+    width: 100%;
+    top: 0;
+    background: linear-gradient(180deg, transparent, #000);
+    background-size: 120% 100%;
+    z-index: 7;
+}
+
+
+.legal-head {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ebe6d0;
+    text-align: center;
+    font-size: 4.5rem;
+    font-weight: 600;
+    line-height: 4.5rem;
+    z-index: 8;
+}
+
+
+@media screen and (max-width: 768px) {
+    .legal-banner {
+        background-position: 0 50%;
+    }
+
+    .legal-head {
+        font-size: 3.7rem;
+        padding:0 3rem;
+        line-height: 3.5rem;
+    }
+
+}
