@@ -33,7 +33,6 @@ const AuthProvider = ({ children }) => {
             const res = await account.get('current');
             setUser(res);
             checkUserSession();
-            console.log("user", res);
             setLoading(false);
             return res;
         } catch (error) {
@@ -60,7 +59,7 @@ const AuthProvider = ({ children }) => {
             //     console.log("Session not expired");
             //     console.log("session", res);
             // }
-            console.log("session", new Date(res.providerAccessTokenExpiry).toLocaleString());
+            // console.log("session", new Date(res.providerAccessTokenExpiry).toLocaleString());
         } catch (error) {
             throw new Error(error.message);
         }
@@ -81,10 +80,10 @@ const AuthProvider = ({ children }) => {
         <AuthContext.Provider value={contextData}>
             {loading ? <div className="flex flex-col gap-16 items-center justify-center min-h-screen">
                 <div className="flex gap-3 items-center">
-                    <img src="apple-icon.png" alt="Logo" className="w-16" />
+                    <img src="android-chrome-192x192.png" alt="Logo" className="w-16" />
                     <div className="flex divide-x divide-gray-600 gap-3">
-                        <p className="text-white text-xl font-semibold">NIT,<br /> Patna</p>
-                        <p className="text-xl font-semibold text-sky-500 pl-2">ALUMNI<br /> ASSOCIATION</p>
+                        <p className="text-white text-xl font-semibold">KAIZEN<br /> 2024</p>
+                        <p className="text-xl font-semibold text-sky-500 pl-2">AIIMS<br /> Patna</p>
                     </div>
                 </div>
                 <div className="flex gap-2">
