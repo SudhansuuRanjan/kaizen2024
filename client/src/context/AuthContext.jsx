@@ -12,7 +12,7 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    const login = async (user) => {
+    const login = async () => {
         try {
             await createOAuthSession('google', `${import.meta.env.VITE_APP_URL}/`, `${import.meta.env.VITE_APP_URL}/`, []);
             await checkUser();
@@ -82,8 +82,8 @@ const AuthProvider = ({ children }) => {
                 <div className="flex gap-3 items-center">
                     <img src="android-chrome-192x192.png" alt="Logo" className="w-16" />
                     <div className="flex divide-x divide-gray-600 gap-3">
-                        <p className="text-white text-xl font-semibold">KAIZEN<br /> 2024</p>
-                        <p className="text-xl font-semibold text-sky-500 pl-2">AIIMS<br /> Patna</p>
+                        <p className="text-white text-2xl font-semibold">KAIZEN<br /> 2024</p>
+                        <p className="text-2xl font-semibold text-rose-500 pl-2">AIIMS<br /> Patna</p>
                     </div>
                 </div>
                 <div className="flex gap-2">
