@@ -2,11 +2,11 @@ import React from 'react'
 import './Proshow.scss'
 
 const Pronite = () => {
-    document.title = "Pronite | KAIZEN 2023"
+    document.title = "Pronite | KAIZEN 2024"
   return (
     <div className='pronite-container'>
       <div className='pronite-banner'>
-        <h2 className='pronite-head-text'>PRONITE<br />2023</h2>
+        <h2 className='pronite-head-text'>PRONITE<br />2024</h2>
       </div>
       <div className='pronite-cards'>
 
@@ -26,7 +26,7 @@ const Pronite = () => {
               <div className='flex items-center gap-6'>
                 <img src="https://ragam.co.in/images/assets/calender.svg" alt="asdf" loading='lazy' className='h-8 w-8' />
                 <div>
-                  <h3 className='pronite-date'>-/05/23</h3>
+                  <h3 className='pronite-date'>-/05/24</h3>
                   <h2 className='pronite-day'>......</h2>
                 </div>
               </div>
@@ -50,7 +50,7 @@ const Pronite = () => {
               <div className='flex items-center gap-6'>
                 <img src="https://ragam.co.in/images/assets/calender.svg" alt="asdf" loading='lazy' className='h-8 w-8' />
                 <div>
-                  <h3 className='pronite-date'>-/05/23</h3>
+                  <h3 className='pronite-date'>-/05/24</h3>
                   <h2 className='pronite-day'>......</h2>
                 </div>
               </div>
@@ -79,7 +79,7 @@ const Pronite = () => {
               <div className='flex items-center gap-6'>
                 <img src="https://ragam.co.in/images/assets/calender.svg" alt="asdf" loading='lazy' className='h-8 w-8' />
                 <div>
-                  <h3 className='pronite-date'>-/05/23</h3>
+                  <h3 className='pronite-date'>-/05/24</h3>
                   <h2 className='pronite-day'>......</h2>
                 </div>
               </div>
@@ -102,7 +102,7 @@ const Pronite = () => {
               <div className='flex items-center gap-6'>
                 <img src="https://ragam.co.in/images/assets/calender.svg" alt="asdf" loading='lazy' className='h-8 w-8' />
                 <div>
-                  <h3 className='pronite-date'>-/05/23</h3>
+                  <h3 className='pronite-date'>-/05/24</h3>
                   <h2 className='pronite-day'>......</h2>
                 </div>
               </div>
@@ -132,7 +132,7 @@ const Pronite = () => {
               <div className='flex items-center gap-6'>
                 <img src="https://ragam.co.in/images/assets/calender.svg" alt="asdf" loading='lazy' className='h-8 w-8' />
                 <div>
-                  <h3 className='pronite-date'>-/05/23</h3>
+                  <h3 className='pronite-date'>-/05/24</h3>
                   <h2 className='pronite-day'>......</h2>
                 </div>
               </div>
