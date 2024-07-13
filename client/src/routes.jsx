@@ -7,6 +7,7 @@ import SignUp from './pages/Auth/SignUp'
 const Legals = lazy(() => import('./pages/Legals/Legals'));
 import HomeLayout from './components/Layouts/HomeLayout'
 import PageLayout from './components/Layouts/PageLayout'
+import Error from './pages/Error/Error'
 
 
 const routes = () => {
@@ -17,12 +18,14 @@ const routes = () => {
             </Route>
 
             <Route path='/' element={<PageLayout />} >
+                <Route path='*' element={<Error />} />
                 <Route path="/schedule" element={<Schedule />} />
                 <Route path="/legals/:pageName" element={<Legals />} />
             </Route>
             
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
+
         </Routes>
     )
 }
