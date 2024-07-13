@@ -8,6 +8,8 @@ const Legals = lazy(() => import('./pages/Legals/Legals'));
 import HomeLayout from './components/Layouts/HomeLayout'
 import PageLayout from './components/Layouts/PageLayout'
 import Error from './pages/Error/Error'
+import Events from './pages/Events'
+import Event from "./pages/Events/Event"
 
 
 const routes = () => {
@@ -21,8 +23,10 @@ const routes = () => {
                 <Route path='*' element={<Error />} />
                 <Route path="/schedule" element={<Schedule />} />
                 <Route path="/legals/:pageName" element={<Legals />} />
+                <Route path='/events' element={<Events />} />
+                <Route path='/events/:eventId' element={<Event />} />
             </Route>
-            
+
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
 

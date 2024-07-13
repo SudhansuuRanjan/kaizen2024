@@ -1,0 +1,1864 @@
+[
+    {
+        "price": "100",
+        "participants": "1",
+        "minMembers": "1",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-academics.webp-45b148e1-3215-45ad-b056-07a0073912d2?alt=media&token=81cc2b15-bd46-4de5-a3e4-2813abed8576",
+        "status": "Ended",
+        "name": "Case Presentation ",
+        "sponsorLogo": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2F6QdGbwRQezLbM0mpM4D69yZzpCI2-littmann.png-a12a69ea-2201-4b16-9d2e-f5129135fdd2?alt=media&token=d6b6e4dc-4556-45cb-b6a2-a986c51d314d",
+        "description": "“It's never lupus”, are the famous words of Dr House. If you've ever encountered a mysterious illness in your mundane posting, didn't round it down to Lupus and actually have an interesting diagnosis to present, this is the place for you! KAIZEN's case presentation competition is a call to all those budding physicians of tomorrow to present that mind twisting case that made your day!",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FAcademic%20Events-%20Rulebook%20Kaizen.pdf?alt=media&token=3ab6f227-ea8e-44ef-9da8-ae3a72ce4eec",
+        "prizes": "worth ₹2.5k",
+        "id": "case-presentation",
+        "category": "Academics",
+        "contacts": [
+            {
+                "name": "Gautam Rawlani ",
+                "contact_no": "+91 9111179081"
+            },
+            {
+                "name": "Atul Singh",
+                "contact_no": "+91 7489581029"
+            }
+        ],
+        "tagline": "Academic event",
+        "sponsorName": ""
+    },
+    {
+        "prizes": "worth ₹2.5k",
+        "description": "We hope that your continuity can form a great sense of Rhetoric.\nThe last line by one shall be echoed to the next who shall pick.\nTo a particular theme 3 different minds have to stick.\nLet's see how lucidity of the ideas will combine up thick.",
+        "minMembers": "3",
+        "category": "Literary",
+        "contacts": [
+            {
+                "name": "Aripra Singh",
+                "contact_no": "+91 9606705298"
+            },
+            {
+                "name": "Neha Reddy ",
+                "contact_no": "+91 9901678418"
+            }
+        ],
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-english%20writing.webp-7e7ffdc5-79a4-4d9a-b684-bf922649129a?alt=media&token=b61b6044-5293-4c38-a005-c13c292f8cf0",
+        "name": "Rhetorica (English)",
+        "tagline": "Writing Competition (English)",
+        "id": "rhetorica-english",
+        "status": "Ended",
+        "sponsorLogo": "",
+        "sponsorName": "",
+        "participants": "3",
+        "price": "100",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FLiterary%20Events-%20Rulebook%20Kaizen%20(3).pdf?alt=media&token=582e439e-dfc2-4de0-a0a0-df0a23f8b42c"
+    },
+    {
+        "minMembers": "1",
+        "sponsorName": "",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-table%20tennis-singles.webp-c5cdc550-f548-4afa-8c09-7d4e6cccdcfc?alt=media&token=948a92d3-ebe7-4715-9e95-fedddbd073a5",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FSPARDHA%20BROCHURE_compressed.pdf?alt=media&token=6c79539d-b991-484f-908c-fa79b88310ed",
+        "name": "Table tennis : Women's singles",
+        "description": "Unleash your skills and take your game to the next level at the highly anticipated Table Tennis Tournament! Join us for a thrilling display of speed, precision, and competition as players from all around battle it out for the championship title. Whether you're a seasoned pro or a beginner, this is your chance to showcase your talent and experience the adrenaline rush of table tennis. Don't miss out on the excitement - register now and let the games begin!",
+        "category": "Sports",
+        "price": "150",
+        "participants": "1",
+        "tagline": "Sports Event",
+        "status": "Ended",
+        "contacts": [
+            {
+                "name": "Fatima Ahsan",
+                "contact_no": "+91 9934778625"
+            },
+            {
+                "name": "Yash",
+                "contact_no": "+91 8792464192"
+            }
+        ],
+        "sponsorLogo": "",
+        "prizes": "worth ₹64k",
+        "id": "table-tennis-womens-singles"
+    },
+    {
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FKalpakriti%20(Arts)%20Kaizen-2023.pdf?alt=media&token=cfbeea45-f2de-4fce-97a8-780a0c267941",
+        "price": "100",
+        "category": "Arts",
+        "participants": "1",
+        "id": "canvasphere-canvas-painting",
+        "status": "Ended",
+        "prizes": "worth ₹4.5k",
+        "name": "Canvasphere - Canvas Painting",
+        "sponsorName": "",
+        "sponsorLogo": "",
+        "minMembers": "1",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-canvas%20painting-1.webp-ecdbf899-51ed-4c86-b712-604b8c3229ef?alt=media&token=840fc4d4-a245-4ebd-8448-1cb4aec13263",
+        "contacts": [
+            {
+                "name": "Rohan",
+                "contact_no": "+91 7439826412"
+            },
+            {
+                "name": "Bandana",
+                "contact_no": "+91 8603087822"
+            }
+        ],
+        "description": "From the very 14th century till today, canvas painting remains to be one of the most prestigious form of art. So what are you waiting for? Bring out the artist within you and make one of the finest canvas work!!!",
+        "tagline": "Arts"
+    },
+    {
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FKalpakriti%20(Arts)%20Kaizen-2023.pdf?alt=media&token=cfbeea45-f2de-4fce-97a8-780a0c267941",
+        "description": "Charcoal is the world's oldest form of drawing. Showcase your talent at the charcoal painting competition with this conventional art form.",
+        "sponsorLogo": "",
+        "category": "Arts",
+        "name": "Skizzle - Charcoal Sketching",
+        "minMembers": "1",
+        "prizes": "worth ₹3k",
+        "sponsorName": "",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-charcoal%20painting.webp-048b9579-a6a3-4744-b75e-870443be4680?alt=media&token=68f82cd6-9d7c-432d-bb8d-bfa94563ba05",
+        "tagline": "Arts",
+        "id": "skizzle-charcoal-sketching",
+        "contacts": [
+            {
+                "name": "Ashima",
+                "contact_no": "+91 8210382310"
+            },
+            {
+                "name": "Bandana",
+                "contact_no": "+91 8603087822"
+            }
+        ],
+        "participants": "1",
+        "price": "75",
+        "status": "Ended"
+    },
+    {
+        "price": "100",
+        "name": "Swar : Solo Singing  (classical)",
+        "description": "Kaizen 2023 brings you Swar, a fun solo singing competition to showcase the melody of your vocal chords Let your music create consonance!",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/new%20rulebooks%2FPravah%20(Cultural)%20Kaizen%202023%20(2).pdf?alt=media&token=23e1c4a4-a4de-4a13-8323-f528d95876c2",
+        "tagline": "Cultural Event",
+        "minMembers": "1",
+        "sponsorLogo": "",
+        "category": "Cultural",
+        "id": "swar-solo-singing-classical",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2F6QdGbwRQezLbM0mpM4D69yZzpCI2-classical_singing.webp-aca1703b-cb0f-4903-a4a7-76c5ebc5f4e6?alt=media&token=7f3106c9-12a7-4181-aa45-d9b20dd81719",
+        "prizes": "worth ₹12k",
+        "contacts": [
+            {
+                "contact_no": "+91 7852822993",
+                "name": "Shivam Deopa"
+            },
+            {
+                "name": "Ishita Dutta",
+                "contact_no": "+91 7085157668"
+            },
+            {
+                "contact_no": "+91 8453513312",
+                "name": "Bikashita"
+            }
+        ],
+        "status": "Ended",
+        "participants": "1",
+        "sponsorName": ""
+    },
+    {
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-family%20feud.webp-d431cafe-3706-4f05-88c9-6c90a323ae5a?alt=media&token=1a367343-23d8-4d25-82b5-dd93c77cbb33",
+        "sponsorName": "",
+        "minMembers": "4",
+        "category": "Informals",
+        "price": "0",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FInformal%20Events-%20Rulebook%20Kaizen%20(2).pdf?alt=media&token=3535121d-491a-4303-a061-633802348a95",
+        "sponsorLogo": "",
+        "name": "Family Feud ",
+        "tagline": "Informal event",
+        "description": "The iconic Family Feud, with a desi twist!\nAnswer the survey questions specifically targeted towards college students, as you put your trivia skills to the test.",
+        "contacts": [
+            {
+                "contact_no": "+91 7099852450",
+                "name": "Adnan "
+            },
+            {
+                "contact_no": "+91 9111179081",
+                "name": "Gautam  Rawlani "
+            }
+        ],
+        "status": "Ended",
+        "participants": "4",
+        "prizes": "Gift Hampers",
+        "id": "family-feud"
+    },
+    {
+        "minMembers": "3",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FLiterary%20Events-%20Rulebook%20Kaizen%20(3).pdf?alt=media&token=582e439e-dfc2-4de0-a0a0-df0a23f8b42c",
+        "prizes": "worth ₹2.5k",
+        "sponsorLogo": "",
+        "sponsorName": "",
+        "name": "Rhetorica (Hindi)",
+        "participants": "3",
+        "tagline": "Writing Competition (HIndi)",
+        "status": "Ended",
+        "id": "rhetorica-hindi",
+        "category": "Literary",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-literary.webp-6fbfd996-e9f5-4a99-8a1a-4d6a63ce3760?alt=media&token=cf1a2b98-11e5-41d2-a335-1446aef19e78",
+        "description": "\"We hope that your continuity can form a great sense of Rhetoric\nThe last line by one shall be echoed to the next who shall pick\nTo a particular theme 3 different minds have to stick\nLet's see how lucidity of the ideas will combine up thick\"",
+        "contacts": [
+            {
+                "contact_no": "+91 7357986810",
+                "name": "Dinesh Bhakar"
+            },
+            {
+                "contact_no": "+91 7277728154",
+                "name": "Khyati Vats"
+            }
+        ],
+        "price": "100"
+    },
+    {
+        "status": "Ended",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-sports%20quiz.webp-fef56308-4d60-4582-bd67-f5c9e141791c?alt=media&token=87c9e49d-eabd-4359-b0d6-2f1c245bc45f",
+        "prizes": "worth ₹3k",
+        "price": "100",
+        "contacts": [
+            {
+                "contact_no": "+91 7073665402",
+                "name": "Digvijay Singh Rajawat"
+            },
+            {
+                "name": "Gura Harsha",
+                "contact_no": "+91 9955998192"
+            }
+        ],
+        "id": "inquizitive-sports",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FLiterary%20Events-%20Rulebook%20Kaizen%20(3).pdf?alt=media&token=582e439e-dfc2-4de0-a0a0-df0a23f8b42c",
+        "participants": "3",
+        "category": "Literary",
+        "name": "InQuizitive - Sports",
+        "description": "Are you a footballer? A cricketer? Or merely a sports geek who can't run? Gather here for this sports quiz and let's see which teams score the most goals.",
+        "tagline": "Quiz ",
+        "minMembers": "1",
+        "sponsorLogo": "",
+        "sponsorName": ""
+    },
+    {
+        "sponsorName": "",
+        "description": "With its lightning-fast moves and intense gameplay, it's a sport that's sure to get your heart racing.So grab your racket, perfect your serve, and get ready to smash your way to victory!",
+        "participants": "1",
+        "id": "badminton-mens-singles",
+        "status": "Ended",
+        "name": "Badminton : Men's singles",
+        "minMembers": "1",
+        "price": "150",
+        "category": "Sports",
+        "prizes": "worth ₹54k",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FSPARDHA%20BROCHURE_compressed.pdf?alt=media&token=6c79539d-b991-484f-908c-fa79b88310ed",
+        "contacts": [
+            {
+                "name": "Gaurav ",
+                "contact_no": "+91 8368639191"
+            },
+            {
+                "name": "Aditi Sharma",
+                "contact_no": "+91 8900456625"
+            }
+        ],
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-badminton%20singles.webp-cfb90770-ed26-4f7d-9a13-4c68c5647c5c?alt=media&token=cb1f8c65-e816-4def-9432-daefb5ca491c",
+        "sponsorLogo": "",
+        "tagline": "Sports Event"
+    },
+    {
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-women%20cricket.webp-9b90222e-57fa-4ed2-b5ce-c0833a7b7a31?alt=media&token=57b32889-3e66-44ac-871d-f3f729c714c4",
+        "minMembers": "9",
+        "category": "Sports",
+        "contacts": [
+            {
+                "contact_no": "+91 9772687016",
+                "name": "Rukhsana"
+            },
+            {
+                "contact_no": "+91 7488615526",
+                "name": "Kriti"
+            }
+        ],
+        "status": "Ended",
+        "tagline": "Sports Event",
+        "participants": "11",
+        "price": "1650",
+        "prizes": "worth ₹64k",
+        "sponsorName": "",
+        "rulebook": "https://www.instagram.com/kaizen.aiimspatna",
+        "name": "Women's Cricket",
+        "sponsorLogo": "",
+        "id": "womens-cricket",
+        "description": "Get ready for a heart-pumping experience with cricket! The explosive hits, nail-biting finishes, and fierce rivalries will keep you on the edge of your seat. It's not just a game, it's an adrenaline-fueled spectacle!\n"
+    },
+    {
+        "price": "100",
+        "contacts": [
+            {
+                "name": "Aanchal",
+                "contact_no": "+91 7070793532"
+            },
+            {
+                "name": "Govind",
+                "contact_no": "+91 9351752302"
+            }
+        ],
+        "id": "pravah-solo-dance-contemporary",
+        "category": "Cultural",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-solo%20dance-contemporary.webp-72dfe412-1d05-4017-9fdc-a5b46bc77651?alt=media&token=334da2a7-1714-43bc-bf06-987e957c6f84",
+        "prizes": "worth ₹22k",
+        "sponsorName": "",
+        "sponsorLogo": "",
+        "participants": "1",
+        "status": "Ended",
+        "name": "Pravah: Solo Dance (contemporary)",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/new%20rulebooks%2FPravah%20(Cultural)%20Kaizen%202023%20(2).pdf?alt=media&token=23e1c4a4-a4de-4a13-8323-f528d95876c2",
+        "minMembers": "1",
+        "description": "Can't help but create choreographies in your head as you listen to all the funky\nsongs of your Playlist? We've got just the competition to show those moves \nand grooves and win exciting prizes for it! So what are you waiting for?",
+        "tagline": "Cultural Event"
+    },
+    {
+        "tagline": "Sports Event",
+        "contacts": [
+            {
+                "name": "Gaurav",
+                "contact_no": "+91 8368639191"
+            },
+            {
+                "name": "Aditi Sharma",
+                "contact_no": "+91 8797286755"
+            }
+        ],
+        "description": "With its lightning-fast moves and intense gameplay, it's a sport that's sure to get your heart racing.So grab your racket, perfect your serve, and get ready to smash your way to victory!",
+        "price": "300",
+        "sponsorLogo": "",
+        "minMembers": "2",
+        "prizes": "worth Rs.64000",
+        "status": "Ended",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FSPARDHA%20BROCHURE_compressed.pdf?alt=media&token=6c79539d-b991-484f-908c-fa79b88310ed",
+        "name": "Badminton : Women's Doubles",
+        "id": "badminton-womens-doubles",
+        "participants": "2",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-badminton%20singles.webp-27eb228e-c1c0-4930-97db-b411dd7f1ada?alt=media&token=a30a1ee3-fa53-450d-b479-77fa4bf04bea",
+        "category": "Sports",
+        "sponsorName": ""
+    },
+    {
+        "description": "Unleash your skills and take your game to the next level at the highly anticipated Table Tennis Tournament! Join us for a thrilling display of speed, precision, and competition as players from all around battle it out for the championship title. Whether you're a seasoned pro or a beginner, this is your chance to showcase your talent and experience the adrenaline rush of competitive table tennis. Don't miss out on the excitement - register now and let the games begin!\n",
+        "price": "150",
+        "participants": "1",
+        "contacts": [
+            {
+                "name": "Fatima Ahsan",
+                "contact_no": "+91 9934778625"
+            },
+            {
+                "name": "Yash",
+                "contact_no": "+91 8792464192"
+            }
+        ],
+        "prizes": "worth ₹64k",
+        "minMembers": "1",
+        "id": "table-tennis-mens-singles",
+        "sponsorLogo": "",
+        "status": "Ended",
+        "tagline": "Sports Event",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FSPARDHA%20BROCHURE_compressed.pdf?alt=media&token=6c79539d-b991-484f-908c-fa79b88310ed",
+        "sponsorName": "",
+        "category": "Sports",
+        "name": "Table tennis : Men's singles",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-table%20tennis-singles.webp-52345da7-9dae-42c3-9114-c16aba291dc6?alt=media&token=b3e57f0c-073d-4297-9726-acba8b8cc20f"
+    },
+    {
+        "status": "Ended",
+        "participants": "1",
+        "sponsorLogo": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2F6QdGbwRQezLbM0mpM4D69yZzpCI2-chesscom_logo_filled.png-53a7ff28-97aa-45b2-90be-b25181718645?alt=media&token=8f82ab4a-7aae-4c48-b0e9-c23b85b46b22",
+        "contacts": [
+            {
+                "name": "Adarsh",
+                "contact_no": "+91 9926685533"
+            },
+            {
+                "name": "Gaurav Raj",
+                "contact_no": "+91 9304286976"
+            }
+        ],
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FChess-Rulebook.pdf?alt=media&token=b68d6205-17ab-4f82-8e59-d01e23b9bb6c",
+        "prizes": "worth ₹30k",
+        "id": "chess",
+        "name": "Chess",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-chess-11-1.webp-cf7cda30-3e02-45b7-8800-87f8c560e647?alt=media&token=8e91ca10-91b6-401b-ac3d-7c2c29af51ef",
+        "sponsorName": "chess.com",
+        "tagline": "-",
+        "minMembers": "1",
+        "price": "50",
+        "category": "Sports",
+        "description": "With each move, a world of possibilities unfolds before your eyes. A game of strategy, where intellect reigns supreme. Chess, the ultimate mental challenge, where victory is earned one move at a time."
+    },
+    {
+        "contacts": [
+            {
+                "contact_no": "+91 7248610029",
+                "name": "Saurabh Singh"
+            },
+            {
+                "name": "Uttam Kumar",
+                "contact_no": "+91 7258974877"
+            }
+        ],
+        "sponsorLogo": "",
+        "status": "Ended",
+        "name": "The Immitation game : Mimicry",
+        "id": "the-immitation-game-mimicry",
+        "participants": "1",
+        "price": "100",
+        "sponsorName": "",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-mime-artist-1.webp-73243757-5ebf-45fb-94e9-cfa8f3fc2381?alt=media&token=77b7ca9e-d368-4d34-b426-f44f6bd3c999",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/new%20rulebooks%2FPravah%20(Cultural)%20Kaizen%202023%20(2).pdf?alt=media&token=23e1c4a4-a4de-4a13-8323-f528d95876c2",
+        "description": "Unleash your inner chameleon and show off your best impressions at our Mimicry Competition! From celebrities to animals, we want to see you transform into any character you choose. Get ready to amaze the crowd with your spot-on impressions and compete for the title of Mimicry Master. Whether you're a seasoned impersonator or just starting out, this is your chance to shine. Let the games begin!",
+        "tagline": "Cultural Event",
+        "category": "Cultural",
+        "prizes": "worth ₹3k",
+        "minMembers": "1"
+    },
+    {
+        "description": "Unleash your skills and take your game to the next level at the highly anticipated Table Tennis Tournament! Join us for a thrilling display of speed, precision, and competition as players from all around battle it out for the championship title. Whether you're a seasoned pro or a beginner, this is your chance to showcase your talent and experience the adrenaline rush of table tennis. Don't miss out on the excitement - register now and let the games begin!",
+        "contacts": [
+            {
+                "name": "Fatima Ahsan",
+                "contact_no": "+91 9934778625"
+            },
+            {
+                "contact_no": "+91 8792464192",
+                "name": "Yash"
+            }
+        ],
+        "status": "Ended",
+        "sponsorName": "",
+        "participants": "2",
+        "tagline": "Sports Event",
+        "prizes": "worth Rs.64K",
+        "minMembers": "2",
+        "name": "Table Tennis : Women's Doubles",
+        "sponsorLogo": "",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-doubles-tt.webp-491ac990-e5b6-46b5-93bc-b3f3e7954219?alt=media&token=9a9d4b67-20a0-47b4-bf73-0024393f50a7",
+        "id": "table-tennis-womens-doubles",
+        "price": "300",
+        "category": "Sports",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FSPARDHA%20BROCHURE_compressed.pdf?alt=media&token=6c79539d-b991-484f-908c-fa79b88310ed"
+    },
+    {
+        "contacts": [
+            {
+                "name": "Ajay",
+                "contact_no": "+91 9745813471"
+            },
+            {
+                "name": "Syamantak",
+                "contact_no": "+91 8018740247"
+            }
+        ],
+        "participants": "12",
+        "prizes": "worth ₹64k",
+        "status": "Ended",
+        "price": "1650",
+        "sponsorLogo": "",
+        "description": "Get ready to rumble on the field! Calling all skilled football players to join us for a game of pure adrenaline, teamwork, and passion",
+        "id": "football-mens",
+        "minMembers": "10",
+        "sponsorName": "",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FSPARDHA%20BROCHURE_compressed.pdf?alt=media&token=6c79539d-b991-484f-908c-fa79b88310ed",
+        "tagline": "Sports Event",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-pexels-yahye-abdi-10513114.webp-4ea120c5-d292-48f0-8b63-da439f7180ed?alt=media&token=8b7f221e-5405-4819-8e2d-eda3604aa5b1",
+        "name": "Football men's",
+        "category": "Sports"
+    },
+    {
+        "id": "turncoat-debate-hindi",
+        "category": "Literary",
+        "tagline": "Debate",
+        "name": "Turncoat Debate (Hindi)",
+        "contacts": [
+            {
+                "contact_no": "+91 9631303625",
+                "name": "Madhurendra"
+            },
+            {
+                "name": "Ayush ",
+                "contact_no": "+91 8050681307"
+            }
+        ],
+        "sponsorLogo": "",
+        "price": "100",
+        "status": "Ended",
+        "description": "What if, you get to play at both sides of the table? You're the attacker and you're the defender; you agree and yet you disagree. Puzzled about the format? Welcome to the modern variation of debate, the trending Turncoat Debate. Here, you get to speak both for the motion and against the motion. Here, you're your own competition. Not only will your delivery of speech be judged but also your verbal and logical agility. So buckle up, prepare hard and outwit yourself.",
+        "sponsorName": "",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FLiterary%20Events-%20Rulebook%20Kaizen%20(3).pdf?alt=media&token=582e439e-dfc2-4de0-a0a0-df0a23f8b42c",
+        "participants": "1",
+        "prizes": "worth ₹2.5k",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-hindi%20debate.webp-d7259922-1e58-4434-9142-4be85fbd5123?alt=media&token=812bec58-829c-4d14-884e-8ebeeb7c4765",
+        "minMembers": "1"
+    },
+    {
+        "minMembers": "3",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-cod.webp-07fecfe9-2a76-41e5-86e5-4cdd2fef07b3?alt=media&token=3f414b5b-72c7-459e-a1ce-97c84858eabe",
+        "status": "Ended",
+        "prizes": "worth ₹64k",
+        "sponsorName": "",
+        "name": "Call of Duty: Combat Arena",
+        "price": "250",
+        "participants": "5",
+        "category": "Sports",
+        "contacts": [
+            {
+                "contact_no": "+91 9304286976",
+                "name": "Gaurav Raj"
+            },
+            {
+                "name": "Dinesh Bhakar",
+                "contact_no": "+91 7357986810"
+            }
+        ],
+        "sponsorLogo": "",
+        "tagline": "E-Sports Event",
+        "id": "call-of-duty-combat-arena",
+        "description": "Prepare for Epic Battles and Fierce Showdowns! Join the Ranks of the Elite in the Ultimate Call of Duty Tournament featuring Heart-Pounding Search and Destroy and Intense Team Deathmatch Modes. Will You Rise as the Victorious Champion or Fall in the Heat of Battle? It's Time to Prove Your Skills and Claim Glory on the Virtual Battlefield!",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FSPARDHA%20BROCHURE_compressed.pdf?alt=media&token=6c79539d-b991-484f-908c-fa79b88310ed"
+    },
+    {
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FSPARDHA%20BROCHURE_compressed.pdf?alt=media&token=6c79539d-b991-484f-908c-fa79b88310ed",
+        "participants": "1",
+        "name": "Badminton : Women's Singles",
+        "price": "150",
+        "sponsorName": "",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-badminton%20singles.webp-760b6169-c4fb-45b0-a625-91b0159c02fe?alt=media&token=d6fdd8f4-9052-4f1a-bfd3-bb7a58a58b04",
+        "minMembers": "1",
+        "description": "With its lightning-fast moves and intense gameplay, it's a sport that's sure to get your heart racing.So grab your racket, perfect your serve, and get ready to smash your way to victory!",
+        "prizes": "worth ₹64k",
+        "status": "Ended",
+        "tagline": "Sports Event",
+        "contacts": [
+            {
+                "name": "Gaurav ",
+                "contact_no": "+91 8368639191"
+            },
+            {
+                "name": "Aditi",
+                "contact_no": "+91 8900456625"
+            }
+        ],
+        "category": "Sports",
+        "id": "badminton-womens-singles",
+        "sponsorLogo": ""
+    },
+    {
+        "sponsorLogo": "",
+        "tagline": "Sports Event",
+        "sponsorName": "",
+        "contacts": [
+            {
+                "contact_no": "+91 8252128305",
+                "name": "Navya Naveli"
+            },
+            {
+                "contact_no": "+91 7848816161",
+                "name": "Sandeep"
+            }
+        ],
+        "name": "4x100 meters relay",
+        "participants": "4",
+        "description": "Gather your team and step up to the starting line for an electrifying 4x100 relay race. Speed, strategy, and teamwork will lead you to victory. Let's race!",
+        "minMembers": "4",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FSPARDHA%20BROCHURE_compressed.pdf?alt=media&token=6c79539d-b991-484f-908c-fa79b88310ed",
+        "id": "4x100-meters-relay",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-100-m%20relay%20race.webp-83eee4c1-120e-4814-a61b-c7197c6d3345?alt=media&token=9425f237-624a-4559-943f-ac5a39abc0e1",
+        "prizes": "worth ₹64k",
+        "price": "200",
+        "category": "Sports",
+        "status": "Ended"
+    },
+    {
+        "tagline": "Sports Event",
+        "prizes": "worth ₹64k",
+        "category": "Sports",
+        "name": "Table Tennis : Mixed Doubles",
+        "sponsorName": "",
+        "id": "table-tennis-mixed-doubles",
+        "participants": "2",
+        "sponsorLogo": "",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FSPARDHA%20BROCHURE_compressed.pdf?alt=media&token=6c79539d-b991-484f-908c-fa79b88310ed",
+        "price": "300",
+        "minMembers": "2",
+        "status": "Ended",
+        "contacts": [
+            {
+                "contact_no": "+91 9934778625",
+                "name": "Fatima Ahsan"
+            },
+            {
+                "name": "Yash",
+                "contact_no": "+91 8792464192"
+            }
+        ],
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-doubles-tt.webp-a3a512bd-f9b6-4fab-9bfb-77e95ed55bb6?alt=media&token=bd1989e2-51db-42a0-9b2e-242a5c54fa56",
+        "description": "Unleash your skills and take your game to the next level at the highly anticipated Table Tennis Tournament! Join us for a thrilling display of speed, precision, and competition as players from all around battle it out for the championship title. Whether you're a seasoned pro or a beginner, this is your chance to showcase your talent and experience the adrenaline rush of competitive table tennis. Don't miss out on the excitement - register now and let the games begin"
+    },
+    {
+        "minMembers": "1",
+        "sponsorLogo": "",
+        "price": "150",
+        "name": "Fashion Show",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2F6QdGbwRQezLbM0mpM4D69yZzpCI2-fashion_show_solo.webp-2aac3b8c-a11c-4bd2-879d-49e092fdf8d8?alt=media&token=59f198d3-7d02-43e2-8a8f-1e426fa48bee",
+        "id": "fashion-show",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/new%20rulebooks%2FFashion%20Show%20Kaizen%202023.pdf?alt=media&token=dcf35b49-d286-4744-b5c7-6fd2e7b83a81",
+        "status": "Ended",
+        "prizes": "worth ₹12k+",
+        "contacts": [
+            {
+                "contact_no": "+91 8309862460 ",
+                "name": "Sejal Gudivada"
+            },
+            {
+                "contact_no": "+91 8529141887",
+                "name": "Himanshu Kumar"
+            }
+        ],
+        "category": "Cultural",
+        "sponsorName": "",
+        "description": "Let's bring some style, elegance and creativity with a flagship event happening on the main stage! It's time to flex your styling skills for the most awaited Fashion Show. Showcase your love for fashion and styling as exciting Cash Prizes and Hampers await you.",
+        "participants": "2",
+        "tagline": "Cultural Pronite"
+    },
+    {
+        "name": "Women's Throwball",
+        "prizes": "worth ₹64k",
+        "sponsorLogo": "",
+        "participants": "10",
+        "minMembers": "7",
+        "id": "womens-throwball",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FSPARDHA%20BROCHURE_compressed.pdf?alt=media&token=6c79539d-b991-484f-908c-fa79b88310ed",
+        "category": "Sports",
+        "sponsorName": "",
+        "tagline": "Sports Event",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-photo_2023-04-16_15-57-59.webp-fed5a008-0090-4e35-aabb-06d2d967805e?alt=media&token=c00ca4e3-8b16-481d-8de6-23f22db65618",
+        "status": "Ended",
+        "price": "1500",
+        "description": "Spiking to Victory! Join us for the thrilling action of the Throwball Sports Tournament. Witness teams battle it out, with intense throws and expert catches. Experience the adrenaline rush of this fast-paced and exciting game. Don't miss out on the fun, camaraderie, and competitive spirit. Let's make it a smashing success!",
+        "contacts": [
+            {
+                "name": "Rukhsana",
+                "contact_no": "+91 9772687016"
+            },
+            {
+                "name": "Neha",
+                "contact_no": "+91 9901678418"
+            }
+        ]
+    },
+    {
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FAcademic%20Events-%20Rulebook%20Kaizen.pdf?alt=media&token=3ab6f227-ea8e-44ef-9da8-ae3a72ce4eec",
+        "contacts": [
+            {
+                "name": "Atul Singh ",
+                "contact_no": "+91 7489581029"
+            },
+            {
+                "name": "Aashna Singhvi",
+                "contact_no": "+91 9182898871"
+            }
+        ],
+        "tagline": "Academic Quiz(2021 to Interns)",
+        "name": "Medathena Advanced",
+        "participants": "2",
+        "id": "medathena-advanced",
+        "description": "3,2,1 and time's Up!\nHere's a challenge to the brightest minds out there, Medathena! Start flipping through your Guytons, Robbins and Harrisons because time's running short. So grab your steths and let's get quizzing!",
+        "category": "Academics",
+        "sponsorLogo": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2F6QdGbwRQezLbM0mpM4D69yZzpCI2-Screenshot%20(753).png-66b36d1e-ea76-47c9-a7f1-7fd370f9a435?alt=media&token=bc013c94-aafa-499b-84f4-759563583d7f",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2F6QdGbwRQezLbM0mpM4D69yZzpCI2-quiz.webp-09f6fe68-de07-4ad3-93cf-bb320903d917?alt=media&token=d6c9150c-be04-41ee-90a0-8ed4904f0f9f",
+        "status": "Ended",
+        "prizes": "worth 40k",
+        "minMembers": "1",
+        "price": "145",
+        "sponsorName": ""
+    },
+    {
+        "description": "Choreograph! Practice! Synchronize!  The time has come to turn on the speakers,\ngrab a partner and twirl to the music, for dance is better done in pairs!",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-classical%20duet.webp-95f000ef-115c-4130-a6d1-d5b07c57f076?alt=media&token=ab9dcee8-0f1a-495f-b628-4f2cc5202b4b",
+        "participants": "2",
+        "contacts": [
+            {
+                "name": "Kiran Das",
+                "contact_no": "+91 7044500921"
+            },
+            {
+                "name": "Satwata",
+                "contact_no": "+91 7044682660"
+            },
+            {
+                "name": "Himanshi",
+                "contact_no": "+91 9117147413"
+            }
+        ],
+        "prizes": "worth ₹16k",
+        "sponsorLogo": "",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/new%20rulebooks%2FPravah%20(Cultural)%20Kaizen%202023%20(2).pdf?alt=media&token=23e1c4a4-a4de-4a13-8323-f528d95876c2",
+        "name": "Pravah : Duet Dance (classical)",
+        "tagline": "Cultural Event",
+        "minMembers": "2",
+        "status": "Ended",
+        "category": "Cultural",
+        "price": "150",
+        "id": "pravah-duet-dance-classical",
+        "sponsorName": ""
+    },
+    {
+        "price": "400",
+        "description": "This competition aims to bring light to important social issues and encourage creativity and innovation in the art Nukkad Natak. So sit back, relax and enjoy the show.",
+        "tagline": "Cultural Event",
+        "minMembers": "6",
+        "name": "Pratibimb :  Nukkad natak",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-street%20play1.webp-b6715e6e-3d42-4d1b-9003-a2c3884739bb?alt=media&token=027495d6-0155-44ce-9f88-5b41a7a63ec7",
+        "participants": "12",
+        "prizes": "worth ₹8k",
+        "id": "pratibimb-nukkad-natak",
+        "sponsorName": "",
+        "contacts": [
+            {
+                "contact_no": "+91 8050681307",
+                "name": "Ayush "
+            },
+            {
+                "contact_no": "+91 7982989081",
+                "name": "Shria Mishra"
+            }
+        ],
+        "sponsorLogo": "",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/new%20rulebooks%2FPravah%20(Cultural)%20Kaizen%202023%20(2).pdf?alt=media&token=23e1c4a4-a4de-4a13-8323-f528d95876c2",
+        "category": "Cultural",
+        "status": "Ended"
+    },
+    {
+        "category": "Literary",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-InQuizitive%20-%20LAME.webp-c39e56ff-5ccd-4c70-b500-0b7523e1db86?alt=media&token=6cd1a495-24af-4d95-8b89-4a1d206f4c5e",
+        "id": "inquizitive-lame",
+        "name": "InQuizitive - LAME",
+        "sponsorLogo": "",
+        "participants": "3",
+        "description": "Despite what it's name suggests, this event is definitely not lame. Are you an avid movie watcher, or an art and literature buff, or does music run through your veins? Tell your mom all the time you spend watching sitcoms, or being holed up in your room with your headphones on, reading fiction, is not an entire waste of time. LAME- Literature, Art, Music and Entertainment quiz, is exactly what you needed so you can win cash prizes for all the cesspool of information inhabiting your brain.",
+        "sponsorName": "",
+        "prizes": "worth ₹3k",
+        "price": "100",
+        "status": "Ended",
+        "minMembers": "1",
+        "contacts": [
+            {
+                "contact_no": "+91 7099852450",
+                "name": "Adnan"
+            },
+            {
+                "contact_no": "+91 9581680201",
+                "name": "Ashitha"
+            }
+        ],
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FLiterary%20Events-%20Rulebook%20Kaizen%20(3).pdf?alt=media&token=582e439e-dfc2-4de0-a0a0-df0a23f8b42c",
+        "tagline": "Quiz"
+    },
+    {
+        "contacts": [
+            {
+                "name": "Aripra Singh ",
+                "contact_no": "+91 9606705298"
+            },
+            {
+                "contact_no": "+91 9895489122",
+                "name": "Michelle"
+            }
+        ],
+        "price": "100",
+        "status": "Ended",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FLiterary%20Events-%20Rulebook%20Kaizen%20(3).pdf?alt=media&token=582e439e-dfc2-4de0-a0a0-df0a23f8b42c",
+        "description": "Everyone has a little side to them that grows \nTo frame stanzas to sonnets of prose \nAs an opportunity to SLAM up your creative Rows \nYour style need not be quest for a mystery  \nBut it's important for it to be your own POETRY  \nA true test for the taste of your own creativity ",
+        "name": "Slam Poetry",
+        "sponsorName": "",
+        "participants": "1",
+        "id": "slam-poetry",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-A%20feather%20lying%20on%20a%20book.webp-9179d542-d510-430a-ba38-1fb824442e84?alt=media&token=57a6efd0-2a23-486e-a537-b3d2ddbf50ff",
+        "tagline": "Poetry",
+        "prizes": "worth ₹3k",
+        "minMembers": "1",
+        "sponsorLogo": "",
+        "category": "Literary"
+    },
+    {
+        "participants": "1",
+        "price": "50",
+        "sponsorName": "",
+        "description": "Ready, set, sprint! Join us for a heart-pumping 100 meter dash where speed and agility are everything. Showcase your skills and compete for the win. Are you up for the challenge?",
+        "id": "100-meters-sprint",
+        "category": "Sports",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FSPARDHA%20BROCHURE_compressed.pdf?alt=media&token=6c79539d-b991-484f-908c-fa79b88310ed",
+        "name": "100 meters sprint",
+        "minMembers": "1",
+        "contacts": [
+            {
+                "contact_no": "+91 8252128305",
+                "name": "Navya Naveli"
+            },
+            {
+                "contact_no": "+91 7848816161",
+                "name": "Sandeep"
+            }
+        ],
+        "sponsorLogo": "",
+        "tagline": "Sports Event",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-100%20metre%20sprint.webp-a6548381-c665-42cf-88cd-4637970f3f4c?alt=media&token=a482f375-64d7-4934-ad00-e8d290837e31",
+        "status": "Ended",
+        "prizes": "worth ₹64k"
+    },
+    {
+        "price": "300",
+        "status": "Ended",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-badminton%20singles.webp-631c60d4-73df-4d70-abf6-a9b9d0015982?alt=media&token=543219be-bca7-48b3-91c2-8abd4682d6aa",
+        "id": "badminton-mens-doubles",
+        "participants": "2",
+        "contacts": [
+            {
+                "name": "Gaurav",
+                "contact_no": "+91 8368639191"
+            },
+            {
+                "contact_no": "+91 8797286755",
+                "name": "Aditi Sharma"
+            }
+        ],
+        "description": "With its lightning-fast moves and intense gameplay, it's a sport that's sure to get your heart racing. So grab your racket, perfect your serve, and get ready to smash your way to victory!",
+        "prizes": "worth ₹64k",
+        "category": "Sports",
+        "name": "Badminton : Men's doubles",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FSPARDHA%20BROCHURE_compressed.pdf?alt=media&token=6c79539d-b991-484f-908c-fa79b88310ed",
+        "sponsorName": "",
+        "sponsorLogo": "",
+        "tagline": "Sports Event",
+        "minMembers": "2"
+    },
+    {
+        "sponsorName": "",
+        "status": "Ended",
+        "price": "100",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2FpQmXVg4ZNteUAjg2tq1tFqrwJz12-LDhZi0ViBBQODUCa8V5fjCZmB0u1_rohitkr20_two_masks_with_beautiful.png-5a5ab887-0f69-4727-83c0-216ff2b1010b?alt=media&token=3308f625-ab6d-445d-b5f7-c57f3ac4d3cc",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FKalpakriti%20(Arts)%20Kaizen-2023.pdf?alt=media&token=cfbeea45-f2de-4fce-97a8-780a0c267941",
+        "name": "Facade - Mask Painting ",
+        "minMembers": "1",
+        "participants": "1",
+        "category": "Arts",
+        "sponsorLogo": "",
+        "prizes": "worth ₹4.5k",
+        "tagline": "Arts",
+        "description": "Let your brushes do the talking and your art gain the applauses at the mask painting competition celebrating how masks can communicate love, respect, power, fear and feelings.",
+        "contacts": [
+            {
+                "contact_no": "+91 8210382310",
+                "name": "Ashima"
+            },
+            {
+                "contact_no": "+91 6291431217",
+                "name": "Manas"
+            }
+        ],
+        "id": "facade-mask-painting"
+    },
+    {
+        "contacts": [
+            {
+                "contact_no": "+91 8309862460",
+                "name": "Sejal Gudivada "
+            },
+            {
+                "name": "Satwata ",
+                "contact_no": "+91 7044682660"
+            }
+        ],
+        "id": "inquizitive-fandom",
+        "participants": "3",
+        "category": "Literary",
+        "sponsorName": "",
+        "status": "Ended",
+        "prizes": "worth ₹6k",
+        "tagline": "Quiz",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FLiterary%20Events-%20Rulebook%20Kaizen%20(3).pdf?alt=media&token=582e439e-dfc2-4de0-a0a0-df0a23f8b42c",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-fandom%20quiz.webp-686ff009-5414-4451-a20e-1ece443b269c?alt=media&token=f8cac50e-fbb7-4b75-92a6-c31bccb86be3",
+        "name": "InQuizitive - Fandom",
+        "price": "100",
+        "sponsorLogo": "",
+        "minMembers": "1",
+        "description": "Knock Knock!!\nTo all the potterheads, swifties, blinks, cinemaholics and more...buckle up, cuz the literary society of AIIMS Patna brings to you the biggest Fandom Quiz in Kaizen, 2023. This is your chance to prove the world that you are a true aficianado !!!"
+    },
+    {
+        "sponsorLogo": "",
+        "description": "The t shirt painting competition brings to you a unique chance to showoff your fashion mantra. Turn on your colorful creative pulses and let the world see what your style is all about.",
+        "status": "Ended",
+        "prizes": "worth ₹4.5k",
+        "contacts": [
+            {
+                "contact_no": "+91 8360304174",
+                "name": "Veronica"
+            },
+            {
+                "name": "Neha",
+                "contact_no": "+91 8789303007"
+            }
+        ],
+        "minMembers": "1",
+        "tagline": "Arts",
+        "participants": "1",
+        "price": "100",
+        "category": "Arts",
+        "id": "tunica-t-shirt-painting",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FKalpakriti%20(Arts)%20Kaizen-2023.pdf?alt=media&token=cfbeea45-f2de-4fce-97a8-780a0c267941",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-t-shirt%20painting.webp-b5114625-cc18-4e0c-87fa-ed9eed6d7c15?alt=media&token=4108915b-a45d-4353-bb97-703e11efe145",
+        "name": "Tunica : T-shirt Painting ",
+        "sponsorName": ""
+    },
+    {
+        "sponsorLogo": "",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-hindi%20debate.webp-0124c0a8-beb5-4cf0-8694-ea9f7e93f8e9?alt=media&token=c961f3da-9c2e-459d-b53f-0774488988d9",
+        "price": "100",
+        "prizes": "worth ₹2.5k",
+        "minMembers": "1",
+        "contacts": [
+            {
+                "name": "Kanishk Malisetty",
+                "contact_no": "+91 9966957759"
+            },
+            {
+                "contact_no": "+91 8769298794",
+                "name": "Anjali Dubey"
+            }
+        ],
+        "name": "Turncoat Debate (English)",
+        "sponsorName": "",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FLiterary%20Events-%20Rulebook%20Kaizen%20(3).pdf?alt=media&token=582e439e-dfc2-4de0-a0a0-df0a23f8b42c",
+        "participants": "1",
+        "status": "Ended",
+        "tagline": "Debate",
+        "id": "turncoat-debate-english",
+        "category": "Literary",
+        "description": "Welcome to the modern variation of debate, the trending Turncoat Debate. Here, you get to speak both for the motion and against the motion. Here, you're your own competition. Not only will your delivery of speech be judged but also your verbal and logical agility. So buckle up, pepare hard and outwit yourself."
+    },
+    {
+        "status": "Ended",
+        "name": "Aquarelle : Watercolor Painting ",
+        "sponsorLogo": "",
+        "tagline": "Arts",
+        "price": "100",
+        "contacts": [
+            {
+                "contact_no": "+91 8360304174",
+                "name": "Veronica"
+            },
+            {
+                "name": "Manas",
+                "contact_no": "+91 6291431217"
+            }
+        ],
+        "minMembers": "1",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FKalpakriti%20(Arts)%20Kaizen-2023.pdf?alt=media&token=cfbeea45-f2de-4fce-97a8-780a0c267941",
+        "participants": "1",
+        "category": "Arts",
+        "sponsorName": "",
+        "id": "aquarelle-watercolor-painting",
+        "prizes": "worth ₹4.5k",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-watercolour-1.webp-9ba15784-f81c-474b-bcd2-630910edb39e?alt=media&token=f14b8cd4-7d44-446d-8802-4973d864dcb6",
+        "description": "Let the colours flow where your mind wanders because it's time to splash your inner creative expressions onto the canvas. Pour out your emotions with colors in the watercolor painting competition."
+    },
+    {
+        "sponsorName": "",
+        "description": "Pick up the old pen and unleash your creative beast onto the oldest canvas in the world - our own skin !  From intricate strokes to designs, modern or folk - bring to life your very own tattoo design !",
+        "minMembers": "1",
+        "id": "pen-ting-pen-tattooing",
+        "price": "50",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FKalpakriti%20(Arts)%20Kaizen-2023.pdf?alt=media&token=cfbeea45-f2de-4fce-97a8-780a0c267941",
+        "sponsorLogo": "",
+        "category": "Arts",
+        "prizes": "worth ₹3k",
+        "name": "Pen-Ting : Pen Tattooing",
+        "status": "Ended",
+        "tagline": "Arts",
+        "contacts": [
+            {
+                "name": "Madhurendra",
+                "contact_no": "+91 9631303625"
+            },
+            {
+                "contact_no": "+91 7488509457",
+                "name": "Akansh"
+            }
+        ],
+        "participants": "2",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-pen%20tattoo.webp-3627f124-4ca4-41f8-af32-29a922fb24e6?alt=media&token=7ce2d546-16a6-4666-bdb5-bf7bed1f2707"
+    },
+    {
+        "contacts": [
+            {
+                "contact_no": "+91 7044500921",
+                "name": "Kiran Das"
+            },
+            {
+                "contact_no": "+91 7044682660",
+                "name": "Satwata"
+            },
+            {
+                "name": "Himanshi",
+                "contact_no": "+91 9117147413"
+            }
+        ],
+        "name": "Pravah : solo Dance (classical)",
+        "sponsorName": "",
+        "participants": "1",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-solo-classical.webp-4c9da26e-5336-445e-a692-07faa31bcdd3?alt=media&token=5d7e5777-8641-4b2a-a15f-551d0f724471",
+        "tagline": "Cultural Event",
+        "minMembers": "1",
+        "sponsorLogo": "",
+        "description": "You can't help but sway to the beats of the melodious taranas of classical music. \nThis competition brings to you a platform to show us the power of your ghungroos!",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/new%20rulebooks%2FPravah%20(Cultural)%20Kaizen%202023%20(2).pdf?alt=media&token=23e1c4a4-a4de-4a13-8323-f528d95876c2",
+        "category": "Cultural",
+        "prizes": "worth ₹16k",
+        "status": "Ended",
+        "id": "pravah-solo-dance-classical",
+        "price": "99"
+    },
+    {
+        "sponsorLogo": "",
+        "name": "Whiplash : Battle of bands",
+        "tagline": "Cultural Event",
+        "status": "Ended",
+        "description": "Prepare to be blown away as we kick off the Battle of the Bands! ",
+        "price": "500",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-battle%20of%20bands.webp-8515fad9-78f4-4061-bcb3-95cfff562c61?alt=media&token=f1c9b3a5-da2d-4b38-b3ff-7160fd834531",
+        "contacts": [
+            {
+                "name": "Rohit Kumar",
+                "contact_no": "+91 7991169030"
+            },
+            {
+                "name": "Sritam Sen",
+                "contact_no": "+91 7076832668"
+            }
+        ],
+        "category": "Cultural",
+        "participants": "10",
+        "id": "whiplash-battle-of-bands",
+        "sponsorName": "",
+        "prizes": "worth ₹12k+",
+        "minMembers": "3",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/new%20rulebooks%2FBattle%20of%20Bands-2.pdf?alt=media&token=70cb500a-f28f-4ad4-900e-638f47dab704"
+    },
+    {
+        "price": "100",
+        "contacts": [
+            {
+                "contact_no": "+91 9955687777",
+                "name": "Kanishka Katriar "
+            },
+            {
+                "contact_no": "+91 9111179081",
+                "name": "Gautam Rawlani "
+            }
+        ],
+        "participants": "1",
+        "category": "Informals",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-hogathon.webp-a09a5b20-ea69-4b5e-8b1c-ccd29bfe2a53?alt=media&token=967ad0c5-cb0d-440f-8954-082d64367c55",
+        "minMembers": "1",
+        "sponsorName": "Angeethi Restaurant",
+        "id": "hogathon",
+        "name": "Hogathon",
+        "status": "Ended",
+        "sponsorLogo": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2FTAm6QedRE8R67x2PbmqlV7WOZLC2-Angeethi%2Brestautrant.webp-18c681a9-80ab-4594-9da8-132332e94dd3?alt=media&token=a688c3d7-057b-49f1-92c8-318585239ade",
+        "prizes": "Gift Hampers",
+        "description": "Relish the delicacies of the streets of India and savour the moment! However do not take too long for it's a marathon!\nCome aboard to sail with us on this swift journey where you and we race against time to fill our stomach and satisfy our minds!!",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FInformal%20Events-%20Rulebook%20Kaizen%20(2).pdf?alt=media&token=3535121d-491a-4303-a061-633802348a95",
+        "tagline": "Informal event"
+    },
+    {
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-javelin%20throw.webp-aaf204c3-fb2a-4466-8df5-faba472f35a2?alt=media&token=621bb5c6-b9ab-4360-928d-dae3ee677f5e",
+        "sponsorName": "",
+        "contacts": [
+            {
+                "name": "Sandeep",
+                "contact_no": "+91 7848816161"
+            },
+            {
+                "contact_no": "+91 8252128305",
+                "name": "Navya Naveli"
+            }
+        ],
+        "status": "Ended",
+        "category": "Sports",
+        "price": "50",
+        "sponsorLogo": "",
+        "participants": "1",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FSPARDHA%20BROCHURE_compressed.pdf?alt=media&token=6c79539d-b991-484f-908c-fa79b88310ed",
+        "description": "Attention all athletes! Unleash your inner warrior and join us for a thrilling javelin throw competition. Push your limits, showcase your skills, and compete for glory.",
+        "id": "javelin-throw",
+        "minMembers": "1",
+        "prizes": "worth ₹64k",
+        "name": "Javelin Throw",
+        "tagline": "Sports Event"
+    },
+    {
+        "contacts": [
+            {
+                "name": "Shivam",
+                "contact_no": "+91 8923055260"
+            },
+            {
+                "contact_no": "+91 7872285962",
+                "name": "Bodhadipto"
+            }
+        ],
+        "prizes": "Gift Hampers",
+        "sponsorName": "",
+        "id": "dare-to-dart",
+        "category": "Informals",
+        "participants": "1",
+        "minMembers": "1",
+        "status": "Ended",
+        "name": "Dare To Dart",
+        "price": "0",
+        "description": "HOCUS, POCUS and FOCUS folks. It's time to put your aiming skills into good use, and let the prizes be your muse. Hit the bullseye,else hit by the dares thrown at you. And mind you, ONCE YOU'RE IN, THERE'S NO OUT!",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-Dare%20to%20Dart.webp-786fb011-5c0c-40be-9d13-f508c096599e?alt=media&token=6a08dd8d-b212-4544-a6b9-833a08c2f9b4",
+        "sponsorLogo": "",
+        "tagline": "Informal event",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FInformal%20Events-%20Rulebook%20Kaizen%20(2).pdf?alt=media&token=3535121d-491a-4303-a061-633802348a95"
+    },
+    {
+        "status": "Ended",
+        "contacts": [
+            {
+                "name": "Kanishka Katriar",
+                "contact_no": "+91 9955687777"
+            }
+        ],
+        "sponsorName": "",
+        "id": "speed-dating",
+        "tagline": "Informal event",
+        "prizes": "No cash prize",
+        "sponsorLogo": "",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-speed%20dating.webp-70af76bb-e072-449f-8285-2b82b750d136?alt=media&token=38f21a2d-fcef-4528-b1a7-69c5afb72d77",
+        "category": "Informals",
+        "price": "100",
+        "participants": "1",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FInformal%20Events-%20Rulebook%20Kaizen%20(2).pdf?alt=media&token=3535121d-491a-4303-a061-633802348a95",
+        "minMembers": "1",
+        "name": "Speed Dating",
+        "description": "Is it bliss or a miss? \nPresenting to all you lovesick hearts out there, Speed Dating. Rizz your way through this game filled with chance and charm.\nDo you have it in you?"
+    },
+    {
+        "status": "Ended",
+        "id": "ha-ha-kaar-standup-comedy",
+        "name": "Ha-ha-kaar : Standup Comedy",
+        "description": "We have some incredible talent waiting to take the stage and tickle your funny bone. This competition is a Night to be remembered, full of laughter, entertainment and pure joy.",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/new%20rulebooks%2FPravah%20(Cultural)%20Kaizen%202023%20(2).pdf?alt=media&token=23e1c4a4-a4de-4a13-8323-f528d95876c2",
+        "tagline": "Cultural Event",
+        "contacts": [
+            {
+                "contact_no": "+91 7073923723",
+                "name": "Rahul Chaudhary"
+            },
+            {
+                "name": " Manish",
+                "contact_no": "+91 8905950639"
+            }
+        ],
+        "sponsorLogo": "",
+        "prizes": "worth ₹3k",
+        "price": "99",
+        "sponsorName": "",
+        "minMembers": "1",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-standup%20(1).webp-9faa5906-7ed9-47a5-b04e-477c992e4cc5?alt=media&token=1c4dd293-4041-4a5f-b089-ded7dae9810e",
+        "participants": "1",
+        "category": "Cultural"
+    },
+    {
+        "prizes": "worth ₹22k",
+        "price": "399",
+        "minMembers": "3",
+        "participants": "10",
+        "name": "Pravah : Group Dance  (contemporary)",
+        "contacts": [
+            {
+                "contact_no": "+91 7070793532",
+                "name": "Aanchal"
+            },
+            {
+                "name": "Govind",
+                "contact_no": "+91 9351752302"
+            }
+        ],
+        "tagline": "Cultural Event",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-group%20dance%20contemporary.webp-5d148b22-2fa5-4949-b505-3341e58569b8?alt=media&token=7ed417d9-1287-4489-a0b9-230c2fc928be",
+        "status": "Ended",
+        "id": "pravah-group-dance-contemporary",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/new%20rulebooks%2FPravah%20(Cultural)%20Kaizen%202023%20(2).pdf?alt=media&token=23e1c4a4-a4de-4a13-8323-f528d95876c2",
+        "category": "Cultural",
+        "sponsorLogo": "",
+        "description": "Through their moves , they will express the universal human experiences of love, loss and transformation. So sit back , relax and allow yourself to be transported by the beauty of contemporary dance ",
+        "sponsorName": ""
+    },
+    {
+        "participants": "1",
+        "price": "75",
+        "sponsorName": "",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FKalpakriti%20(Arts)%20Kaizen-2023.pdf?alt=media&token=cfbeea45-f2de-4fce-97a8-780a0c267941",
+        "minMembers": 1,
+        "sponsorLogo": "",
+        "tagline": "Arts",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2FLDhZi0ViBBQODUCa8V5fjCZmB0u1-rohitkr20_beautifully_painted_pebbles_a8fe72c1-8393-4abd-b267-8d85953582b9.png-b0fbc7d2-6f48-41e8-99bc-f602bd854bd5?alt=media&token=da1116ee-0bbf-474b-883a-7ab4e152026b",
+        "contacts": [
+            {
+                "name": "Madhurendra",
+                "contact_no": "+91 9631303625"
+            },
+            {
+                "name": "Neha",
+                "contact_no": "+91 8789303007"
+            }
+        ],
+        "status": "Ended",
+        "name": "Opal - Pebble Painting",
+        "description": "Pebbles are all around us, you just need to put in a little bit of creativity to turn these rocks into works of art. Now the time has come to fire up your imagination, think painted owls and ladybugs to abstract designs and unleash your inner artist on God's own creation.",
+        "category": "Arts",
+        "prizes": "worth ₹3k",
+        "id": "opal-pebble-painting"
+    },
+    {
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FAcademic%20Events-%20Rulebook%20Kaizen.pdf?alt=media&token=3ab6f227-ea8e-44ef-9da8-ae3a72ce4eec",
+        "sponsorName": "",
+        "prizes": "worth 40k",
+        "participants": "2",
+        "id": "medathena-amateur",
+        "status": "Ended",
+        "price": "145",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-quiz.webp-ddb8b5f6-fbb5-4aed-865a-5e2134e94885?alt=media&token=46ab164e-723e-4880-9488-cb9617512264",
+        "category": "Academics",
+        "name": "Medathena Amateur",
+        "contacts": [
+            {
+                "name": "Atul Singh ",
+                "contact_no": "+91 7489581029"
+            },
+            {
+                "name": "Aashna Singhvi",
+                "contact_no": "+91 9182898871"
+            }
+        ],
+        "description": "3,2,1 and time's Up!\nHere's a challenge to the brightest minds out there, Medathena! Start flipping through your Guytons, Robbins and Harrisons because time's running short. So grab your steths and let's get quizzing!",
+        "tagline": "Academic Quiz(2021 & 2022 batch)",
+        "minMembers": "1",
+        "sponsorLogo": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2F6QdGbwRQezLbM0mpM4D69yZzpCI2-Screenshot%20(753).png-4081ad45-f0b6-4cca-8d44-b805d2e8cdd3?alt=media&token=adad6595-7482-430f-a328-2f3fa66c1acf"
+    },
+    {
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/new%20rulebooks%2FPravah%20(Cultural)%20Kaizen%202023%20(2).pdf?alt=media&token=23e1c4a4-a4de-4a13-8323-f528d95876c2",
+        "price": "399",
+        "sponsorName": "",
+        "category": "Cultural",
+        "description": "With their unique choreography and synchronized movements, our classical dancers are ready to enchant the audience with their execution, creativity and stage presence. Are you ready?",
+        "id": "pravah-group-dance-classical",
+        "name": "Pravah : Group Dance  (classical)",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-group%20dance%20classical.webp-2df0ee87-0581-4cd5-b344-8529b522e066?alt=media&token=11cf00b9-dde4-4322-8ca9-64335c3ef2d2",
+        "minMembers": "2",
+        "participants": "10",
+        "sponsorLogo": "",
+        "status": "Ended",
+        "tagline": "Cultural Event",
+        "contacts": [
+            {
+                "name": "Kiran Das",
+                "contact_no": "+91 7044500921"
+            },
+            {
+                "name": "Satwata",
+                "contact_no": "+91 7044682660"
+            },
+            {
+                "contact_no": "+91 9117147413",
+                "name": "Himanshi"
+            }
+        ],
+        "prizes": "worth ₹16k"
+    },
+    {
+        "participants": "2",
+        "sponsorLogo": "",
+        "minMembers": "2",
+        "id": "table-tennis-mens-doubles",
+        "category": "Sports",
+        "name": "Table tennis : Men's doubles",
+        "prizes": "worth ₹64k",
+        "price": "300",
+        "contacts": [
+            {
+                "name": "Fatima Ahsan",
+                "contact_no": "+91 9934778625"
+            },
+            {
+                "name": "Yash",
+                "contact_no": "+91 8792464192"
+            }
+        ],
+        "sponsorName": "",
+        "status": "Ended",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-doubles-tt.webp-d9213850-ce5a-41ca-8006-4829c9597e4a?alt=media&token=c0425938-5711-4146-b17b-ec5a5bae4c7c",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FSPARDHA%20BROCHURE_compressed.pdf?alt=media&token=6c79539d-b991-484f-908c-fa79b88310ed",
+        "tagline": "Sports Event",
+        "description": "Table tennis, a beautiful display of finesse and grace, sees players glide across the court with elegance and precision. Its seamless backhands, graceful footwork, and rhythmic cadence create a mesmerizing spectacle for all to behold.\"\n"
+    },
+    {
+        "category": "Sports",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2FTAm6QedRE8R67x2PbmqlV7WOZLC2-carrom-1.webp-eb7d2c21-427a-4d46-a2f4-61954270b5e6?alt=media&token=ba7c792a-aef4-48f8-a088-9da235d87ce5",
+        "minMembers": "1",
+        "id": "carrom-singles",
+        "description": "\"Strike, Pocket, Win: The Ultimate Battle of Precision and Skill!\" - Join us for an exciting Carrom game as players compete to become the ultimate champion. Witness thrilling shots and nail-biting finishes in this intense game of strategy and technique. Don't miss out on the action!",
+        "tagline": " ",
+        "name": "Carrom - Singles",
+        "contacts": [
+            {
+                "contact_no": "+91 7289986877",
+                "name": "Simran"
+            }
+        ],
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FSPARDHA%20BROCHURE_compressed.pdf?alt=media&token=6c79539d-b991-484f-908c-fa79b88310ed",
+        "prizes": "Gift Hamper",
+        "sponsorName": "",
+        "sponsorLogo": "",
+        "status": "Ended",
+        "price": "150",
+        "participants": "1"
+    },
+    {
+        "participants": "9",
+        "category": "Sports",
+        "sponsorName": "",
+        "price": "1350",
+        "sponsorLogo": "",
+        "description": "Volleyball: the perfect combination of finesse and power. Acrobatic digs, towering blocks, and lightning-fast reflexes make it an exhilarating sport for all.",
+        "prizes": "worth ₹64k",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-volley%20ball.webp-55002b3c-749e-4ae8-b1aa-e4a6fbcbf6dd?alt=media&token=4a5ba7ad-f80e-4aae-9383-6793669f0b30",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FSPARDHA%20BROCHURE_compressed.pdf?alt=media&token=6c79539d-b991-484f-908c-fa79b88310ed",
+        "tagline": "Sports Event",
+        "id": "volleyball-mens",
+        "status": "Ended",
+        "minMembers": "7",
+        "contacts": [
+            {
+                "name": "Akash Kumar",
+                "contact_no": "+91 8709731289"
+            },
+            {
+                "name": "Prem",
+                "contact_no": "+91 7340469355"
+            }
+        ],
+        "name": "Volleyball men's"
+    },
+    {
+        "sponsorName": "",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2FTAm6QedRE8R67x2PbmqlV7WOZLC2-carrom-1.webp-fa165be7-80f5-459e-8e00-43fed9c04bba?alt=media&token=156ef323-db88-4bb4-8856-e75e49cedf9a",
+        "price": "150",
+        "sponsorLogo": "",
+        "minMembers": "2",
+        "prizes": "Gift Hamper",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FSPARDHA%20BROCHURE_compressed.pdf?alt=media&token=6c79539d-b991-484f-908c-fa79b88310ed",
+        "contacts": [
+            {
+                "contact_no": "+91 7289986877",
+                "name": "Simran"
+            },
+            {
+                "contact_no": "+91 7982989081",
+                "name": "Shria Mishra"
+            }
+        ],
+        "category": "Sports",
+        "tagline": " ",
+        "description": "\"Strike, Pocket, Win: The Ultimate Battle of Precision and Skill!\" - Join us for an exciting Carrom game as players compete to become the ultimate champion. Witness thrilling shots and nail-biting finishes in this intense game of strategy and technique. Don't miss out on the action!",
+        "id": "carrom-doubles",
+        "status": "Ended",
+        "participants": "2",
+        "name": "Carrom - Doubles"
+    },
+    {
+        "prizes": "worth ₹2.5k",
+        "price": "100",
+        "participants": "1",
+        "minMembers": "1",
+        "name": "Research Idea Presentation ",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-research.webp-63896006-da82-43f0-a7f6-04f1e668ff19?alt=media&token=da9e6ded-7c0a-44a0-a3a1-6975ad74baa7",
+        "sponsorName": "",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FAcademic%20Events-%20Rulebook%20Kaizen.pdf?alt=media&token=3ab6f227-ea8e-44ef-9da8-ae3a72ce4eec",
+        "status": "Ended",
+        "sponsorLogo": "",
+        "contacts": [
+            {
+                "contact_no": "+91 9381298939",
+                "name": "Naomie Mredha"
+            },
+            {
+                "contact_no": "+91 9111179081",
+                "name": "Gautam Rawlani "
+            }
+        ],
+        "category": "Academics",
+        "description": "Do you often find yourself wearing the 6 thinking hats? If you're someone who often asks “why” and have a mind for research, this is the right place for you. KAIZEN brings to you, one of a kind Research Idea Presentation! Submit your Research Idea with its Title, Introduction, Objectives, Methodology, Implications, References and the top 20 will be invited to present it in AIIMS Patna!\n\nCopy and open this link in browser to Register : https://forms.gle/za2YkrnBFDTmoaYU8",
+        "tagline": "Academic event",
+        "id": "research-idea-presentation"
+    },
+    {
+        "prizes": "worth ₹40k",
+        "sponsorName": "",
+        "contacts": [
+            {
+                "contact_no": "+91 9182898871",
+                "name": "Aashna Singhvi"
+            },
+            {
+                "name": "Naomie",
+                "contact_no": "+91 9381298939"
+            }
+        ],
+        "minMembers": "1",
+        "price": "145",
+        "name": "Medathena Elite",
+        "description": "3,2,1 and time's Up!\nHere's a challenge to the brightest minds out there, Medathena! Start flipping through your Guytons, Robbins and Harrisons because time's running short. So grab your steths and let's get quizzing!\n",
+        "sponsorLogo": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2F6QdGbwRQezLbM0mpM4D69yZzpCI2-Screenshot%20(753).png-a6d914a6-d4d0-45de-b072-19f2ab8ba673?alt=media&token=ecd735cd-a6d3-453c-b476-ff60c99f1813",
+        "participants": "2",
+        "id": "medathena-elite",
+        "tagline": "Academic Quiz (All UG Students)",
+        "category": "Academics",
+        "rulebook": "https://www.instagram.com/kaizen.aiimspatna",
+        "status": "Ended",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-quiz.webp-e7efb262-e165-4dd7-bc94-79027f77c8cd?alt=media&token=3b7252c7-a05f-4927-a602-c5adb264eb27"
+    },
+    {
+        "status": "Ended",
+        "id": "step-up-street-dance-face-off",
+        "participants": "1",
+        "contacts": [
+            {
+                "contact_no": "+91 9931633716",
+                "name": "Md. Sharique"
+            },
+            {
+                "name": "Kiran Das",
+                "contact_no": "+91 7044500921"
+            }
+        ],
+        "tagline": "Cultural Event",
+        "description": "We have the most talented and energetic dancers from around the country competing to become the champion. This competition promises to be filled with jaw-dropping moves, mind-blowing dance routines, and pure entertainment.",
+        "minMembers": "1",
+        "prizes": "worth ₹22k",
+        "category": "Cultural",
+        "name": "Step up: Street Dance  (Face off)",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/new%20rulebooks%2FPravah%20(Cultural)%20Kaizen%202023%20(2).pdf?alt=media&token=23e1c4a4-a4de-4a13-8323-f528d95876c2",
+        "sponsorName": "",
+        "price": "99",
+        "sponsorLogo": "",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-street%20dance.webp-06e8ae5a-5024-4c71-b447-89df0991341d?alt=media&token=17a6a436-e8ad-4972-baa4-0a37c05ab8bd"
+    },
+    {
+        "description": "Wanna get mesmerized with the co-ordination, elegance and grace of the duet dancers? Let's sit back and enjoy the show as we witness some of the most captivating dance moves and awe-inspiring performances.",
+        "minMembers": "2",
+        "participants": "2",
+        "price": "149",
+        "status": "Ended",
+        "id": "pravahduet-dance-contemporary",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/new%20rulebooks%2FPravah%20(Cultural)%20Kaizen%202023%20(2).pdf?alt=media&token=23e1c4a4-a4de-4a13-8323-f528d95876c2",
+        "sponsorName": "",
+        "name": "Pravah:Duet Dance (contemporary)",
+        "contacts": [
+            {
+                "name": "Aanchal sharma",
+                "contact_no": "+91 7070793532"
+            },
+            {
+                "contact_no": "+91 9351752302",
+                "name": "Govind sharma"
+            }
+        ],
+        "sponsorLogo": "",
+        "category": "Cultural",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-duet%20contemporary.webp-fef11d47-dfee-4fe1-b178-b516b6b9b5b9?alt=media&token=f9d23640-4b23-449e-9a2d-2fc596bf3056",
+        "prizes": "worth ₹22k",
+        "tagline": "Cultural Event"
+    },
+    {
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-BGMI.webp-2b50b373-3f3e-4d5e-8c39-e54c23559e01?alt=media&token=40bd8358-1f09-4961-9549-818535059c59",
+        "category": "Sports",
+        "participants": "4",
+        "tagline": "E -Sports Event",
+        "id": "bgmi-classic-battle-royale",
+        "prizes": "worth ₹64k",
+        "name": "BGMI: Classic Battle Royale",
+        "minMembers": "4",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FSPARDHA%20BROCHURE_compressed.pdf?alt=media&token=6c79539d-b991-484f-908c-fa79b88310ed",
+        "price": "200",
+        "sponsorName": "",
+        "status": "Ended",
+        "sponsorLogo": "",
+        "description": "Enter the battlegrounds and fight for survival in the classic battle royale mode of BGMI. With its iconic gameplay, intense action, and immersive experience, this mode brings you back to the roots of the game. Strategize, loot, and outsmart your opponents to be the last one standing. Are you ready to take on the challenge and emerge victorious in BGMI classic battle royale?",
+        "contacts": [
+            {
+                "contact_no": "+91 9304286976",
+                "name": "Gaurav Raj"
+            },
+            {
+                "contact_no": "+91 7357986810",
+                "name": "Dinesh Bhakar"
+            }
+        ]
+    },
+    {
+        "participants": "1",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FKalpakriti%20(Arts)%20Kaizen-2023.pdf?alt=media&token=cfbeea45-f2de-4fce-97a8-780a0c267941",
+        "name": "Orikata - Origami",
+        "prizes": "worth ₹3k",
+        "price": "50",
+        "minMembers": "1",
+        "sponsorName": "",
+        "contacts": [
+            {
+                "name": "Veronica",
+                "contact_no": "+91 8360304174"
+            },
+            {
+                "contact_no": "+91 9102545255",
+                "name": "Subhash"
+            }
+        ],
+        "status": "Ended",
+        "category": "Arts",
+        "tagline": "Arts",
+        "sponsorLogo": "",
+        "description": "Take together an architect's imagination, an artist's skill and a simple piece of paper as medium and what you get is a beautiful origami sculpture. Establish bonds within the paper with deft folds and creases to create flowers, animals, airplanes and all else.",
+        "id": "orikata-origami",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-final%20origami.webp-50f5623e-0235-4cd5-b832-6c364c3c28fb?alt=media&token=ee354c5f-8e45-414c-a4a0-71cdbae6d260"
+    },
+    {
+        "tagline": "Cultural Event",
+        "prizes": "worth ₹12k",
+        "minMembers": "1",
+        "participants": "1",
+        "sponsorName": "",
+        "category": "Cultural",
+        "description": "Kaizen 2023 brings you Swar, a fun solo singing competition to showcase the\nmelody of your vocal chords\nLet your music create consonance!",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-solo%20singing.webp-f995c153-96df-4681-a530-8199d7f8fbcb?alt=media&token=d4b36b8f-e208-4e5d-ad12-2ca3e703c935",
+        "contacts": [
+            {
+                "name": "Shivam Deopa",
+                "contact_no": "+91 7852822993"
+            },
+            {
+                "contact_no": "+91 7085157668",
+                "name": "Ishita Dutta"
+            },
+            {
+                "contact_no": "+91 8453513312",
+                "name": "Bikashita"
+            }
+        ],
+        "sponsorLogo": "",
+        "status": "Ended",
+        "price": "99",
+        "name": "Swar : Solo Singing    (contemporary)",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/new%20rulebooks%2FPravah%20(Cultural)%20Kaizen%202023%20(2).pdf?alt=media&token=23e1c4a4-a4de-4a13-8323-f528d95876c2",
+        "id": "swar-solo-singing-contemporary"
+    },
+    {
+        "description": "The stage is set, the microphone is ready, and the atmosphere is electric. So, get ready to witness some of the most innovative lyrical styles, catchy rhymes, and powerful punchlines from the finest rappers.",
+        "participants": "1",
+        "minMembers": "1",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/new%20rulebooks%2FPravah%20(Cultural)%20Kaizen%202023%20(2).pdf?alt=media&token=23e1c4a4-a4de-4a13-8323-f528d95876c2",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-rap%20competition.webp-96947a4d-ffff-418e-aa91-cf474413693b?alt=media&token=8a96a388-5c21-4337-b1bd-cc77c661763d",
+        "price": "99",
+        "sponsorName": "",
+        "status": "Ended",
+        "id": "hustlerap-competition",
+        "name": "Hustle:Rap competition",
+        "sponsorLogo": "",
+        "category": "Cultural",
+        "contacts": [
+            {
+                "name": "Rahul Chaudhary",
+                "contact_no": "+91 7073923723"
+            },
+            {
+                "contact_no": "+91 8905950639",
+                "name": "Manish"
+            }
+        ],
+        "prizes": "worth ₹12k",
+        "tagline": "Cultural Event"
+    },
+    {
+        "tagline": "JAM",
+        "status": "Ended",
+        "price": "50",
+        "sponsorLogo": "",
+        "name": "Just-A-Minute",
+        "description": "\"Without any hesitation, repetition or deviation,\nLet's see how much of an enunciation YOU can make with the addition of the sentences framed as your own creation. But nonetheless, you've to be CAREFUL!!!\nInspired by the BBC Radio 4 comedy panel game, Just a Minute or in short JAM is rather simple yet a bit tricky. A true test of how without Fumbling or Stumbling the words Rumble off your mouths all in the matter of A MINUTE!\nSo roll your tongues, brace your minds, clear your ears and spill it all in JUST A MINUTE.\"",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-jam.webp-b909da0b-8253-4dbb-858c-d344a859c9ec?alt=media&token=4902ae96-8733-4b9e-bc7c-a25f486c9559",
+        "sponsorName": "",
+        "participants": "1",
+        "minMembers": "1",
+        "prizes": "worth ₹1.5k",
+        "category": "Literary",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FLiterary%20Events-%20Rulebook%20Kaizen%20(3).pdf?alt=media&token=582e439e-dfc2-4de0-a0a0-df0a23f8b42c",
+        "id": "just-a-minute",
+        "contacts": [
+            {
+                "contact_no": "+91 9606705298",
+                "name": "Aripra"
+            },
+            {
+                "contact_no": "+91 8769298794",
+                "name": "Anjali Dubey "
+            }
+        ]
+    },
+    {
+        "sponsorName": "",
+        "prizes": "worth ₹3k",
+        "status": "Ended",
+        "id": "sonix-solo-instrumental",
+        "category": "Cultural",
+        "name": "Sonix: Solo instrumental",
+        "description": "This is a great opportunity for talented musicians who excel in solo performance on their chosen instrument to showcase their skills and passion for music.",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-Woman%20playing%20a%20guitar%20on%20stage.webp-6690ec04-396f-420a-a944-800f883df95e?alt=media&token=17e0c544-aae5-4e46-9db0-378a2f0fec2e",
+        "minMembers": "1",
+        "sponsorLogo": "",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/new%20rulebooks%2FPravah%20(Cultural)%20Kaizen%202023%20(2).pdf?alt=media&token=23e1c4a4-a4de-4a13-8323-f528d95876c2",
+        "participants": "1",
+        "contacts": [
+            {
+                "contact_no": "+91 9064715637",
+                "name": "Swapnamoy"
+            },
+            {
+                "name": "Abir",
+                "contact_no": "+91 7642828375"
+            }
+        ],
+        "tagline": "Cultural Event",
+        "price": "99"
+    },
+    {
+        "contacts": [
+            {
+                "name": "Bikashita",
+                "contact_no": "+91 8453513312"
+            },
+            {
+                "contact_no": "+91 7852822993",
+                "name": "Shivam Deopa"
+            },
+            {
+                "name": "Ishita Dutta",
+                "contact_no": "+91 7085157668"
+            }
+        ],
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-duet%20singing.webp-2cabdd67-0c70-443d-8840-e42311061f3b?alt=media&token=9e03af9d-4b7f-43c6-aeca-eed7ce552f45",
+        "tagline": "Cultural Event",
+        "status": "Ended",
+        "participants": "2",
+        "minMembers": "2",
+        "name": "Swar : Duet Singing(contemporary)",
+        "description": "The power of duet singing lies in the harmonious blend of two voices, creating a beautiful symphony that is greater than the sum of its parts.  So sit back, relax and get ready to witness an unforgettable night of musical magic!",
+        "category": "Cultural",
+        "sponsorName": "",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/new%20rulebooks%2FPravah%20(Cultural)%20Kaizen%202023%20(2).pdf?alt=media&token=23e1c4a4-a4de-4a13-8323-f528d95876c2",
+        "sponsorLogo": "",
+        "id": "swar-duet-singingcontemporary",
+        "prizes": "worth ₹12k",
+        "price": "149"
+    },
+    {
+        "id": "step-up-freestyle",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FPravah%20Cultural-%20Rulebook%20Kaizen.pdf?alt=media&token=7c1f7dc2-baf0-4c52-b4ee-935fc43905e0",
+        "sponsorLogo": "",
+        "contacts": [
+            {
+                "name": "Md. Sharique",
+                "contact_no": "+91 9931633716"
+            },
+            {
+                "name": "Kiran Das",
+                "contact_no": "+91 7044500921"
+            }
+        ],
+        "participants": "1",
+        "description": "Great dancers are not great because of their technique, they're great because of their passion. Kaizen presents to you \"Step Up\", a freestyle dance competition where you can dance to your own rhythm!",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-free%20style.webp-e92ce828-e87c-481b-a54f-ae0f81c3b140?alt=media&token=ba15f1fe-f603-43cc-a99f-3e29df880d56",
+        "price": "99",
+        "status": "Ended",
+        "name": "Step up: Freestyle",
+        "tagline": "Cultural Event",
+        "prizes": "worth ₹22k",
+        "category": "Cultural",
+        "sponsorName": "",
+        "minMembers": "1"
+    },
+    {
+        "minMembers": "1",
+        "sponsorLogo": "",
+        "price": "50",
+        "status": "Ended",
+        "description": "Experience the explosive power and skill of shot put. Join us for a thrilling athletic event that will leave you amazed. Don't miss out on the action!",
+        "category": "Sports",
+        "participants": "1",
+        "name": "Shotput",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FSPARDHA%20BROCHURE_compressed.pdf?alt=media&token=6c79539d-b991-484f-908c-fa79b88310ed",
+        "tagline": "Sports Event",
+        "id": "shotput",
+        "prizes": "worth ₹64k",
+        "contacts": [
+            {
+                "contact_no": "+91 7848816161",
+                "name": "Sandeep"
+            },
+            {
+                "contact_no": "+91 8252128305",
+                "name": "Navya Naveli"
+            }
+        ],
+        "sponsorName": "",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-shot-put.webp-909a1653-df7f-4d27-b76d-332779ece850?alt=media&token=ddab2cbe-96c1-40f0-9dcd-8d7c6268ebc1"
+    },
+    {
+        "minMembers": "3",
+        "sponsorName": "",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-Treasure%20hunt.webp-ebdc7886-ef64-4302-9970-90371fc25c07?alt=media&token=57b6822d-7cb0-4f18-bfe2-2ec6a13b89fd",
+        "name": "Treasure Hunt",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FInformal%20Events-%20Rulebook%20Kaizen%20(2).pdf?alt=media&token=3535121d-491a-4303-a061-633802348a95",
+        "participants": "5",
+        "description": "Pirate themed fest and no treasure hunt? That surely can't be. Kaizen'23 is presenting you with puzzlers with an exhilarating hunt around the campus, and honestly, what better way to explore?\nYou got a knack for solving riddles? Then this is the event for you.\nCome by and uncover the trail to the hidden fortune!",
+        "sponsorLogo": "",
+        "status": "Ended",
+        "id": "treasure-hunt",
+        "prizes": "No cash prize",
+        "contacts": [
+            {
+                "name": "Adnan",
+                "contact_no": "+91 7099852450"
+            },
+            {
+                "name": "Ashitha",
+                "contact_no": "+91 9581680201"
+            }
+        ],
+        "tagline": "Informal event",
+        "category": "Informals",
+        "price": "99"
+    },
+    {
+        "price": "300",
+        "prizes": "worth ₹64k",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-badminton%20singles.webp-82a58cbc-4d07-4de7-8393-17f5490ad99b?alt=media&token=232e5983-2aca-4565-8874-a55464c7bcb8",
+        "minMembers": "2",
+        "status": "Ended",
+        "description": "With its lightning-fast moves and intense gameplay, it's a sport that's sure to get your heart racing.So grab your racket, perfect your serve, and get ready to smash your way to victory!",
+        "category": "Sports",
+        "id": "badminton-mixed-doubles",
+        "name": "Badminton : Mixed Doubles",
+        "contacts": [
+            {
+                "name": "Gaurav ",
+                "contact_no": "+91 8368639191"
+            },
+            {
+                "contact_no": "+91 8900456625",
+                "name": "Aditi Sharma"
+            }
+        ],
+        "sponsorName": "",
+        "participants": "2",
+        "sponsorLogo": "",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FSPARDHA%20BROCHURE_compressed.pdf?alt=media&token=6c79539d-b991-484f-908c-fa79b88310ed",
+        "tagline": "Sports Event"
+    },
+    {
+        "tagline": "Quiz",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FLiterary%20Events-%20Rulebook%20Kaizen%20(3).pdf?alt=media&token=582e439e-dfc2-4de0-a0a0-df0a23f8b42c",
+        "id": "inquizitive-general",
+        "sponsorName": "",
+        "name": "InQuizitive - General ",
+        "contacts": [
+            {
+                "contact_no": "+91 7872285962",
+                "name": "Bodhadipto Kundu"
+            },
+            {
+                "name": "Khyati Vats",
+                "contact_no": "+91 7277728154"
+            }
+        ],
+        "price": "100",
+        "participants": "3",
+        "category": "Literary",
+        "prizes": "worth ₹3k",
+        "sponsorLogo": "",
+        "minMembers": "1",
+        "status": "Ended",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-InQuizitive%20-%20General_1_.webp-6fa51150-f09a-40d7-8c68-4f01626c93f0?alt=media&token=a38692bb-aa19-44c3-93fa-8b0a325bc5bc",
+        "description": "Stimulate your mind, fasten your seatbelts and get ready as the era of quizzing is back! From world leaders to interesting science facts, every inch of your knowledge will be utilized. Every bit of information your brain has processed till date will help you get closer to the win. So, don't miss it!"
+    },
+    {
+        "description": "Volleyball: the perfect combination of finesse and power. Acrobatic digs, towering blocks, and lightning-fast reflexes make it an exhilarating sport for all.",
+        "name": "Volleyball women's",
+        "category": "Sports",
+        "tagline": "Sports Event",
+        "price": "1350",
+        "minMembers": "6",
+        "status": "Ended",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FSPARDHA%20BROCHURE_compressed.pdf?alt=media&token=6c79539d-b991-484f-908c-fa79b88310ed",
+        "sponsorName": "",
+        "sponsorLogo": "",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-pexels-cottonbro-studio-10350230.webp-521bdfd0-cb44-47e8-a978-cef7507dcc99?alt=media&token=2a86e980-1c15-4168-98d3-7933fa86a52a",
+        "contacts": [
+            {
+                "contact_no": "+91 9901678418",
+                "name": "Neha Reddy"
+            },
+            {
+                "contact_no": "+91 9772687016",
+                "name": "Rukhsana"
+            }
+        ],
+        "prizes": "worth ₹64k",
+        "id": "volleyball-womens",
+        "participants": "9"
+    },
+    {
+        "participants": "15",
+        "image": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fwj4LsKOO5qeTGsxc4825gmh8yOJ2-sports.webp-eaf6ebcc-f1d0-474f-bd7e-efb02fda19ce?alt=media&token=a0122799-ffda-46d6-b71c-1f464c3c19a5",
+        "price": "3750",
+        "name": "Men's Cricket",
+        "contacts": [
+            {
+                "contact_no": "+91 84268271583",
+                "name": "Vishal"
+            },
+            {
+                "contact_no": "+91 8792464192",
+                "name": "Yash"
+            }
+        ],
+        "sponsorName": "",
+        "id": "mens-cricket",
+        "prizes": "worth ₹64k",
+        "tagline": "Sports Event",
+        "minMembers": "13",
+        "rulebook": "https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/rulebook%2FSPARDHA%20BROCHURE_compressed.pdf?alt=media&token=6c79539d-b991-484f-908c-fa79b88310ed",
+        "status": "Ended",
+        "category": "Sports",
+        "sponsorLogo": "",
+        "description": "Get ready for a heart-pumping experience with cricket! The explosive hits, nail-biting finishes, and fierce rivalries will keep you on the edge of your seat. It's not just a game, it's an adrenaline-fueled spectacle!\n"
+    }
+]

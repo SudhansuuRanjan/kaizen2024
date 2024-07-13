@@ -8,6 +8,12 @@ import AOS from 'aos';
 import "aos/dist/aos.css";
 import Routes from './routes'
 import ScrollToTop from './hooks/useScrollToTop';
+import {
+    QueryClient,
+    QueryClientProvider,
+} from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
 
 const App = () => {
 
@@ -17,15 +23,17 @@ const App = () => {
     }, [])
 
     return (
-        <ParallaxProvider>
-            <Router>
-                <ScrollToTop />
-                <ToastContainer />
-                <Suspense fallback={<div>Loading...</div>}>
-                    <Routes />
-                </Suspense>
-            </Router>
-        </ParallaxProvider>
+        <QueryClientProvider client={queryClient}>
+            <ParallaxProvider>
+                <Router>
+                    <ScrollToTop />
+                    <ToastContainer />
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Routes />
+                    </Suspense>
+                </Router>
+            </ParallaxProvider>
+        </QueryClientProvider>
     )
 }
 
