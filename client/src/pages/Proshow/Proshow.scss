@@ -1,0 +1,175 @@
+.pronite-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+}
+
+.pronite-banner {
+    background: url('https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/static-images%2Fpheonix%20warship%20docked%20at%20port%20at%20sea.jpg?alt=media&token=a437cf0e-61ee-433f-8d23-db3a8caff6b1');
+    height: 100vh;
+    background-position: 0 75%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pronite-banner::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url("https://ragam.co.in/noise_big.svg");
+    mix-blend-mode: screen;
+    opacity: 18%;
+    z-index: 5;
+    top: 0;
+}
+
+.pronite-banner::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background: linear-gradient(180deg, transparent, #000);
+    background-size: 120% 100%;
+    z-index: 7;
+}
+
+
+.pronite-head-text {
+    font-size: 7.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: #ebe6d0;
+    z-index: 8;
+    line-height: 6.5rem;
+}
+
+.pronite-head-text::after {
+    content: "";
+    background: linear-gradient(#000, #435445);
+}
+
+.pronite-cards {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 3rem;
+    gap: 3.5rem;
+    margin-bottom: 5rem;
+}
+
+.pronite-card-container {
+    width: 95%;
+    display: flex;
+    background-color: #111317;
+    min-height: 460px;
+    overflow: hidden;
+}
+
+.pronite_profile_details {
+    justify-content: space-around;
+    padding: 1.7rem;
+    display: flex;
+    flex-direction: column;
+    color: #ebe6d0;
+    width: 70%;
+}
+
+.pronite-name {
+    font-size: 2.75rem;
+    font-weight: 500;
+}
+
+.proshow-content {
+    margin-top: 15px;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid #ebe6d0;
+    font-size: 1.25rem;
+    opacity: 65%;
+}
+
+.proshow-content p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.pronite-date {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.pronite-day {
+    opacity: 65%;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+@media screen and (max-width:760px) {
+    .pronite-card-container {
+        width: 95%;
+        display: flex;
+        background-color: #111317;
+        min-height: 460px;
+        overflow: hidden;
+        flex-direction: column;
+    }
+
+    .pronite_profile_details {
+        justify-content: space-around;
+        padding: 1.7rem;
+        display: flex;
+        flex-direction: column;
+        color: #ebe6d0;
+        width: 100%;
+    }
+
+    .pronite-head-text {
+        font-size: 4.5rem;
+        font-weight: 600;
+        text-align: center;
+        color: #ebe6d0;
+        z-index: 8;
+        line-height: 4.5rem;
+    }
+
+    .pronite-cards {
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        gap: 3.5rem;
+        margin-bottom: 5rem;
+    }
+
+}
+
+
+@media screen and (max-width:480px) {
+    .pronite-head-text {
+        font-size: 3.5rem;
+        font-weight: 600;
+        text-align: center;
+        color: #ebe6d0;
+        z-index: 8;
+        line-height: 3rem;
+    }
+
+    .pronite-cards {
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        gap: 3.5rem;
+        margin-bottom: 5rem;
+    }
+}

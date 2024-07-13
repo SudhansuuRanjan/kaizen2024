@@ -12,6 +12,7 @@ import {
     QueryClient,
     QueryClientProvider,
 } from '@tanstack/react-query'
+import { AuthProvider } from './context/AuthContext';
 
 const queryClient = new QueryClient()
 
@@ -26,11 +27,13 @@ const App = () => {
         <QueryClientProvider client={queryClient}>
             <ParallaxProvider>
                 <Router>
-                    <ScrollToTop />
-                    <ToastContainer />
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <Routes />
-                    </Suspense>
+                    <AuthProvider>
+                        <ScrollToTop />
+                        <ToastContainer />
+                        <Suspense fallback={<div>Loading...</div>}>
+                            <Routes />
+                        </Suspense>
+                    </AuthProvider>
                 </Router>
             </ParallaxProvider>
         </QueryClientProvider>

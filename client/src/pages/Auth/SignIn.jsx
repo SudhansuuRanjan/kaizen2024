@@ -1,8 +1,12 @@
 import React from 'react'
+import { createOAuthSession } from '../../services/auth.service';
 
 const SignIn = () => {
   return (
-    <div>SignIn</div>
+    <div>
+      <h1>Sign  In with Google</h1>
+      <button onClick={() => createOAuthSession('google')}>Sign In with Google</button>
+    </div>
   )
 }
 
