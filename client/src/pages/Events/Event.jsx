@@ -3,10 +3,15 @@ import { toast } from 'react-toastify';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getDocument } from '../../services/doc.service';
 import { useQuery } from '@tanstack/react-query';
+import RegisterPopup from './RegisterPopup';
+import useAuth from '../../hooks/useAuth';
+import { useState } from 'react';
 
 const EventDetails = () => {
+    const [popup,setPopup] = useState(false);
     const navigate = useNavigate();
     const { eventId } = useParams()
+    const { user } = useAuth();
 
     const { data, isPending, isError } = useQuery({
         queryKey: ["event", eventId],
@@ -15,11 +20,9 @@ const EventDetails = () => {
         refetchOnWindowFocus: false
     })
 
-
-
     // handle register button
     const checkAuthNActive = (status) => {
-        if (auth.currentUser === null) {
+        if (user === null) {
             toast.error("Please login to continue!");
             navigate('/signin');
         } else {
@@ -28,13 +31,11 @@ const EventDetails = () => {
         }
     }
 
-
-
     return (
         <div className='bg-black pb-[5rem] min-h-screen relative'>
-            {/* {
-        popup && <RegisterPopup event={data} setPopup={setPopup} />
-      } */}
+            {
+                popup && <RegisterPopup event={data} setPopup={setPopup} />
+            }
 
             {
                 isPending ? <div className='flex pt-[10rem] w-[100%] items-center justify-center'> <p>Loading...</p></div> :

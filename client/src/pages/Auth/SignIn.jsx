@@ -1,7 +1,17 @@
 import React from 'react'
 import { createOAuthSession } from '../../services/auth.service';
+import useAuth from '../../hooks/useAuth';
+import { useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
+  const { user } = useAuth();
+
+  const navigate = useNavigate();
+
+  if (user) {
+    navigate('/profile');
+  }
+
   return (
     <div className='flex w-full h-screen flex-col justify-center items-center gap-4'>
       <h1 className='text-lg font-semibold'>Sign  In with Google</h1>
