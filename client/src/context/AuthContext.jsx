@@ -1,7 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { createOAuthSession } from "../services/auth.service";
 import { useNavigate } from "react-router-dom";
-import { ID } from "appwrite";
 import Loader from "../components/Loader/Loader";
 import { account } from "../config/appwrite";
 
@@ -14,7 +13,7 @@ const AuthProvider = ({ children }) => {
 
     const login = async () => {
         try {
-            await createOAuthSession('google', `${import.meta.env.VITE_APP_URL}/`, `${import.meta.env.VITE_APP_URL}/`, []);
+            await createOAuthSession('google');
             await checkUser();
         } catch (error) {
             throw new Error(error.message);
