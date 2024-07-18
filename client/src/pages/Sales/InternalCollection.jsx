@@ -248,12 +248,33 @@ const Alumni = () => {
               errors={errors.phone}
             />
 
+            <Input
+              label="Address"
+              type="text"
+              placeholder="Patna"
+              require={true}
+              title="address"
+              reactHookForm={register('address', {
+                required: 'Current City is required',
+                minLength: {
+                  value: 2,
+                  message: 'Current City must be at least 2 characters',
+                },
+                maxLength: {
+                  value: 256,
+                  message: 'Current City must not exceed 256 characters',
+                },
+              })}
+              className='bg-gray-950 rounded-lg px-3 py-2 mt-1 w-full text-gray-300'
+              errors={errors.address}
+            />
+
             <Select
               label='Designation'
               id='designation'
               require={true}
               options={[
-                { name: 'residents', value: 'residents' },
+                { name: 'resident', value: 'resident' },
               ]}
               reactHookForm={register('designation', {
                 required: 'Designation is required',
@@ -268,6 +289,7 @@ const Alumni = () => {
               type="number"
               placeholder="Amount"
               title="amount"
+              value={1600}
               reactHookForm={register('amount', {
                 required: 'Amount is required',
                 min: {
