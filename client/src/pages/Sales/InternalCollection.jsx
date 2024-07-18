@@ -164,7 +164,7 @@ const Alumni = () => {
       </div>
 
       <div className='lg:w-[37rem] md:w-[32rem] w-[90%] m-auto font-medium'>
-        <p className='mb-5 text-2xl'>Hello Contributor,</p>
+        <p className='mb-5 text-2xl'>Respected Sir/Ma'am,</p>
         <p className='text-lg'>Warm greetings from Team <span className='text-yellow-500'>KAIZEN!</span></p>
         <p className='text-lg pt-2'>We hope to see you in <span className='text-yellow-500'>KAIZEN!</span> this year!</p>
       </div>
