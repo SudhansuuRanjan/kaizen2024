@@ -289,13 +289,13 @@ const Alumni = () => {
               type="number"
               placeholder="Amount"
               title="amount"
-              value={1600}
               reactHookForm={register('amount', {
                 required: 'Amount is required',
                 min: {
                   value: 10,
                   message: 'Minimum amount is 10',
                 },
+                value:1600
               })}
               className='bg-gray-950 rounded-lg px-3 py-2 mt-1 w-full text-gray-300'
               errors={errors.amount}
