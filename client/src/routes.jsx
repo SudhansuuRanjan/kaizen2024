@@ -5,21 +5,18 @@ import PrivateRoute from './components/Private/Private'
 import AuthSuccess from './pages/Auth/AuthSuccess'
 import Error from './pages/Error/Error'
 import SignIn from './pages/Auth/SignIn'
-const Legals = lazy(() => import('./pages/Legals/Legals'));
-
 import HomeLayout from './components/Layouts/HomeLayout'
 import PageLayout from './components/Layouts/PageLayout'
-
 import Home from './pages/Home'
-import Schedule from './pages/Schedule'
-import Events from './pages/Events'
-import Event from "./pages/Events/Event"
-import Pronite from './pages/Proshow/Pronite'
-import Profile from './pages/User/Profile'
 
-import Cart from './pages/Cart/CartPage'
-
-
+const Legals = lazy(() => import('./pages/Legals/Legals'));
+const InternalCollection = lazy(() => import('./pages/Sales/InternalCollection'));
+const Pronite = lazy(() => import('./pages/Proshow/Pronite'));
+const Schedule = lazy(() => import('./pages/Schedule'));
+const Event = lazy(() => import('./pages/Events/Event'));
+const Profile = lazy(() => import('./pages/User/Profile'));
+const Cart = lazy(() => import('./pages/Cart/CartPage'));
+const Events = lazy(() => import('./pages/Events'));
 
 const routes = () => {
     return (
@@ -36,6 +33,7 @@ const routes = () => {
                 <Route path='/events' element={<Events />} />
                 <Route path="/pronite" element={<Pronite />} />
                 <Route path='/events/:eventId' element={<Event />} />
+                <Route path='/internal-collection' element={<InternalCollection />} />
 
 
                 <Route path='/cart' element={<PrivateRoute><Cart /></PrivateRoute>} />

@@ -8,14 +8,13 @@ import { useNavigate } from 'react-router-dom';
 import generateRandomID from '../../utils/generateRandomID';
 
 const AuthSuccess = () => {
-  const { session } = useAuth();
+  const { session, user } = useAuth();
   const navigate = useNavigate();
   const { register, reset, handleSubmit, formState: { errors }, setValue } = useForm({ trim: true });
 
   useEffect(() => {
     if (session) {
       const user = session.user.user_metadata;
-
       setValue('name', user.full_name);
       setValue('email', user.email);
 
@@ -49,11 +48,11 @@ const AuthSuccess = () => {
     }
   };
 
-  // useEffect(() => {
-  //   if (user && user.mobile && user.college && user.address) {
-  //     navigate('/profile');
-  //   }
-  // }, [user, navigate]);
+  useEffect(() => {
+    if (user && user.mobile && user.college && user.address) {
+      navigate('/profile');
+    }
+  }, [user, navigate]);
 
   return (
     <div className='flex items-center justify-center h-screen bg-gray-900'>
@@ -144,7 +143,7 @@ const AuthSuccess = () => {
                   message: 'Mobile no. must be 10 characters or more'
                 },
                 maxLength: {
-                  value: 14,
+                  value: 16,
                   message: 'Mobile no. must not exceed 14 characters'
                 },
               })}

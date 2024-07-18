@@ -13,6 +13,7 @@ import {
     QueryClientProvider,
 } from '@tanstack/react-query'
 import { AuthProvider } from './context/AuthContext';
+import Loader from './components/Loader/Loader';
 
 const queryClient = new QueryClient()
 
@@ -30,7 +31,7 @@ const App = () => {
                     <AuthProvider>
                         <ScrollToTop />
                         <ToastContainer />
-                        <Suspense fallback={<div>Loading...</div>}>
+                        <Suspense fallback={<div className='w-full z-[10000] h-screen flex items-center justify-center'><Loader /></div>}>
                             <Routes />
                         </Suspense>
                     </AuthProvider>

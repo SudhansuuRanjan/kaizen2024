@@ -17,6 +17,8 @@
     "@types/aos": "^3.0.7",
     "aos": "^2.3.4",
     "appwrite": "^15.0.0",
+    "axios": "^1.7.2",
+    "pg-test-project": "^4.0.9",
     "react": "^18.3.1",
     "react-confetti-explosion": "^2.1.2",
     "react-countup": "^6.5.3",
@@ -28,7 +30,8 @@
     "react-scroll-parallax": "^3.4.5",
     "react-toastify": "^10.0.5",
     "shortid": "^2.2.16",
-    "swiper": "^11.1.4"
+    "swiper": "^11.1.4",
+    "uniqid": "^5.4.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",

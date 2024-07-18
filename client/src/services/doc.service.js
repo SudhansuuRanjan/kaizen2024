@@ -305,3 +305,43 @@ export const deleteMembersFromCartItem = async (table, id) => {
         throw new Error(error.message);
     }
 }
+
+export const createInternalTransaction = async (table,data) => {
+    const { data: transaction, error } = await supabase
+        .from(table)
+        .insert(data)
+        .select('*')
+
+    if (error) {
+        throw new Error(error.message);
+    }
+
+    return transaction;
+}
+
+export const getInternalTransactions = async (table, txnid) => {
+    const { data, error } = await supabase
+        .from(table)
+        .select('*')
+        .eq('txnid', txnid)
+
+    if (error) {
+        throw new Error(error.message);
+    }
+
+    return data;
+}
+
+export const updateInternalTransaction = async (table, txnid, data) => {
+    const { data: transaction, error } = await supabase
+        .from(table)
+        .update(data)
+        .eq('txnid', txnid)
+        .select('*')
+
+    if (error) {
+        throw new Error(error.message);
+    }
+
+    return transaction;
+}    
