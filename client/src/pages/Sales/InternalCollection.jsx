@@ -274,7 +274,7 @@ const Alumni = () => {
               id='designation'
               require={true}
               options={[
-                { name: 'resident', value: 'resident' },
+                { name: 'Resident Doctor', value: 'Resident Doctor' },
               ]}
               reactHookForm={register('designation', {
                 required: 'Designation is required',
