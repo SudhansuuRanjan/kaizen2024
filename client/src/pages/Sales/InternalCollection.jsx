@@ -160,7 +160,7 @@ const Alumni = () => {
   return (
     <div className='bg-black pb-24'>
       <div className='cart-banner'>
-        <h1 className='cart-head lg:mx-0 md:mx-0 mx-5'>Alumni Connect</h1>
+        <h1 className='cart-head lg:mx-0 md:mx-0 mx-5'>Internal Collection</h1>
       </div>
 
       <div className='lg:w-[37rem] md:w-[32rem] w-[90%] m-auto font-medium'>
