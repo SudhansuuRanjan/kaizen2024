@@ -1,4 +1,3 @@
-import './CartPage.scss'
 import CartItem from './CartItems'
 import useAuth from '../../hooks/useAuth'
 import { useQuery } from '@tanstack/react-query'

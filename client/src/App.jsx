@@ -14,6 +14,7 @@ import {
 } from '@tanstack/react-query'
 import { AuthProvider } from './context/AuthContext';
 import Loader from './components/Loader/Loader';
+import "../src/pages/Cart/CartPage.scss"
 
 const queryClient = new QueryClient()
 
