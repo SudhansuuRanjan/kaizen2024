@@ -1,25 +1,15 @@
-import { Outlet, Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
-import { useEffect } from 'react';
-import { useNavigate } from "react-router-dom"
+import supabase from '../../config/supabase';
 
-const PrivateRoute = () => {
-    const { user } = useAuth();
-    const navigate = useNavigate();
+const PrivateRoute = ({ children }) => {
+  const { session } = useAuth();
 
-    console.log("user", user);
+  if (!session) {
+    return <Navigate to="/signin" />;
+  }
 
-    // useEffect(() => {
-    //     if (user && !user.emailVerification) {
-    //         navigate("/verify-email");
-    //     }
-    // }, [])
-
-    return (
-        <div>
-            {user ? <Outlet /> : <Navigate to="/signin" />}
-        </div>
-    )
-}
+  return children;
+};
 
 export default PrivateRoute;

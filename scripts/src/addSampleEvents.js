@@ -10,7 +10,7 @@ const databases = new Databases(client);
 
 const addData = async () => {
     try {
-        for (let idx = 0; idx < eventsData.length; idx++) {
+        for (let idx = 56; idx < eventsData.length; idx++) {
             const eventData = eventsData[idx];
 
             const eventContacts = [];

@@ -14,3 +14,25 @@ export const Input = ({ id, require, label, type, placeholder, title, reactHookF
         </div>
     )
 }
+
+export const Select = ({ label, require, id, options, placeholder, reactHookForm, className, errors }) => {
+    return (
+        <div className="flex-1">
+            <label htmlFor={id} className='text-gray-300'>{label}</label>{require && <span className='text-rose-500 text-xl'>*</span>}
+            <select
+                id={id}
+                name={id}
+                className={className}
+                placeholder={placeholder}
+                {...reactHookForm}>
+                <option value="">{placeholder}</option>
+                {
+                    options.map((option, idx) => (
+                        <option key={idx} value={option.value}>{option.name}</option>
+                    ))
+                }
+            </select>
+            {errors && <p className="text-rose-500">{errors.message}</p>}
+        </div>
+    )
+}

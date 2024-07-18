@@ -2,32 +2,27 @@ import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { FiX } from "react-icons/fi";
-// import CartIcon from "./CartIcon";
+import CartIcon from "./CartIcon";
+import useAuth from "../../hooks/useAuth";
+import { useQuery } from "@tanstack/react-query";
+import { getUserEventCart } from "../../services/doc.service";
 
 
 const NavBar = () => {
     const [menu, setMenu] = useState(false);
     const [focus, setFocus] = useState(-1);
-    // const [user, setUser] = useState(null);
-    // const auth = getAuth();
+    const { session } = useAuth();
 
-    // // get user cart length from firebase
-    // const getUser = async () => {
-    //     if (auth.currentUser === null) return;
-    //     try {
-    //         const userRef = doc(db, 'users', auth.currentUser.uid);
-    //         const docSnap = await getDoc(userRef);
-    //         const user = docSnap.data();
-    //         // console.log(user.cart);
-    //         setUser(user);
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     getUser();
-    // }, [])
+    const { data: cartItems } = useQuery({
+        queryKey: ['cart'],
+        queryFn: () => {
+            if (session) {
+                return getUserEventCart('cart', session.user.id)
+            }else{
+                return []
+            }
+        },
+    })
 
     return (
         <div className="backdrop-blur-md drop-shadow-md z-50 flex flex-row fixed  bg-gray-800 bg-opacity-40 dark:backdrop-blur-md dark:drop-shadow-md  w-[100vw] items-center justify-center text-white border-b-[1px] border-[#242424]">
@@ -77,7 +72,7 @@ const NavBar = () => {
                             }
 
                         >
-                            <Link to="/alumni-connect">Alumni Connect</Link>
+                            <Link to="/internal-collection">Internal Collection</Link>
                         </li>
                         <li
                             className={
@@ -89,7 +84,7 @@ const NavBar = () => {
                         >
                             <Link to="/schedule">Schedule</Link>
                         </li>
-                        {/* <li
+                        {/* {session && <li
                             className={
                                 focus === 1
                                     ? "hover:underline mx-3 border-yellow-300  border-[3px]  bg-yellow-50 dark:bg-[#7b2c5d] px-2 py-1"
@@ -97,9 +92,9 @@ const NavBar = () => {
                             }
 
                         >
-                            <Link to="/">Get pass</Link>
-                        </li> */}
-                        {/* <li
+                            <button onClick={signOut}>Sign Out</button>
+                        </li>} */}
+                        <li
                             className={
                                 focus === 2
                                     ? "hover:underline mx-3 border-yellow-300  border-[3px]  bg-yellow-50 dark:bg-[#7b2c5d] px-2 py-1"
@@ -108,13 +103,14 @@ const NavBar = () => {
 
                         >
                             <Link to="/cart">
-                                <CartIcon cartLength={0} />
+                                <CartIcon cartLength={
+                                    cartItems ? cartItems.length : 0
+                                } />
                             </Link>
-                        </li> */}
+                        </li>
 
 
                     </ul>
-
 
                     <button
                         type="button"

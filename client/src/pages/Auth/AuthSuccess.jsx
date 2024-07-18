@@ -1,77 +1,67 @@
 import React, { useEffect } from 'react';
 import useAuth from '../../hooks/useAuth';
-import { getDocumentByQuery, updateUserDoc, createUserDoc } from '../../services/doc.service';
+import { updateUserProfile, createProfile } from '../../services/doc.service';
 import { toast } from 'react-toastify';
-import { Input } from '../../components/Form';
+import { Input, Select } from '../../components/Form';
 import { useForm } from 'react-hook-form';
-import { useQuery } from '@tanstack/react-query';
 import { useNavigate } from 'react-router-dom';
+import generateRandomID from '../../utils/generateRandomID';
 
 const AuthSuccess = () => {
-  const { user } = useAuth();
+  const { session } = useAuth();
   const navigate = useNavigate();
-  const { register, reset, handleSubmit, formState: { errors } } = useForm({ trim: true });
-
-  const { data: userProfile } = useQuery({
-    queryKey: ['user', user.email],
-    queryFn: () => getDocumentByQuery('users', "email", user.email),
-    onSuccess: (data) => {
-      console.log(data);
-    }
-  })
+  const { register, reset, handleSubmit, formState: { errors }, setValue } = useForm({ trim: true });
 
   useEffect(() => {
-    const createUser = async () => {
-      try {
-        const data = {
-          name: user.name,
-          email: user.email,
-        };
-        const res = await createUserDoc('users', data, user);
-      } catch (error) {
-        toast.error('An error occurred while creating user');
-      }
-    };
+    if (session) {
+      const user = session.user.user_metadata;
 
-    if (user) {
+      setValue('name', user.full_name);
+      setValue('email', user.email);
+
+      const createUser = async () => {
+        try {
+          const data = {
+            name: user.name,
+            email: user.email,
+            kaizenid: generateRandomID(),
+            user_id: session.user.id
+          };
+          await createProfile('profiles', data);
+        } catch (error) {
+          toast.error('An error occurred while creating user');
+        }
+      };
       createUser();
     }
   }, []);
 
-
   const onSubmit = async (data) => {
     try {
-      await updateUserDoc('users', userProfile.$id, data);
+      await updateUserProfile('profiles', session.user.id, data);
       toast.success('User updated successfully');
       navigate('/profile');
     } catch (error) {
+      console.log(error);
       toast.error('An error occurred while updating user');
     } finally {
       reset();
     }
   };
 
-  const checkUserProfileisComplete = () => {
-    if (userProfile) {
-      if (userProfile.mobile && userProfile.college && userProfile.address) {
-        navigate('/profile');
-      }
-    }
-  }
+  // useEffect(() => {
+  //   if (user && user.mobile && user.college && user.address) {
+  //     navigate('/profile');
+  //   }
+  // }, [user, navigate]);
 
-  useEffect(() => {
-    checkUserProfileisComplete();
-  }, [userProfile]);
-
-  // https://cloud.appwrite.io/v1/avatars/initials?name=Sudhanshu+Ranjan&width=80&height=80
   return (
-    <div className='flex items-center justify-center h-screen'>
-      <div className="border border-gray-800 lg:w-[32rem] md:w-[24rem] w-full mx-2 rounded-2xl p-5">
+    <div className='flex items-center justify-center h-screen bg-gray-900'>
+      <div className="border border-gray-800 lg:w-[32rem] md:w-[24rem] w-full mx-2 rounded-2xl p-5 bg-gray-800 text-gray-200 shadow-lg">
         <div className='rounded'>
-
-          <h1 className='text-2xl font-semibold'>Complete Your Profile</h1>
-          <p className='text-gray-400'>Please complete your profile to continue</p>
-          <form className='flex gap-3 flex-col mt-5' onSubmit={handleSubmit(onSubmit)}>
+          <h1 className='text-2xl font-semibold mb-3'>Complete Your Profile</h1>
+          <p className='text-gray-400 mb-5'>Please complete your profile to continue</p>
+          <form className='flex gap-3 flex-col' onSubmit={handleSubmit(onSubmit)}>
             <Input
               label='Name'
               type='text'
@@ -81,16 +71,15 @@ const AuthSuccess = () => {
               reactHookForm={register('name', {
                 required: 'Name is required',
                 minLength: {
-                  value: 5,
+                  value: 2,
                   message: 'Name must be at least 2 characters',
                 },
                 maxLength: {
                   value: 256,
                   message: 'Name must not exceed 256 characters',
                 },
-                value: user.name
               })}
-              className='bg-gray-950 rounded-lg px-3 py-2 mt-1 w-full text-gray-300'
+              className='bg-gray-900 rounded-lg px-3 py-2 mt-1 w-full text-gray-300'
               errors={errors.name}
               disabled
             />
@@ -110,11 +99,36 @@ const AuthSuccess = () => {
                   value: 256,
                   message: 'Email must not exceed 256 characters',
                 },
-                value: user.email
               })}
-              className='bg-gray-950 rounded-lg px-3 py-2 mt-1 w-full text-gray-300'
+              className='bg-gray-900 rounded-lg px-3 py-2 mt-1 w-full text-gray-300'
               errors={errors.email}
               disabled
+            />
+
+            <Select
+              label='Gender'
+              id='Gender'
+              require={true}
+              options={[
+                {
+                  name: 'Male',
+                  value: 'Male',
+                },
+                {
+                  name: 'Female',
+                  value: 'Female',
+                },
+                {
+                  name: 'Others',
+                  value: 'Others',
+                }
+              ]}
+              reactHookForm={register('gender', {
+                required: 'Gender is required',
+              })}
+              className='bg-gray-950 rounded-lg px-3 py-2 mt-1 w-full text-gray-300'
+              errors={errors.gender}
+              placeholder="Select gender"
             />
 
             <Input
@@ -134,7 +148,7 @@ const AuthSuccess = () => {
                   message: 'Mobile no. must not exceed 14 characters'
                 },
               })}
-              className='bg-gray-950 rounded-lg px-3 py-2 mt-1 w-full text-gray-300'
+              className='bg-gray-900 rounded-lg px-3 py-2 mt-1 w-full text-gray-300'
               errors={errors.mobile}
             />
 
@@ -155,10 +169,9 @@ const AuthSuccess = () => {
                   message: 'College name must not exceed 256 characters',
                 },
               })}
-              className='bg-gray-950 rounded-lg px-3 py-2 mt-1 w-full text-gray-300'
+              className='bg-gray-900 rounded-lg px-3 py-2 mt-1 w-full text-gray-300'
               errors={errors.college}
             />
-
 
             <Input
               label="Your Current City"
@@ -177,7 +190,7 @@ const AuthSuccess = () => {
                   message: 'Current City must not exceed 256 characters',
                 },
               })}
-              className='bg-gray-950 rounded-lg px-3 py-2 mt-1 w-full text-gray-300'
+              className='bg-gray-900 rounded-lg px-3 py-2 mt-1 w-full text-gray-300'
               errors={errors.address}
             />
 
@@ -188,7 +201,7 @@ const AuthSuccess = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default AuthSuccess;

@@ -5,7 +5,6 @@ import PrivateRoute from './components/Private/Private'
 import AuthSuccess from './pages/Auth/AuthSuccess'
 import Error from './pages/Error/Error'
 import SignIn from './pages/Auth/SignIn'
-import SignUp from './pages/Auth/SignUp'
 const Legals = lazy(() => import('./pages/Legals/Legals'));
 
 import HomeLayout from './components/Layouts/HomeLayout'
@@ -16,6 +15,9 @@ import Schedule from './pages/Schedule'
 import Events from './pages/Events'
 import Event from "./pages/Events/Event"
 import Pronite from './pages/Proshow/Pronite'
+import Profile from './pages/User/Profile'
+
+import Cart from './pages/Cart/CartPage'
 
 
 
@@ -34,10 +36,13 @@ const routes = () => {
                 <Route path='/events' element={<Events />} />
                 <Route path="/pronite" element={<Pronite />} />
                 <Route path='/events/:eventId' element={<Event />} />
+
+
+                <Route path='/cart' element={<PrivateRoute><Cart /></PrivateRoute>} />
+                <Route path='/profile' element={<PrivateRoute><Profile /></PrivateRoute>} />
             </Route>
 
             <Route path="/signin" element={<SignIn />} />
-            <Route path="/signup" element={<SignUp />} />
             <Route path="/auth/success" element={<AuthSuccess />} />
         </Routes>
     )

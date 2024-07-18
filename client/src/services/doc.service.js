@@ -1,5 +1,6 @@
 import { databases, DATABASE_ID } from "../config/appwrite";
 import { ID, Query, Permission, Role } from "appwrite";
+import supabase from "../config/supabase";
 
 export const getDocuments = async (COLLECTION_ID, limit = 21, offset = 0) => {
     try {
@@ -16,6 +17,15 @@ export const getDocuments = async (COLLECTION_ID, limit = 21, offset = 0) => {
 export const getDocument = async (COLLECTION_ID, DOCUMENT_ID) => {
     try {
         const res = await databases.getDocument(DATABASE_ID, COLLECTION_ID, DOCUMENT_ID);
+        return res;
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}
+
+export const deleteDocument = async (COLLECTION_ID, DOCUMENT_ID) => {
+    try {
+        const res = await databases.deleteDocument(DATABASE_ID, COLLECTION_ID, DOCUMENT_ID);
         return res;
     } catch (error) {
         throw new Error(error.message);
@@ -66,21 +76,232 @@ export const updateUserDoc = async (COLLECTION_ID, DOCUMENT_ID, data) => {
     }
 }
 
-
-export const getEvents = async (collectionId, limit = 21, offset = 0, category = "All") => {
+export const addEventToCart = async (data, user_id, team_members) => {
+    // Check if the user has already added the event to cart
     try {
-        const filters = [Query.limit(limit), Query.offset(offset)];
-        if (category !== "All") {
-            filters.push(Query.equal('category', category));
+        const { data: cartExist } = await supabase
+            .from('cart')
+            .select('*')
+            .eq('event_id', data.event_id)
+            .eq('user_id', user_id)
+
+        if (cartExist.length > 0) {
+            throw new Error('Event already added to cart');
         }
 
-        const res = await databases.listDocuments(DATABASE_ID, collectionId, filters);
-        const data = {
-            documents: res.documents,
-            nextCursor: offset + limit < res.total ? offset + limit : undefined
-        };
+        const { data: cart, error } = await supabase
+            .from('cart')
+            .insert(data)
+            .select('*')
+
+
+        team_members = team_members.map(member => {
+            return { ...member, cart_id: cart[0].id, uid: user_id }
+        })
+
+        const { data: members, error: memberError } = await supabase
+            .from('members')
+            .insert(team_members)
+            .select('*')
+
+
+        return { cart, members };
+    } catch (error) {
+        console.log(error);
+        throw new Error(error.message);
+    }
+}
+
+
+export const getUserCart = async (collectionId, user) => {
+    try {
+        const res = await databases.listDocuments(DATABASE_ID, collectionId, [
+            Query.equal('user', user.$id)
+        ]);
+        console.log(res);
+        return res.documents;
+    } catch (error) {
+        return [];
+    }
+}
+
+export const getDocumentById = async function (table, id) {
+    const { data, error } = await supabase
+        .from(table)
+        .select('*')
+        .eq('id', id)
+        .single()
+
+    if (error) {
+        throw new Error(error.message);
+        return null;
+    } else {
         return data;
+    }
+
+}
+
+
+export const createProfile = async function (table, user) {
+
+    // Check if the user already exists
+    const { data: userExist } = await supabase
+        .from(table)
+        .select('email')
+        .eq('email', user.email)
+        .single()
+
+    if (!userExist) {
+        const { data, error } = await supabase
+            .from(table)
+            .insert(user)
+            .single()
+
+        if (error) {
+            console.log(error);
+            throw new Error(error.message);
+        } else {
+            return data;
+        }
+    }
+}
+
+export const updateUserProfile = async function (table, user_id, user) {
+    const { data, error } = await supabase
+        .from(table)
+        .update(user)
+        .eq('user_id', user_id)
+
+    if (error) {
+        console.log(error);
+        throw new Error(error.message);
+    } else {
+        return data;
+    }
+}
+
+
+export const getPaginatedEvents = async (collectionId, limit = 21, offset = 0, category = "All") => {
+    try {
+        const query = supabase
+            .from(collectionId)
+            .select('*')
+            .range(offset, offset + limit - 1)
+            .order('id', { ascending: false });
+
+        if (category !== "All") {
+            query.eq('category', category);
+        }
+
+        const { data, error } = await query;
+
+        if (error) {
+            throw new Error(error.message);
+        }
+
+        return {
+            documents: data,
+            nextCursor: data.length === limit ? offset + limit : undefined
+        };
     } catch (err) {
         throw new Error(err.message);
     }
 };
+
+export const getUserEventCart = async (table, user_id) => {
+    try {
+        const { data, error } = await supabase
+            .from(table)
+            .select(`*, 
+            events(*),
+            self:profiles(*),
+            members(*,profiles(*))
+            `)
+            .eq('user_id', user_id)
+
+        if (error) {
+            throw new Error(error.message);
+        }
+
+        return data;
+    } catch (error) {
+        throw new Error(error.message);
+        return [];
+    }
+}
+
+export const searchUserProfiles = async (query) => {
+    try {
+        // Search for user profiles by name or email or kaizenid
+        const { data, error } = await supabase
+            .from('profiles')
+            .select('*')
+            .or(`email.like.%${query}%, name.like.%${query}%, kaizenid.like.%${query}%`)
+            .limit(5)
+
+        if (error) {
+            console.log(error);
+            throw new Error(error.message);
+        }
+
+        return data;
+    } catch (error) {
+        throw new Error(error.message);
+        return [];
+    }
+}
+
+export const getCurrentUserProfile = async (user_id) => {
+    try {
+        const { data, error } = await supabase
+            .from('profiles')
+            .select('*')
+            .eq('user_id', user_id)
+            .single()
+
+        if (error) {
+            return null;
+        }
+
+        return data;
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}
+
+export const deleteCartItem = async (table, id) => {
+    // delete cart item
+    console.log(table, id);
+    const { data, error } = await supabase
+        .from(table)
+        .delete()
+        .eq('id', id)
+
+    if (error) {
+        throw new Error(error.message);
+    }
+}
+
+export const addMembersToCartItem = async (table, member) => {
+    const { data, error } = await supabase
+        .from(table)
+        .insert(member)
+        .select('*,profiles(*)')
+
+    if (error) {
+        throw new Error(error.message);
+    }
+
+    return data;
+}
+
+export const deleteMembersFromCartItem = async (table, id) => {
+    const { data, error } = await supabase
+        .from(table)
+        .delete()
+        .eq('id', id)
+
+    if (error) {
+        throw new Error(error.message);
+    }
+}

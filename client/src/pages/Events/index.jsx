@@ -3,7 +3,7 @@ import './Event.css';
 import { Link } from 'react-router-dom';
 import { BsArrowUpRight } from 'react-icons/bs';
 import { useInfiniteQuery } from '@tanstack/react-query';
-import { getEvents } from '../../services/doc.service';
+import { getPaginatedEvents } from '../../services/doc.service';
 import { useInView } from 'react-intersection-observer';
 
 const EventPage = () => {
@@ -22,7 +22,7 @@ const EventPage = () => {
         status
     } = useInfiniteQuery({
         queryKey: ['events', selectedEventCat],
-        queryFn: ({ pageParam = 0 }) => getEvents("events", 21, pageParam, selectedEventCat),
+        queryFn: ({ pageParam = 0 }) => getPaginatedEvents("events", 21, pageParam, selectedEventCat),
         getNextPageParam: (lastPage) => lastPage.nextCursor,
         staleTime: Infinity,
         refetchOnWindowFocus: false,
@@ -57,8 +57,8 @@ const EventPage = () => {
             <div className='event-card-container'>
                 {status === 'pending' ? <div>Loading...</div> :
                     status === 'error' ? <div>Error loading events: {error.message}</div> :
-                      data.pages.flatMap(page => page.documents).map((event) => (
-                            <Link to={event.$id} key={event.$id}>
+                        data.pages.flatMap(page => page.documents).map((event) => (
+                            <Link to={event.id} key={event.id}>
                                 <div className='event-card'>
                                     <div className='event-detail'>
                                         <div className='flex justify-between items-center w-[100%]'>

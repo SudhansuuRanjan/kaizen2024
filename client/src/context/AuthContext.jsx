@@ -1,79 +1,69 @@
 import { createContext, useEffect, useState } from "react";
-import { createOAuthSession } from "../services/auth.service";
 import { useNavigate } from "react-router-dom";
 import Loader from "../components/Loader/Loader";
-import { account } from "../config/appwrite";
+import supabase from "../config/supabase";
+import { getCurrentUserProfile } from "../services/doc.service";
 
 const AuthContext = createContext({});
 
 const AuthProvider = ({ children }) => {
     const navigate = useNavigate();
-    const [user, setUser] = useState(null);
+    const [session, setSession] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [user, setUser] = useState(null);
 
-    const login = async () => {
-        try {
-            await createOAuthSession('google');
-            await checkUser();
-        } catch (error) {
-            throw new Error(error.message);
-        }
-    }
+    useEffect(() => {
 
-    const logout = async () => {
-        await account.deleteSession("current");
-        setUser(null);
-        setLoading(false);
-        navigate("/");
-    }
-
-    const checkUser = async () => {
-        try {
-            const res = await account.get('current');
-            setUser(res);
-            checkUserSession();
+        const initSession = async () => {
+            const { data: { session } } = await supabase.auth.getSession();
+            setSession(session);
             setLoading(false);
-            return res;
-        } catch (error) {
-            setUser(null);
-            setLoading(false);
-        }
+        };
+
+        initSession();
+
+        const {
+            data: { subscription },
+        } = supabase.auth.onAuthStateChange((_event, session) => {
+            setSession(session)
+        })
+
+        return () => subscription.unsubscribe()
+    }, []);
+
+    const getCurrentUser = async () => {
+        if (!session) return;
+        const user_id = session.user.id;
+        const user = await getCurrentUserProfile(user_id);
+        setUser(user);
     }
 
-    const saveUserToDB = async (user) => {
-        try {
-        } catch (error) {
-            throw new Error(error.message);
-        }
-    }
-
-    const checkUserSession = async () => {
-        try {
-            const res = await account.getSession('current');
-            // if(new Date(res.providerAccessTokenExpiry) < Date.now()) {
-            //     console.log("Session expired");
-            //     const response = await account.updateSession(res.$id);
-            //     console.log("session", response);
-            // }else{
-            //     console.log("Session not expired");
-            //     console.log("session", res);
-            // }
-            // console.log("session", new Date(res.providerAccessTokenExpiry).toLocaleString());
-        } catch (error) {
-            throw new Error(error.message);
+    const contextData = {
+        session,
+        user,
+        signIn: async (provider) => {
+            await supabase.auth.signInWithOAuth({
+                provider,
+                options: {
+                    redirectTo: import.meta.env.VITE_APP_SUPABASE_REDIRECT_URI + '/auth/success',
+                    queryParams: {
+                        access_type: 'offline',
+                        prompt: 'consent',
+                    },
+                },
+            });
+        },
+        signOut: async () => {
+            await supabase.auth.signOut();
+            navigate('/');
         }
     }
 
     useEffect(() => {
-        checkUser();
-    }, []);
-
-    const contextData = {
-        user,
-        handleLogin: login,
-        handleLogout: logout,
-        refresh: checkUser,
-    }
+        if (session) {
+            getCurrentUser();
+        }
+    }, [session])
 
     return (
         <AuthContext.Provider value={contextData}>

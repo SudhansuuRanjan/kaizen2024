@@ -1,21 +1,20 @@
-// import RegisterPopup from './RegisterPopup';
 import { toast } from 'react-toastify';
 import { useNavigate, useParams } from 'react-router-dom';
-import { getDocument } from '../../services/doc.service';
+import { getDocumentById } from '../../services/doc.service';
 import { useQuery } from '@tanstack/react-query';
 import RegisterPopup from './RegisterPopup';
 import useAuth from '../../hooks/useAuth';
 import { useState } from 'react';
 
 const EventDetails = () => {
-    const [popup,setPopup] = useState(false);
+    const [popup, setPopup] = useState(false);
     const navigate = useNavigate();
     const { eventId } = useParams()
     const { user } = useAuth();
 
     const { data, isPending, isError } = useQuery({
         queryKey: ["event", eventId],
-        queryFn: () => getDocument('events', eventId),
+        queryFn: () => getDocumentById('events', eventId),
         staleTime: Infinity,
         refetchOnWindowFocus: false
     })
@@ -74,7 +73,7 @@ const EventDetails = () => {
                                                             return (
                                                                 <div key={index} className='flex items-center text-base justify-center gap-1'>
                                                                     <span className='details-text m-0 p-0'>{item.name} - </span>
-                                                                    <a className='details-text m-0 p-0'>{item.contact_no}</a>
+                                                                    <a className='details-text m-0 p-0'>{item.phone}</a>
                                                                 </div>
                                                             )
                                                         })
