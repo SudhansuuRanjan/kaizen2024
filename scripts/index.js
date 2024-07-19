@@ -3,6 +3,9 @@ import cors from 'cors';
 import axios from 'axios';
 import querystring from 'querystring';
 import crypto from 'crypto';
+import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -27,6 +30,7 @@ app.use(cors({
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 const algorithm = "aes-128-cbc";
 const authKey = process.env.AUTH_KEY;
@@ -54,6 +58,7 @@ function decrypt(text) {
 const checkApiKey = (req, res, next) => {
     const apiKey = req.headers['x-api-key'];
     const validApiKey = process.env.ACCESS_KEY;
+    console.log(apiKey, validApiKey);
 
     if (apiKey && apiKey === validApiKey) {
         next();
