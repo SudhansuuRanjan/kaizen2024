@@ -57,11 +57,14 @@ const Alumni = () => {
 
     if (params.status === 'SUCCESS') {
       await handlePaymentSuccess(params);
+      navigate('/');
     } else if (params.status === 'FAILED') {
       await handlePaymentFailed(params);
       toast.error('Payment Failed! If your money has been debited please contact Administrator. Err code 3');
+      navigate('/');
     } else if (params.status === 'CANCELLED') {
       toast.error('Payment Cancelled! Err code 4');
+      navigate('/internal-collection');
     }
   };
 
