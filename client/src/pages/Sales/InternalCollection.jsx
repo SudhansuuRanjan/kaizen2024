@@ -119,7 +119,7 @@ const Alumni = () => {
             paymentData: params,
           });
           toast.success('Payment Successful! Thank you for your contribution!');
-          sendConfirmationEmail(data.email, data.name, data.paymentData.sabpaisaTxnId, data.amount);
+          await sendConfirmationEmail(data.email, data.name, data.paymentData.sabpaisaTxnId, data.amount);
         } else {
           toast.error('Something went wrong! Please try again later. If your money has been debited, please contact us.');
         }
