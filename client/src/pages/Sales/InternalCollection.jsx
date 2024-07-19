@@ -5,6 +5,7 @@ import { PaymentInitModal } from 'pg-test-project';
 import { Select, Input } from '../../components/Form';
 import { useForm } from 'react-hook-form';
 import { createInternalTransaction, updateInternalTransaction, getInternalTransactions } from '../../services/doc.service';
+import { sendConfirmationEmail } from '../../services/mail.service';
 
 const generateTxnId = () => {
   const chars = '0123456789';
@@ -29,7 +30,7 @@ const Alumni = () => {
     transUserPassword: import.meta.env.VITE_PAYMENT_PASSWORD,
     authkey: import.meta.env.VITE_PAYMENT_AUTH_KEY,
     authiv: import.meta.env.VITE_PAYMENT_AUTH_IV,
-    callbackUrl: `${import.meta.env.VITE_APP_SUPABASE_REDIRECT_URI}/alumni-connect`,
+    callbackUrl: `${import.meta.env.VITE_APP_SUPABASE_REDIRECT_URI}/internal-collection`,
     name: '',
     email: '',
     phone: '',
@@ -56,14 +57,11 @@ const Alumni = () => {
 
     if (params.status === 'SUCCESS') {
       await handlePaymentSuccess(params);
-      navigate('/');
     } else if (params.status === 'FAILED') {
       await handlePaymentFailed(params);
       toast.error('Payment Failed! If your money has been debited please contact Administrator. Err code 3');
-      navigate('/');
     } else if (params.status === 'CANCELLED') {
       toast.error('Payment Cancelled! Err code 4');
-      navigate('/');
     }
   };
 
@@ -118,6 +116,7 @@ const Alumni = () => {
             paymentData: params,
           });
           toast.success('Payment Successful! Thank you for your contribution!');
+          sendConfirmationEmail(data.email, data.name, data.paymentData.sabpaisaTxnId, data.amount);
         } else {
           toast.error('Something went wrong! Please try again later. If your money has been debited, please contact us.');
         }
@@ -295,7 +294,7 @@ const Alumni = () => {
                   value: 10,
                   message: 'Minimum amount is 10',
                 },
-                value:1600
+                value: 1600
               })}
               className='bg-gray-950 rounded-lg px-3 py-2 mt-1 w-full text-gray-300'
               errors={errors.amount}

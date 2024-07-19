@@ -313,6 +313,7 @@ export const createInternalTransaction = async (table,data) => {
         .select('*')
 
     if (error) {
+        console.log(error);
         throw new Error(error.message);
     }
 

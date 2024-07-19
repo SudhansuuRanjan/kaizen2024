@@ -9,7 +9,7 @@ import RefundPolicy from './RefundPolicy'
 const Legals = () => {
     const { pageName } = useParams("");
     const [page, setPage] = useState(0);
-    document.title = "Legals | KAIZEN 2023"
+    document.title = "Legals | KAIZEN 2024"
 
     useEffect(() => {
         if (pageName === "privacy-policy") setPage(1);
