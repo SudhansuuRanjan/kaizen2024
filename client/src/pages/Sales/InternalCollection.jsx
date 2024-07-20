@@ -287,15 +287,15 @@ const Alumni = () => {
             />
 
             <Input
-              label="Amount"
+              label="Amount (INR)"
               type="number"
               placeholder="Amount"
               title="amount"
               reactHookForm={register('amount', {
-                required: 'Amount is required',
+                required: 'Amount is required to proceed',
                 min: {
-                  value: 10,
-                  message: 'Minimum amount is 10',
+                  value: 1600,
+                  message: 'Minimum amount is 1600 INR',
                 },
                 value: 1600
               })}
