@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@supabase/supabase-js": "^2.44.4",
     "appwrite": "^15.0.0",
     "axios": "^1.7.2",
     "base-64": "^1.0.0",
