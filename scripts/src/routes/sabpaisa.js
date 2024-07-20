@@ -1,7 +1,7 @@
 const { getTransactionDetailsFromSabpaisa } = require("../services/sabpaisa.service");
 const express = require('express');
 const checkApiKey = require('../middlewares/auth.midddleware');
-const { getInternalTransactions } = require('../services/internaltxn.service');
+const { getInternalNonVerifiedTransactions } = require('../services/internaltxn.service');
 const { updateInternalTransaction } = require('../services/internaltxn.service');
 const sendEmail = require('../services/mail.service');
 
@@ -13,12 +13,20 @@ router.post('/verifytransactions', checkApiKey, async (req, res) => {
     const result = [];
     const { clientCode } = req.body;
     try {
-        const data = await getInternalTransactions('internalpayments');
+        const data = await getInternalNonVerifiedTransactions('internalpayments');
 
         for (let i = 0; i < data.length; i++) {
             paymentData.push(data[i].paymentData);
             try {
                 const txnDetails = await getTransactionDetailsFromSabpaisa({ clientCode, clientTxnId: data[i].txnid });
+
+                const currResult = {
+                    txnid: data[i].txnid,
+                    expected: txnDetails.status,
+                    status: data[i].status,
+                    paymentVerified: data[i].paymentVerified,
+                    mail_sent: data[i].mail_sent,
+                };
 
                 if (data[i].status === txnDetails.status) {
                     await updateInternalTransaction('internalpayments', data[i].txnid, { paymentVerified: true });
@@ -31,7 +39,7 @@ router.post('/verifytransactions', checkApiKey, async (req, res) => {
                         name: data[i].name,
                         amount: data[i].amount,
                         tid: data[i].txnid,
-                    }
+                    };
                     await sendEmail(emailData.email, emailData, process.env.INTERNAL_COLLECTION);
                     console.log('Transaction Updated and Email sent');
                 } else if (txnDetails.status !== data[i].status) {
@@ -42,10 +50,13 @@ router.post('/verifytransactions', checkApiKey, async (req, res) => {
                 result.push(currResult);
             } catch (error) {
                 expectedData.push({ error: 'Error fetching payment details', txnid: data[i].txnid });
+                await updateInternalTransaction('internalpayments', data[i].txnid, { paymentVerified: true });
             }
         }
-        res.send({ result });
+
+        res.send({ data }); // send both result and expectedData
     } catch (error) {
+        console.log(error);
         res.status(500).send({ message: 'Error fetching payment data', error });
     }
 });

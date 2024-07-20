@@ -12,6 +12,20 @@ const getInternalTransactions = async (table) => {
     return data;
 }
 
+const getInternalNonVerifiedTransactions = async (table) => {
+    const { data, error } = await supabase
+        .from(table)
+        .select('*')
+        .eq('paymentVerified', false)
+
+
+    if (error) {
+        throw new Error(error.message);
+    }
+
+    return data;
+}
+
 const createInternalTransaction = async (table, data) => {
     const { data: transaction, error } = await supabase
         .from(table)
@@ -66,4 +80,4 @@ const deleteInternalTransaction = async (table, txnid) => {
     return data;
 }
 
-module.exports = { getInternalTransactions, deleteInternalTransaction, createInternalTransaction, getInternalTransaction, updateInternalTransaction };
+module.exports = { getInternalTransactions, deleteInternalTransaction, createInternalTransaction, getInternalTransaction, updateInternalTransaction, getInternalNonVerifiedTransactions };
