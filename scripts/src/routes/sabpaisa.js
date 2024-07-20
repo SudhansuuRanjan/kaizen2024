@@ -16,39 +16,32 @@ router.post('/verifytransactions', checkApiKey, async (req, res) => {
         const data = await getInternalTransactions('internalpayments');
 
         for (let i = 0; i < data.length; i++) {
-            if (data[i].paymentData) {
-                paymentData.push(data[i].paymentData);
-                try {
-                    const txnDetails = await getTransactionDetailsFromSabpaisa({ clientCode, clientTxnId: data[i].txnid });
-                    let currResult = {
-                        txnid: data[i].txnid,
+            paymentData.push(data[i].paymentData);
+            try {
+                const txnDetails = await getTransactionDetailsFromSabpaisa({ clientCode, clientTxnId: data[i].txnid });
+
+                if (data[i].status === txnDetails.status) {
+                    await updateInternalTransaction('internalpayments', data[i].txnid, { paymentVerified: true });
+                    console.log('Transaction already verified');
+                } else if (data[i].status !== 'SUCCESS' && txnDetails.status === 'SUCCESS') {
+                    await updateInternalTransaction('internalpayments', data[i].txnid, { paymentVerified: true, status: 'SUCCESS', paymentData: txnDetails, mail_sent: true });
+                    // send email
+                    const emailData = {
+                        email: data[i].email,
+                        name: data[i].name,
                         amount: data[i].amount,
-                        status: data[i].status,
-                        expectedStatus: txnDetails.status,
+                        tid: data[i].txnid,
                     }
-
-                    if (data[i].status === txnDetails.status) {
-                        console.log('Transaction already verified');
-                    } else if (data[i].status !== 'SUCCESS' && txnDetails.status === 'SUCCESS') {
-                        await updateInternalTransaction('internalpayments', data[i].txnid, { paymentVerified: true, status: 'SUCCESS', paymentData: txnDetails });
-                        // send email
-                        const emailData = {
-                            email: data[i].email,
-                            name: data[i].name,
-                            amount: data[i].amount,
-                            tid: data[i].txnid,
-                        }
-                        await sendEmail(emailData.email, emailData, process.env.INTERNAL_COLLECTION);
-                        console.log('Transaction Updated and Email sent');
-                    } else if (txnDetails.status !== data[i].status) {
-                        await updateInternalTransaction('internalpayments', data[i].txnid, { paymentVerified: true, status: txnDetails.status, paymentData: txnDetails });
-                        console.log('Transaction Updated');
-                    }
-
-                    result.push(currResult);
-                } catch (error) {
-                    expectedData.push({ error: 'Error fetching payment details', txnid: data[i].txnid });
+                    await sendEmail(emailData.email, emailData, process.env.INTERNAL_COLLECTION);
+                    console.log('Transaction Updated and Email sent');
+                } else if (txnDetails.status !== data[i].status) {
+                    await updateInternalTransaction('internalpayments', data[i].txnid, { paymentVerified: true, status: txnDetails.status, paymentData: txnDetails });
+                    console.log('Transaction Updated');
                 }
+
+                result.push(currResult);
+            } catch (error) {
+                expectedData.push({ error: 'Error fetching payment details', txnid: data[i].txnid });
             }
         }
         res.send({ result });
@@ -57,5 +50,15 @@ router.post('/verifytransactions', checkApiKey, async (req, res) => {
     }
 });
 
+
+router.post('/transaction', checkApiKey, async (req, res) => {
+    const { txnid } = req.body;
+    try {
+        const data = await getTransactionDetailsFromSabpaisa({ clientCode: 'AIIMSK', clientTxnId: txnid });
+        res.status(200).json({ data });
+    } catch (error) {
+        res.status(500).json({ message: 'Error fetching transaction', error: error.message });
+    }
+})
 
 module.exports = router;

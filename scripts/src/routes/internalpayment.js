@@ -32,8 +32,6 @@ router.put('/update', checkApiKey, async (req, res) => {
         if (!sabpaisaResponse) {
             res.status(400).json({ message: 'Transaction not found in Sabpaisa' });
         } else if (sabpaisaResponse.status === 'SUCCESS') {
-            // update transaction status to success
-            await updateInternalTransaction('internalpayments', txnid, { status: sabpaisaResponse.status, paymentData: sabpaisaResponse, paymentVerified: true });
             // send email
             const emailData = {
                 email: data[0].email,
@@ -42,6 +40,8 @@ router.put('/update', checkApiKey, async (req, res) => {
                 tid: data[0].txnid,
             }
             await sendEmail(emailData.email, emailData, process.env.INTERNAL_COLLECTION);
+            // update transaction status to success
+            await updateInternalTransaction('internalpayments', txnid, { status: sabpaisaResponse.status, paymentData: sabpaisaResponse, paymentVerified: true, mail_sent: true });
             return res.status(200).json({ message: 'Transaction updated successfully', status: sabpaisaResponse.status });
         } else {
             // update transaction status to failure
