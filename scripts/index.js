@@ -1,12 +1,11 @@
-const express = require('express');
-const cors = require('cors');
-const axios = require('axios');
-const querystring = require('querystring');
-const crypto = require('crypto');
-const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 dotenv.config();
-const { getInternalTransactions } = require('./src/service');
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const emailRoutes = require('./src/routes/email');
+const sabpaisaRoutes = require('./src/routes/sabpaisa');
+const internalPaymentRoutes = require('./src/routes/internalpayment');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -28,148 +27,16 @@ app.use(cors({
         return callback(null, true);
     }
 }));
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-const algorithm = "aes-128-cbc";
-const authKey = process.env.AUTH_KEY;
-const authIV = process.env.AUTH_IV;
+app.use('/email', emailRoutes);
+app.use('/sabpaisa', sabpaisaRoutes);
+app.use('/internalpayment', internalPaymentRoutes);
 
-function encrypt(text) {
-    let cipher = crypto.createCipheriv(algorithm, Buffer.from(authKey), authIV);
-    let encrypted = cipher.update(text);
-    encrypted = Buffer.concat([encrypted, cipher.final()]);
-    return encrypted.toString("base64");
-}
-
-function decrypt(text) {
-    let decipher = crypto.createDecipheriv(
-        algorithm,
-        Buffer.from(authKey),
-        authIV
-    );
-    let decrypted = decipher.update(Buffer.from(text, "base64"));
-    decrypted = Buffer.concat([decrypted, decipher.final()]);
-    return decrypted.toString();
-}
-
-// Middleware to check for API key
-const checkApiKey = (req, res, next) => {
-    const apiKey = req.headers['x-api-key'];
-    const validApiKey = process.env.ACCESS_KEY;
-
-    if (apiKey && apiKey === validApiKey) {
-        next();
-    } else {
-        res.status(403).json({ error: 'Forbidden: Invalid API key' });
-    }
-};
 
 app.get('/', (req, res) => {
     res.send({ message: 'Hello World!' });
-});
-
-app.post('/getpaymentdetails', checkApiKey, async (req, res) => {
-    const { clientTxnId, clientCode } = req.body;
-    const realQuery = querystring.stringify({ clientTxnId, clientCode });
-    console.log(realQuery);
-
-    try {
-        const result = await axios.post('https://txnenquiry.sabpaisa.in/SPTxtnEnquiry/getTxnStatusByClientxnId', {
-            clientCode,
-            statusTransEncData: encrypt(realQuery)
-        });
-
-        const decryptedData = decrypt(result.data.statusResponseData);
-
-        res.send({ clientCode: result.data.clientCode, decryptedData: querystring.parse(decryptedData) });
-    } catch (error) {
-        console.error('Error fetching payment details:', error);
-        res.status(500).send({ error: 'Error fetching payment details' });
-    }
-});
-
-// send alumni mail 
-app.post("/api/confirmation-email", checkApiKey, async (req, res) => {
-    const person = req.body;
-    // console.log(people);
-
-    const courier_options = {
-        method: "POST",
-        headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + process.env.COURIER_API_KEY,
-        },
-        body: JSON.stringify({
-            message: {
-                to: {
-                    email: person.email,
-                },
-                template: process.env.INTERNAL_COLLECTION,
-                data: {
-                    name: person.name,
-                    email: person.email,
-                    tid: person.tid,
-                    amount: person.amount,
-                },
-                routing: {
-                    method: "all",
-                    channels: ["email"],
-                },
-            },
-        }),
-    };
-
-    try {
-        await fetch("https://api.courier.com/send", courier_options);
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
-
-    res.status(200).json({ message: "Mail Sent" });
-});
-
-app.post('/api/getpaymentsdata', checkApiKey, async (req, res) => {
-    const paymentData = [];
-    const expectedData = [];
-    const result = [];
-    const { clientCode } = req.body;
-    try {
-        const data = await getInternalTransactions('internalpayments');
-
-        for (let i = 0; i < data.length; i++) {
-            if (data[i].paymentData) {
-                paymentData.push(data[i].paymentData);
-                const realQuery = querystring.stringify({ clientTxnId: data[i].txnid, clientCode });
-                try {
-                    const response = await axios.post('https://txnenquiry.sabpaisa.in/SPTxtnEnquiry/getTxnStatusByClientxnId', {
-                        clientCode,
-                        statusTransEncData: encrypt(realQuery)
-                    });
-
-                    const decryptedData = decrypt(response.data.statusResponseData);
-                    expectedData.push(querystring.parse(decryptedData));
-
-                    let currResult = {
-                        txnid: data[i].txnid,
-                        amount: data[i].amount,
-                        status: data[i].status,
-                        expectedStatus: querystring.parse(decryptedData).status,
-                    }
-
-                    result.push(currResult);
-                } catch (error) {
-                    expectedData.push({ error: 'Error fetching payment details', txnid: data[i].txnid });
-                }
-            }
-        }
-        res.send({ result });
-    } catch (error) {
-        res.status(500).send({ message: 'Error fetching payment data', error });
-    }
 });
 
 app.listen(PORT, () => {

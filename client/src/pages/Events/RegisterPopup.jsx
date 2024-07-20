@@ -40,6 +40,7 @@ const RegisterPopup = ({ event, setPopup }) => {
             const data = {
                 event_id: event.id,
                 user_id: user.user_id,
+                user_email: user.email,
             };
 
             const members = team.map(member => {
