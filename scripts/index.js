@@ -6,7 +6,7 @@ const crypto = require('crypto');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 dotenv.config();
-const supabase = require('./src/config');
+const { getInternalTransactions } = require('./src/service');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -132,24 +132,41 @@ app.post("/api/confirmation-email", checkApiKey, async (req, res) => {
     res.status(200).json({ message: "Mail Sent" });
 });
 
-export const getInternalTransactions = async (table) => {
-    const { data, error } = await supabase
-        .from(table)
-        .select('*')
-
-    if (error) {
-        console.log(error);
-        throw new Error(error.message);
-    }
-
-    return data;
-}
-
-app.get('/api/getpaymentsdata', checkApiKey, async (req, res) => {
+app.post('/api/getpaymentsdata', checkApiKey, async (req, res) => {
+    const paymentData = [];
+    const expectedData = [];
+    const result = [];
+    const { clientCode } = req.body;
     try {
-        console.log('Fetching payment data...');
         const data = await getInternalTransactions('internalpayments');
-        res.send(data);
+
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].paymentData) {
+                paymentData.push(data[i].paymentData);
+                const realQuery = querystring.stringify({ clientTxnId: data[i].txnid, clientCode });
+                try {
+                    const response = await axios.post('https://txnenquiry.sabpaisa.in/SPTxtnEnquiry/getTxnStatusByClientxnId', {
+                        clientCode,
+                        statusTransEncData: encrypt(realQuery)
+                    });
+
+                    const decryptedData = decrypt(response.data.statusResponseData);
+                    expectedData.push(querystring.parse(decryptedData));
+
+                    let currResult = {
+                        txnid: data[i].txnid,
+                        amount: data[i].amount,
+                        status: data[i].status,
+                        expectedStatus: querystring.parse(decryptedData).status,
+                    }
+
+                    result.push(currResult);
+                } catch (error) {
+                    expectedData.push({ error: 'Error fetching payment details', txnid: data[i].txnid });
+                }
+            }
+        }
+        res.send({ result });
     } catch (error) {
         res.status(500).send({ message: 'Error fetching payment data', error });
     }
