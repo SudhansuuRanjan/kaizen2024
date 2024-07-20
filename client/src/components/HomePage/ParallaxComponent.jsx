@@ -16,7 +16,7 @@ const ParallaxComponent = () => {
             children: (
               <div className="absolute inset-0 flex flex-col justify-center items-center lg:mt-[-10rem] md:mt-[-10rem] mt-[-15rem]">
                 <h1 className="text-2xl md:text-3xl lg:text-3xl text-white lg:tracking-widest tracking-tight font-semibold">AIIMS PATNA PRESENTS</h1>
-                <img src="kaizen_logo.svg" alt="logo" className='lg:w-[29rem] md:w-[25rem] w-[18rem] h-auto' />
+                <img src="kzn-big.png" loading='eager' alt="logo" className='lg:w-[29rem] md:w-[25rem] w-[18rem] min-h-5 h-auto' />
                 <h1 className="text-6xl font-extrabold tracking-widest text-red-100">'2024'</h1>
                 <h1 className="my-2 text-lg md:text-xl lg:text-xl  lg:tracking-widest tracking-tight font-semibold text-blue-900">3<sup>rd</sup> - 8<sup>th</sup> September</h1>
               </div>
