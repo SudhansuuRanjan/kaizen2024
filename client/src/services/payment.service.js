@@ -1,0 +1,34 @@
+import axios from 'axios';
+
+const createInternalPaymentTransaction = async (data) => {
+    try {
+        const response = await axios.post(`${import.meta.env.VITE_APP_API_URL}/internalpayment`, data, {
+            headers: {
+                'Content-Type': 'application/json',
+                'x-api-key': import.meta.env.VITE_APP_ACCESS_KEY
+            }
+        });
+
+        return response.data;
+    } catch (error) {
+        throw new Error(error.message);
+    }
+};
+
+const updateInternalPaymentTransaction = async (data) => {
+    try {
+        const response = await axios.put(`${import.meta.env.VITE_APP_API_URL}/internalpayment/update`, data, {
+            headers: {
+                'Content-Type': 'application/json',
+                'x-api-key': import.meta.env.VITE_APP_ACCESS_KEY
+            }
+        });
+
+        return response.data;
+    }
+    catch (error) {
+        throw new Error(error.message);
+    }
+}
+
+export { createInternalPaymentTransaction, updateInternalPaymentTransaction };

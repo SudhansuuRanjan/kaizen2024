@@ -2,6 +2,7 @@ const express = require('express');
 const { getInternalTransactions, deleteInternalTransaction, createInternalTransaction, getInternalTransaction, updateInternalTransaction } = require('../services/internaltxn.service');
 const checkApiKey = require('../middlewares/auth.midddleware');
 const { getTransactionDetailsFromSabpaisa } = require('../services/sabpaisa.service');
+const sendEmail = require('../services/mail.service');
 
 const router = express.Router();
 
@@ -19,23 +20,37 @@ router.post('/', checkApiKey, async (req, res) => {
 
 // Update an internal transaction
 router.put('/update', checkApiKey, async (req, res) => {
-    const { txnid, status, paymentData } = req.body;
+    const { txnid } = req.body;
     try {
         const data = await getInternalTransaction('internalpayments', txnid);
         if (data.length === 0) {
-            res.status(404).json({ message: 'Transaction not found' });
-        } else {
-            const sabpaisaResponse = await getTransactionDetailsFromSabpaisa({ clientCode: 'AIIMS', clientTxnId: txnid });
-            if (!sabpaisaResponse) {
-                res.status(400).json({ message: 'Transaction not found in Sabpaisa' });
-            } else if (sabpaisaResponse.status !== 'SUCCESS') {
-                res.status(400).json({ message: 'Transaction Failed' });
+            return res.status(404).json({ message: 'Transaction not found' });
+        }
+
+        const sabpaisaResponse = await getTransactionDetailsFromSabpaisa({ clientCode: 'AIIMSK', clientTxnId: txnid });
+
+        if (!sabpaisaResponse) {
+            res.status(400).json({ message: 'Transaction not found in Sabpaisa' });
+        } else if (sabpaisaResponse.status === 'SUCCESS') {
+            // update transaction status to success
+            await updateInternalTransaction('internalpayments', txnid, { status: sabpaisaResponse.status, paymentData: sabpaisaResponse, paymentVerified: true });
+            // send email
+            const emailData = {
+                email: data[0].email,
+                name: data[0].name,
+                amount: data[0].amount,
+                tid: data[0].txnid,
             }
-            const result = await updateInternalTransaction('internalpayments', txnid, { status, paymentData, paymentVerified: true });
-            res.status(200).json({ message: 'Transaction updated successfully', result });
+            await sendEmail(emailData.email, emailData, process.env.INTERNAL_COLLECTION);
+            return res.status(200).json({ message: 'Transaction updated successfully', status: sabpaisaResponse.status });
+        } else {
+            // update transaction status to failure
+            await updateInternalTransaction('internalpayments', txnid, { status: sabpaisaResponse.status, paymentData: sabpaisaResponse, paymentVerified: false });
+            return res.status(400).json({ message: 'Transaction not successful', status: sabpaisaResponse.status });
         }
     } catch (error) {
-        res.status(500).json({ message: 'Error updating transaction', error: error.message });
+        console.log(error);
+        res.status(500).json({ message: 'Error updating transaction', error });
     }
 })
 

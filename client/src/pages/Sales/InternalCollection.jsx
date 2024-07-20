@@ -4,8 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { PaymentInitModal } from 'pg-test-project';
 import { Select, Input } from '../../components/Form';
 import { useForm } from 'react-hook-form';
-import { createInternalTransaction, updateInternalTransaction, getInternalTransactions } from '../../services/doc.service';
-import { sendConfirmationEmail } from '../../services/mail.service';
+import { createInternalPaymentTransaction, updateInternalPaymentTransaction } from '../../services/payment.service';
 
 const generateTxnId = () => {
   const chars = '0123456789';
@@ -55,16 +54,29 @@ const Alumni = () => {
     const params = getJsonFromUrl();
     if (!params.status) return;
 
-    if (params.status === 'SUCCESS') {
-      await handlePaymentSuccess(params);
-      navigate('/');
-    } else if (params.status === 'FAILED') {
-      await handlePaymentFailed(params);
-      toast.error('Payment Failed! If your money has been debited please contact Administrator. Err code 3');
-      navigate('/');
-    } else if (params.status === 'CANCELLED') {
-      toast.error('Payment Cancelled! Err code 4');
-      navigate('/internal-collection');
+    if (params.status) {
+      setVerifyingPayment(true);
+
+      try {
+        const respone = await updateInternalPaymentTransaction({ txnid: params.clientTxnId });
+
+        if (respone.status === 'SUCCESS') {
+          toast.success('Payment Successful! Thank you for your contribution!');
+        } else if (respone.status === 'FAILED') {
+          toast.error('Payment Failed! Please try again later!');
+          toast.error('If the amount has been deducted from your account, please wait for 24 hours for payment verification.');
+        } else {
+          toast.error('Some error occurred! Please try again later!');
+          toast.error('If the amount has been deducted from your account, please wait for 24 hours for payment verification.');
+        }
+
+      } catch (error) {
+        console.log(error);
+        toast.error('Some error occurred! Please try again later!');
+      } finally {
+        setVerifyingPayment(false);
+        navigate('/internal-collection');
+      }
     }
   };
 
@@ -78,16 +90,9 @@ const Alumni = () => {
         txnid: txnId,
       };
       toast.success('Proceeding to Payment...');
-      await createInternalTransaction('internalpayments', details);
-      console.log({
-        ...paymentCredentials,
-        name: data.name,
-        email: data.email,
-        phone: data.phone,
-        amount: data.amount,
-        isOpen: true,
-        txtnId: txnId,
-      });
+
+      await createInternalPaymentTransaction(details);
+
       setPaymentCredentials({
         ...paymentCredentials,
         name: data.name,
@@ -98,62 +103,12 @@ const Alumni = () => {
         txtnId: txnId,
       });
     } catch (error) {
-      console.log(error);
       toast.error('Some error occurred! Please try again later!');
     }
     setLoading(false);
   };
 
-  const handlePaymentSuccess = async (params) => {
-    try {
-      setVerifyingPayment(true);
-      if (params.clientTxnId) {
-        const txnId = params.clientTxnId;
-        const txnClient = await getInternalTransactions('internalpayments', txnId);
-        if (txnClient.length > 0) {
-          const data = txnClient[0];
-          await updateInternalTransaction('internalpayments', txnId, {
-            ...data,
-            status: 'SUCCESS',
-            paymentVerified: true,
-            paymentData: params,
-          });
-          toast.success('Payment Successful! Thank you for your contribution!');
-          await sendConfirmationEmail(data.email, data.name, params.sabpaisaTxnId, data.amount);
-        } else {
-          toast.error('Something went wrong! Please try again later. If your money has been debited, please contact us.');
-        }
-      } else {
-        toast.error('Something went wrong! Please try again later. If your money has been debited, please contact us.');
-      }
-    } catch (error) {
-      console.log(error);
-      toast.error('Some error occurred! Please try again later!');
-    }
-    setVerifyingPayment(false);
-  };
 
-  const handlePaymentFailed = async (params) => {
-    try {
-      setVerifyingPayment(true);
-      if (params.clientTxnId) {
-        const txnId = params.clientTxnId;
-        const txnClient = await getInternalTransactions('internalpayments', txnId);
-        if (txnClient.length > 0) {
-          const data = txnClient[0];
-          await updateInternalTransaction('internalpayments', txnId, {
-            ...data,
-            status: 'FAILED',
-            paymentData: params,
-          });
-        }
-      }
-    } catch (error) {
-      console.log(error);
-      toast.error('Some error occurred! Please try again later!');
-    }
-    setVerifyingPayment(false);
-  }
 
   useEffect(() => {
     getQueryParams();

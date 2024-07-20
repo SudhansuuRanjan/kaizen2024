@@ -24,6 +24,7 @@ const sendMail = async (email, data, template) => {
     try {
         await fetch("https://api.courier.com/send", courier_options);
     } catch (error) {
+        console.log(error);
         throw new Error(error.message);
     }
 

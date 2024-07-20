@@ -6,7 +6,6 @@ const getInternalTransactions = async (table) => {
         .select('*')
 
     if (error) {
-        console.log(error);
         throw new Error(error.message);
     }
 
@@ -20,7 +19,6 @@ const createInternalTransaction = async (table, data) => {
         .select('*')
 
     if (error) {
-        console.log(error);
         throw new Error(error.message);
     }
 
@@ -62,7 +60,6 @@ const deleteInternalTransaction = async (table, txnid) => {
         .select('*')
 
     if (error) {
-        console.log(error);
         throw new Error(error.message);
     }
 
