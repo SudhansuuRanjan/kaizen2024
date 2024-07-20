@@ -241,6 +241,101 @@ const Alumni = () => {
               placeholder="Select Designation"
             />
 
+            <Select
+              label='Department'
+              id='department'
+              require={true}
+              options={[
+                {
+                  name: "Anatomy",
+                  value: "Anatomy"
+                },
+                {
+                  name: "Physiology",
+                  value: "Physiology"
+                },
+                {
+                  name: "Biochemistry",
+                  value: "Biochemistry"
+                },
+                {
+                  name: "Pathology",
+                  value: "Pathology"
+                },
+                {
+                  name: "Pharmacology",
+                  value: "Pharmacology"
+                },
+                {
+                  name: "Microbiology",
+                  value: "Microbiology"
+                },
+                {
+                  name: "Community Medicine",
+                  value: "Community Medicine"
+                },
+                {
+                  name: "General Medicine",
+                  value: "General Medicine"
+                },
+                {
+                  name: "General Surgery",
+                  value: "General Surgery"
+                },
+                {
+                  name: "Pediatrics",
+                  value: "Pediatrics"
+                },
+                {
+                  name: "Obstetrics and Gynecology",
+                  value: "Obstetrics and Gynecology"
+                },
+                {
+                  name: "Orthopedics",
+                  value: "Orthopedics"
+                },
+                {
+                  name: "Ophthalmology",
+                  value: "Ophthalmology"
+                },
+                {
+                  name: "Otorhinolaryngology (ENT)",
+                  value: "Otorhinolaryngology (ENT)"
+                },
+                {
+                  name: "Dermatology",
+                  value: "Dermatology"
+                },
+                {
+                  name: "Psychiatry",
+                  value: "Psychiatry"
+                },
+                {
+                  name: "Radiology",
+                  value: "Radiology"
+                },
+                {
+                  name: "Anesthesiology",
+                  value: "Anesthesiology"
+                },
+                {
+                  name: "Emergency Medicine",
+                  value: "Emergency Medicine"
+                },
+                {
+                  name: "Others",
+                  value: "Others"
+                }
+              ]
+              }
+              reactHookForm={register('department', {
+                required: 'Department is required',
+              })}
+              className='bg-gray-950 rounded-lg px-3 py-2 mt-1 w-full text-gray-300'
+              errors={errors.department}
+              placeholder="Select Department"
+            />
+
             <Input
               label="Amount (INR)"
               type="number"

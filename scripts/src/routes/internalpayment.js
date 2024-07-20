@@ -8,8 +8,8 @@ const router = express.Router();
 
 // Create a new internal transaction
 router.post('/', checkApiKey, async (req, res) => {
-    const { txnid, amount, name, email, address, phone, designation } = req.body;
-    const data = { txnid, amount, name, email, address, phone, designation };
+    const { txnid, amount, name, email, address, phone, designation, department } = req.body;
+    const data = { txnid, amount, name, email, address, phone, designation, department };
     try {
         const result = await createInternalTransaction('internalpayments', data);
         res.status(200).json({ message: 'Transaction created successfully', result });
