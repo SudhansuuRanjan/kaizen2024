@@ -12,7 +12,7 @@ const Footer = () => {
                 <div data-aos="fade-up" className='mt-10 w-[100%] md:w-[100%] lg:w-[100%] order-1 md:order-1 lg:order-1'>
 
                     <Link href="/">
-                        <img src="https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/static-images%2Fkaizen-logo1.webp?alt=media&token=5205c31b-8eb2-4d97-8e88-4c35fd746570" alt="logo" className='h-20' />
+                        <img src="kaizen-logo.webp" alt="logo" className='h-20' />
                     </Link>
 
                     <p className='max-w-[17rem] py-3 text-base'>Kaizen, is AIIMS Patna's annual socio-cultural fest. </p>
