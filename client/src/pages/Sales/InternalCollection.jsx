@@ -5,7 +5,7 @@ import { PaymentInitModal } from 'pg-test-project';
 import { Select, Input } from '../../components/Form';
 import { useForm } from 'react-hook-form';
 import { createInternalPaymentTransaction, updateInternalPaymentTransaction } from '../../services/payment.service';
-import { generateTxnId } from '../../utils/generateTxnId';
+import { generateTxnId } from '../../utils/generateRandomID';
 
 
 const Alumni = () => {
