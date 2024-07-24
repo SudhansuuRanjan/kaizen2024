@@ -1,5 +1,5 @@
 const sendMail = async (email, data, template) => {
-    if(!email) {
+    if (!email) {
         throw new Error("Email is required");
     }
 

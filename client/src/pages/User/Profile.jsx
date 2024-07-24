@@ -99,8 +99,8 @@ const Profile = () => {
                                 {
                                     loadingEvents ? <div> Loading...</div> : (purchasedEvents.length === 0 ?
                                         <div className='empty-cart flex text-center flex-col justify-center gap-10'>
-                                            <p>Your Cart is Empty.</p>
-                                            <p className='text-lg'>Go to <Link className='text-yellow-500' to='/events'>Events</Link> page to add events to cart.</p>
+                                            <p>Your don't have any registered events.</p>
+                                            <p className='text-lg'>Go to <Link className='text-yellow-500' to='/events'>Events</Link> page to register.</p>
                                         </div> :
                                         <div className='cart-items'>
                                             {

@@ -11,7 +11,7 @@ import { generateTxnId } from '../../utils/generateRandomID';
 const Alumni = () => {
   document.title = 'Internal Collection | KAIZEN 2024';
   const navigate = useNavigate();
-  const { register, reset, handleSubmit, formState: { errors } } = useForm({ trim: true });
+  const { register, handleSubmit, formState: { errors } } = useForm({ trim: true });
   const [paymentCredentials, setPaymentCredentials] = useState({
     isOpen: false,
     clientCode: import.meta.env.VITE_PAYMENT_CLIENT_CODE,
@@ -52,7 +52,7 @@ const Alumni = () => {
         const respone = await updateInternalPaymentTransaction({ txnid: params.clientTxnId });
 
         if (respone.status === 'SUCCESS') {
-          toast.success('Payment Successful! Thank you for your contribution!');
+          toast.success('Payment Successful! Thank you for your participation!');
         } else if (respone.status === 'FAILED') {
           toast.error('Payment Failed! Please try again later!');
           toast.error('If the amount has been deducted from your account, please wait for 24 hours for payment verification.');
