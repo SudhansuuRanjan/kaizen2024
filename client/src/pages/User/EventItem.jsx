@@ -1,7 +1,4 @@
 import React, { useState, useCallback, useEffect } from 'react'
-import { FaEdit } from 'react-icons/fa'
-import { AiFillDelete } from 'react-icons/ai'
-import { FaSave } from 'react-icons/fa'
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import { toast } from 'react-toastify';

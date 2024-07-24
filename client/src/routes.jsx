@@ -17,6 +17,7 @@ const Event = lazy(() => import('./pages/Events/Event'));
 const Profile = lazy(() => import('./pages/User/Profile'));
 const Cart = lazy(() => import('./pages/Cart/CartPage'));
 const Events = lazy(() => import('./pages/Events'));
+const EditProfile = lazy(() => import('./pages/User/EditProfile'));
 
 const routes = () => {
     return (
@@ -38,6 +39,7 @@ const routes = () => {
 
                 <Route path='/cart' element={<PrivateRoute><Cart /></PrivateRoute>} />
                 <Route path='/profile' element={<PrivateRoute><Profile /></PrivateRoute>} />
+                <Route path='/edit-profile' element={<PrivateRoute><EditProfile /></PrivateRoute>} />
             </Route>
 
             <Route path="/signin" element={<SignIn />} />

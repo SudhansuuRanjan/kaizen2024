@@ -89,6 +89,16 @@ export const addEventToCart = async (data, user_id, team_members) => {
             throw new Error('Event already added to cart');
         }
 
+        const { data: eventPurchased } = await supabase
+            .from('purchased_events')
+            .select('*')
+            .eq('event_id', data.event_id)
+            .eq('user_id', user_id)
+
+        if (eventPurchased.length > 0) {
+            throw new Error('Event already purchased');
+        }
+
         const { data: cart, error } = await supabase
             .from('cart')
             .insert(data)
@@ -204,11 +214,12 @@ export const getUserEventCart = async (table, user_id) => {
             .eq('user_id', user_id)
 
         if (error) {
-            console.log(error.message);
             throw new Error(error.message);
         }
 
-        return data;
+        // return only those events that are active
+        const activeEvents = data.filter(event => event.events.status === 'Active');
+        return activeEvents;
     } catch (error) {
         throw new Error(error.message);
         return [];
@@ -226,6 +237,8 @@ export const getPurchasedEvents = async (table, user_id) => {
             `)
             .eq('user_id', user_id)
 
+        console.log(data);
+
         if (error) {
             throw new Error(error.message);
         }
@@ -234,6 +247,31 @@ export const getPurchasedEvents = async (table, user_id) => {
     } catch (error) {
         throw new Error(error.message);
         return [];
+    }
+}
+
+export const getPurchasedSharedEvents = async (table, user_id) => {
+    try {
+        const { data, error } = await supabase
+            .from(table)
+            .select(`*,
+            cart:purchased_events(*,
+            self:profiles(*),
+            events(*),
+            purchased_events_members(*,profiles(*)))
+            `)
+            .eq('user_id', user_id)
+
+        console.log(data);
+
+        if (error) {
+            console.log(error);
+            throw new Error(error.message);
+        }
+
+        return data;
+    } catch (error) {
+        throw new Error(error.message);
     }
 }
 

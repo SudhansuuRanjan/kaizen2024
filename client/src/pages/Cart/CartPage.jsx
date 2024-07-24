@@ -69,10 +69,30 @@ const CartPage = () => {
         }
     }
 
+    // check if cart has members equal to minMembers and less than maxMembers
+    const cartItemsMembers = () => {
+        let flag = false;
+        cartItems.forEach(item => {
+            if (item.events.minMembers > item.members.length || item.events.maxMembers < item.members.length) {
+                flag = true;
+            }
+        });
+        return flag;
+    }
+
     const handlePayment = async () => {
         if (!user.address || !user.mobile) {
             toast.error('Please update your profile with address and mobile number to proceed with payment');
             return navigate('/edit-profile');
+        }
+
+        if (cartItems && cartItems.length === 0) {
+            toast.error('Cart is empty. Please add events to cart to proceed with payment');
+            return navigate('/events');
+        }
+
+        if (cartItemsMembers()) {
+            return toast.error('One or more events in cart have less than minimum members required. Please add more members to proceed with payment');
         }
 
         setLoading(true);

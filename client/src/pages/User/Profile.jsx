@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import useAuth from '../../hooks/useAuth'
 import ConfettiExplosion from 'react-confetti-explosion';
-import { getCurrentUserProfile, getPurchasedEvents } from '../../services/doc.service';
+import { getCurrentUserProfile, getPurchasedEvents, getPurchasedSharedEvents } from '../../services/doc.service';
 import { useQuery } from '@tanstack/react-query';
 import EventItem from './EventItem';
 import { Link } from 'react-router-dom';
@@ -15,21 +15,23 @@ const largeProps = {
 };
 
 const Profile = () => {
-    const { session, signOut } = useAuth();
+    const { session, signOut, user: curruser } = useAuth();
     const user_id = session.user.id;
     const [isLargeExploding, setIsLargeExploding] = useState(false);
-    const [changeDetails, setChangeDetails] = useState(false);
-
 
     const { data: user } = useQuery({
         queryKey: ['user', user_id],
         queryFn: () => getCurrentUserProfile(user_id)
     })
 
-    const { data: purchasedEvents, isLoading: loadingEvents, refetch } = useQuery({
-        queryKey: ['purchasedEvents', user_id],
-        queryFn: () => getPurchasedEvents('purchased_events', user_id),
-        staleTime: Infinity
+    // const { data: purchasedEvents, isLoading: loadingEvents } = useQuery({
+    //     queryKey: ['purchasedEvents', user_id],
+    //     queryFn: () => getPurchasedEvents('purchased_events', user_id)
+    // })
+
+    const { data: sharedEvents, isLoading: loadingSharedEvents } = useQuery({
+        queryKey: ['sharedEvents', user_id],
+        queryFn: () => getPurchasedSharedEvents('purchased_events_members', curruser.id)
     })
 
     return (
@@ -47,10 +49,6 @@ const Profile = () => {
                                     <div className='overflow-hidden rounded-full h-[5rem] w-[5rem] flex items-center justify-between'>
                                         <img src="pirate.webp" alt="profile" className='w-[5rem] h-auto' />
                                     </div>
-                                    {/* <button className='text-sm bg-yellow-200 hover:bg-yellow-700 hover:text-yellow-200 text-yellow-800 px-3 rounded-full py-0.5 mt-2 font-medium' onClick={() => {
-                    setShowQr(true);
-                    document.body.style.overflow = "hidden";
-                  }}>Show QR</button> */}
                                 </div>
                                 <div className='flex flex-col items-start'>
                                     <p className='text-xl font-semibold text-center mt-4'>{user.name}</p>
@@ -60,9 +58,11 @@ const Profile = () => {
 
 
                             <div className='flex items-center justify-center gap-2'>
-                                <button onClick={() => setChangeDetails(true)} className='text-green-500 font-medium py-1 px-5 rounded-full border border-green-500 hover:text-black hover:bg-green-500 hover:border-black'>
-                                    Edit Profile
-                                </button>
+                                <Link to="/edit-profile">
+                                    <button className='text-green-500 font-medium py-1 px-5 rounded-full border border-green-500 hover:text-black hover:bg-green-500 hover:border-black'>
+                                        Edit Profile
+                                    </button>
+                                </Link>
                                 <button className='hover:bg-red-500 hover:text-black font-medium py-1 px-5 rounded-full border-red-500 border text-red-500' onClick={signOut}>
                                     Logout
                                 </button>
@@ -92,7 +92,7 @@ const Profile = () => {
                         <div className='flex flex-col items-center justify-center w-[100%] mt-10 h-[1px] bg-yellow-600 bg-opacity-25'>
                         </div>
 
-                        <div className='w-[100%] mt-10'>
+                        {/* <div className='w-[100%] mt-10'>
                             <p className='text-xl font-semibold text-yellow-400'>Your Registered Events</p>
 
                             <div className='flex flex-col gap-4 w-[100%] mt-5'>
@@ -112,6 +112,28 @@ const Profile = () => {
                                     )
                                 }
                             </div>
+                        </div> */}
+
+                        <div className='w-[100%] mt-10'>
+                            <p className='text-xl font-semibold text-yellow-400'>Your Registered Shared Events</p>
+
+                            <div className='flex flex-col gap-4 w-[100%] mt-5'>
+                                {
+                                    loadingSharedEvents ? <div> Loading...</div> : (sharedEvents.length === 0 ?
+                                        <div className='empty-cart flex text-center flex-col justify-center gap-10'>
+                                            <p>Your don't have any registered events.</p>
+                                            <p className='text-lg'>Go to <Link className='text-yellow-500' to='/events'>Events</Link> page to register.</p>
+                                        </div> :
+                                        <div className='cart-items'>
+                                            {
+                                                sharedEvents.map((item) => (
+                                                    <EventItem key={item.id} data={item.cart} />
+                                                ))
+                                            }
+                                        </div>
+                                    )
+                                }
+                            </div>
                         </div>
                     </div> :
                         <div className='flex items-center justify-center w-[100%] h-[50vh]'>
@@ -125,28 +147,6 @@ const Profile = () => {
                     <div className='h-3 w-3 bg-yellow-200 rotate-45' />
                 </div>
             </div>
-        </div>
-    )
-}
-
-const ShowQr = ({ value, setShowQr }) => {
-    return (
-        <div className='fixed h-[100vh] w-[100vw] flex justify-center items-center top-0 left-0 bg-blue-300 bg-opacity-20 backdrop-blur-md z-[9999] flex-col gap-2'>
-            <button className='absolute top-5 right-5' onClick={() => {
-                setShowQr(false);
-                document.body.style.overflow = 'auto';
-            }}>
-                <img src="https://img.icons8.com/ios/50/000000/close-window.png" alt="close" className='h-10 bg-red-800 rounded bg-opacity-20' />
-            </button>
-            <div className='bg-white h-[17rem] w-[17rem] p-5 rounded-lg'>
-                <QRCode
-                    size={256}
-                    style={{ height: "auto", maxWidth: "100%", width: "100%" }}
-                    value={value}
-                    viewBox={`0 0 256 256`}
-                />
-            </div>
-            <p>Scan it to see profile</p>
         </div>
     )
 }

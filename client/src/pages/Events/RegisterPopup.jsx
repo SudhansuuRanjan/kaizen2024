@@ -30,7 +30,7 @@ const RegisterPopup = ({ event, setPopup }) => {
 
     const handleAddEventToCart = async () => {
         setLoading(true);
-        if (event.minMembers > team.length+1) {
+        if (event.minMembers > team.length) {
             toast.error('Please add more team members to proceed.');
             setLoading(false);
             return;
@@ -56,7 +56,6 @@ const RegisterPopup = ({ event, setPopup }) => {
             setPopup(false);
             navigate('/cart');
         } catch (error) {
-            console.log(error);
             toast.error(error.message);
         } finally {
             setLoading(false);
@@ -166,7 +165,7 @@ const RegisterPopup = ({ event, setPopup }) => {
 
 
 
-                    {event.minMembers > 1 && event.minMembers - 1 > team.length && (
+                    {event.minMembers > 1 && event.minMembers > team.length && (
                         <div className='w-[100%] mb-3'>
                             <h3 className='text-lg font-semibold'>Add Team Members</h3>
                             <form className='flex gap-2 items-center w-[100%] flex-wrap' onSubmit={(e) => e.preventDefault()}>
