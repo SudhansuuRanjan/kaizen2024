@@ -115,7 +115,7 @@ const Profile = () => {
                         </div> */}
 
                         <div className='w-[100%] mt-10'>
-                            <p className='text-xl font-semibold text-yellow-400'>Your Registered Shared Events</p>
+                            <p className='text-xl font-semibold text-yellow-400'>Your Registered/Shared Events</p>
 
                             <div className='flex flex-col gap-4 w-[100%] mt-5'>
                                 {
