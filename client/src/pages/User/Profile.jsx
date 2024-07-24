@@ -4,6 +4,7 @@ import ConfettiExplosion from 'react-confetti-explosion';
 import { getCurrentUserProfile, getPurchasedEvents } from '../../services/doc.service';
 import { useQuery } from '@tanstack/react-query';
 import EventItem from './EventItem';
+import { Link } from 'react-router-dom';
 
 const largeProps = {
     force: 0.8,
