@@ -38,13 +38,13 @@ router.post('/payment', checkApiKey, async (req, res) => {
     try {
         const response = await createCartPaymentTransaction(data);
 
-        res.status(200).json({ message: 'Cart processed successfully', response });
+        res.status(200).json({ message: 'Cart transaction created successfully', response });
     } catch (error) {
         res.status(500).json({ message: 'Error processing cart', error: error.message });
     }
 })
 
-router.put('/handle_payment', async (req, res) => {
+router.put('/handle_payment', checkApiKey, async (req, res) => {
     const { clientTxnId } = req.body;
     try {
         const paymentData = await getTransactionDetailsFromSabpaisa({ clientCode: 'AIIMSK', clientTxnId });
@@ -64,17 +64,20 @@ router.put('/handle_payment', async (req, res) => {
             await addEventsToPurchased(transaction[0].user_id, cart[i], cart[i].members);
         }
 
-        await Promise.all[
-            clearUserCart(cart[0].self.user_id),
-            sendMail(cart[0].self.email, {
-                name: cart[0].self.name,
-                kaizenid: cart[0].self.kaizenid,
-                listofevents: cart.map((event) => event.events.name).join(', ')
-            }, 'KDYM9E7XGKMV21MSN1H6KB5E07XB'),
-            updateCartPaymentTransaction(clientTxnId, { status: 'SUCCESS', paymentData, mail_sent: true, payment_verified: true })
-        ];
+        try {
+            await Promise.all([
+                clearUserCart(cart[0].self.user_id),
+                sendMail(cart[0].self.email, {
+                    name: cart[0].self.name,
+                    kaizenid: cart[0].self.kaizenid,
+                    listofevents: cart.map((event) => event.events.name).join(', ')
+                }, 'KDYM9E7XGKMV21MSN1H6KB5E07XB'),
+                updateCartPaymentTransaction(clientTxnId, { status: 'SUCCESS', paymentData, mail_sent: true, payment_verified: true })
+            ]);
 
-        console.log('Cart processed successfully');
+        } catch (error) {
+            return res.status(500).json({ message: 'Error processing cart', error: error.message });
+        }
 
         res.status(200).json({ message: 'Cart processed successfully', status: 'SUCCESS' });
     } catch (error) {

@@ -118,7 +118,6 @@ const CartPage = () => {
 
         if (params.status) {
             setVerifyingPayment(true);
-
             try {
                 const respone = await updateCartPaymentTransaction({ clientTxnId: params.clientTxnId });
 
