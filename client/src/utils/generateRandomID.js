@@ -8,3 +8,15 @@ const generateRandomID = () => {
 }
 
 export default generateRandomID;
+
+
+export const generateTxnId = () => {
+    const chars = '0123456789';
+    const stringLength = 12;
+    let randomString = '';
+    for (let i = 0; i < stringLength; i++) {
+        const rnum = Math.floor(Math.random() * chars.length);
+        randomString += chars.substring(rnum, rnum + 1);
+    }
+    return randomString;
+};

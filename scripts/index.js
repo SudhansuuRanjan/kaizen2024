@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const emailRoutes = require('./src/routes/email');
 const sabpaisaRoutes = require('./src/routes/sabpaisa');
 const internalPaymentRoutes = require('./src/routes/internalpayment');
+const cartRoutes = require('./src/routes/cart');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -33,6 +34,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/email', emailRoutes);
 app.use('/sabpaisa', sabpaisaRoutes);
 app.use('/internalpayment', internalPaymentRoutes);
+app.use('/cart', cartRoutes);
 
 
 app.get('/', (req, res) => {

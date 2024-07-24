@@ -107,21 +107,7 @@ export const addEventToCart = async (data, user_id, team_members) => {
 
         return { cart, members };
     } catch (error) {
-        console.log(error);
         throw new Error(error.message);
-    }
-}
-
-
-export const getUserCart = async (collectionId, user) => {
-    try {
-        const res = await databases.listDocuments(DATABASE_ID, collectionId, [
-            Query.equal('user', user.$id)
-        ]);
-        console.log(res);
-        return res.documents;
-    } catch (error) {
-        return [];
     }
 }
 
@@ -158,7 +144,6 @@ export const createProfile = async function (table, user) {
             .single()
 
         if (error) {
-            console.log(error);
             throw new Error(error.message);
         } else {
             return data;
@@ -173,7 +158,6 @@ export const updateUserProfile = async function (table, user_id, user) {
         .eq('user_id', user_id)
 
     if (error) {
-        console.log(error);
         throw new Error(error.message);
     } else {
         return data;
@@ -220,6 +204,29 @@ export const getUserEventCart = async (table, user_id) => {
             .eq('user_id', user_id)
 
         if (error) {
+            console.log(error.message);
+            throw new Error(error.message);
+        }
+
+        return data;
+    } catch (error) {
+        throw new Error(error.message);
+        return [];
+    }
+}
+
+export const getPurchasedEvents = async (table, user_id) => {
+    try {
+        const { data, error } = await supabase
+            .from(table)
+            .select(`*, 
+            events(*),
+            self:profiles(*),
+            purchased_events_members(*,profiles(*))
+            `)
+            .eq('user_id', user_id)
+
+        if (error) {
             throw new Error(error.message);
         }
 
@@ -240,7 +247,6 @@ export const searchUserProfiles = async (query) => {
             .limit(5)
 
         if (error) {
-            console.log(error);
             throw new Error(error.message);
         }
 
@@ -270,8 +276,6 @@ export const getCurrentUserProfile = async (user_id) => {
 }
 
 export const deleteCartItem = async (table, id) => {
-    // delete cart item
-    console.log(table, id);
     const { data, error } = await supabase
         .from(table)
         .delete()
@@ -306,14 +310,13 @@ export const deleteMembersFromCartItem = async (table, id) => {
     }
 }
 
-export const createInternalTransaction = async (table,data) => {
+export const createInternalTransaction = async (table, data) => {
     const { data: transaction, error } = await supabase
         .from(table)
         .insert(data)
         .select('*')
 
     if (error) {
-        console.log(error);
         throw new Error(error.message);
     }
 

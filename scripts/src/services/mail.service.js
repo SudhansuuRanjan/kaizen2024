@@ -1,4 +1,8 @@
 const sendMail = async (email, data, template) => {
+    if(!email) {
+        throw new Error("Email is required");
+    }
+
     const courier_options = {
         method: "POST",
         headers: {

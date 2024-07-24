@@ -30,7 +30,7 @@ const RegisterPopup = ({ event, setPopup }) => {
 
     const handleAddEventToCart = async () => {
         setLoading(true);
-        if (event.minMembers > team.length) {
+        if (event.minMembers > team.length+1) {
             toast.error('Please add more team members to proceed.');
             setLoading(false);
             return;

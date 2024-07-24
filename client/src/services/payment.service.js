@@ -31,4 +31,36 @@ const updateInternalPaymentTransaction = async (data) => {
     }
 }
 
-export { createInternalPaymentTransaction, updateInternalPaymentTransaction };
+
+const createCartPaymentTransaction = async (data) => {
+    try {
+        const response = await axios.post(`${import.meta.env.VITE_APP_API_URL}/cart/payment`, { data }, {
+            headers: {
+                'Content-Type': 'application/json',
+                'x-api-key': import.meta.env.VITE_APP_ACCESS_KEY
+            }
+        });
+
+        return response.data;
+    } catch (error) {
+        throw new Error(error.message);
+    }
+};
+
+const updateCartPaymentTransaction = async (data) => {
+    try {
+        const response = await axios.put(`${import.meta.env.VITE_APP_API_URL}/cart/handle_payment`, data, {
+            headers: {
+                'Content-Type': 'application/json',
+                'x-api-key': import.meta.env.VITE_APP_ACCESS_KEY
+            }
+        });
+
+        return response.data;
+    }
+    catch (error) {
+        throw new Error(error.message);
+    }
+}
+
+export { createInternalPaymentTransaction, updateInternalPaymentTransaction, createCartPaymentTransaction, updateCartPaymentTransaction };

@@ -5,17 +5,8 @@ import { PaymentInitModal } from 'pg-test-project';
 import { Select, Input } from '../../components/Form';
 import { useForm } from 'react-hook-form';
 import { createInternalPaymentTransaction, updateInternalPaymentTransaction } from '../../services/payment.service';
+import { generateTxnId } from '../../utils/generateTxnId';
 
-const generateTxnId = () => {
-  const chars = '0123456789';
-  const stringLength = 10;
-  let randomString = '';
-  for (let i = 0; i < stringLength; i++) {
-    const rnum = Math.floor(Math.random() * chars.length);
-    randomString += chars.substring(rnum, rnum + 1);
-  }
-  return randomString;
-};
 
 const Alumni = () => {
   document.title = 'Internal Collection | KAIZEN 2024';

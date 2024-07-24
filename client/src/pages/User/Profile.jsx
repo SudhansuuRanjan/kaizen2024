@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import { documents } from '../../utils/events.json'
-import supabase from '../../config/supabase'
 import useAuth from '../../hooks/useAuth'
 import ConfettiExplosion from 'react-confetti-explosion';
-import { getCurrentUserProfile } from '../../services/doc.service';
+import { getCurrentUserProfile, getPurchasedEvents } from '../../services/doc.service';
 import { useQuery } from '@tanstack/react-query';
+import EventItem from './EventItem';
 
 const largeProps = {
     force: 0.8,
@@ -14,51 +13,22 @@ const largeProps = {
     colors: ['#041E43', '#1471BF', '#5BB4DC', '#FC027B', '#66D805'],
 };
 
-
 const Profile = () => {
     const { session, signOut } = useAuth();
     const user_id = session.user.id;
     const [isLargeExploding, setIsLargeExploding] = useState(false);
     const [changeDetails, setChangeDetails] = useState(false);
 
-    const createEvent = async () => {
-        const user_id = session.user.id;
 
-        for (let i = 0; i < documents.length; i++) {
-            documents[i].user_id = user_id;
-            documents[i].maxMembers = 11;
-            documents[i].id = documents[i].$id;
-            documents[i].eventContacts = documents[i].eventContacts.map(contact => {
-                return {
-                    name: contact.name,
-                    email: contact.email,
-                    phone: contact.contact_no
-                }
-            });
-
-            delete documents[i].$id;
-            delete documents[i].$createdAt;
-            delete documents[i].$updatedAt;
-            delete documents[i].$tenant;
-            delete documents[i].$permissions;
-            delete documents[i].$collectionId;
-            delete documents[i].$databaseId;
-        }
-
-        console.log(documents);
-
-        try {
-            const { data, error } = await supabase.from('events').insert(documents).select('*');
-            console.log(data)
-            console.log(error);
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
-    const { data: user, isLoading } = useQuery({
+    const { data: user } = useQuery({
         queryKey: ['user', user_id],
         queryFn: () => getCurrentUserProfile(user_id)
+    })
+
+    const { data: purchasedEvents, isLoading: loadingEvents, refetch } = useQuery({
+        queryKey: ['purchasedEvents', user_id],
+        queryFn: () => getPurchasedEvents('purchased_events', user_id),
+        staleTime: Infinity
     })
 
     return (
@@ -122,19 +92,24 @@ const Profile = () => {
                         </div>
 
                         <div className='w-[100%] mt-10'>
-                            <p className='text-xl font-semibold text-yellow-400'>Your Events</p>
+                            <p className='text-xl font-semibold text-yellow-400'>Your Registered Events</p>
 
-                            <div>
-                                <div className='flex flex-col gap-4 w-[100%] mt-5'>
-                                    <div>
-                                        No events registered yet.
-                                    </div>
-                                    {/* {
-                                        purchasedEvents.length < 1 ? <div>You haven't registered for any events.</div> : purchasedEvents.map((item, index) => (
-                                            <PurchasedEventItem key={index} data={item} />
-                                        ))
-                                    } */}
-                                </div>
+                            <div className='flex flex-col gap-4 w-[100%] mt-5'>
+                                {
+                                    loadingEvents ? <div> Loading...</div> : (purchasedEvents.length === 0 ?
+                                        <div className='empty-cart flex text-center flex-col justify-center gap-10'>
+                                            <p>Your Cart is Empty.</p>
+                                            <p className='text-lg'>Go to <Link className='text-yellow-500' to='/events'>Events</Link> page to add events to cart.</p>
+                                        </div> :
+                                        <div className='cart-items'>
+                                            {
+                                                purchasedEvents.map((item) => (
+                                                    <EventItem key={item.id} data={item} />
+                                                ))
+                                            }
+                                        </div>
+                                    )
+                                }
                             </div>
                         </div>
                     </div> :
