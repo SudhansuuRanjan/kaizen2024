@@ -66,14 +66,14 @@ const EventDetails = () => {
                                                 {data.description}
                                             </p>
                                             <div className='flex pt-2 flex-col justify-between items-start gap-4 text-xl w-[100%] font-medium'>
-                                                <div className='flex flex-col items-start gap-2 justify-center'>
+                                                <div className='flex flex-col items-start gap-2 justify-center mb-4'>
                                                     <h3 className='details-text m-0 p-0'>For any query contact:</h3>
                                                     {
                                                         data.eventContacts.map((item, index) => {
                                                             return (
                                                                 <div key={index} className='flex items-center text-base justify-center gap-1'>
-                                                                    <span className='details-text m-0 p-0'>{item.name} - </span>
-                                                                    <a className='details-text m-0 p-0'>{item.phone}</a>
+                                                                    <span className='m-0 p-0 font-bold'>{item.name} - </span>
+                                                                    <a className='m-0 p-0 text-blue-500'>{item.phone}</a>
                                                                 </div>
                                                             )
                                                         })
@@ -81,7 +81,10 @@ const EventDetails = () => {
                                                 </div>
                                                 <div className='flex items-center gap-2 justify-center'>
                                                     <h3>Team Size:</h3>
-                                                    <span className='text-yellow-500'>{data.minMembers == '1' ? 'Solo' : data.minMembers} </span>
+                                                    <span className='text-yellow-500'>{data.minMembers == '1' && data.maxMembers == '1' ? 'Solo' : data.minMembers} </span>
+                                                    {data.maxMembers != data.minMembers && <><span className='text-yellow-500'>to</span>
+                                                        <span className='text-yellow-500'> {data.maxMembers}</span></>}
+                                                    <span className='text-yellow-500'>members </span>
                                                 </div>
                                             </div>
                                             <div className='flex py-10 pt-6 lg:flex-row md:flex-row flex-col justify-between items-start gap-4 text-xl w-[100%] font-medium border-bottom'>

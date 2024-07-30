@@ -93,7 +93,7 @@ const RegisterPopup = ({ event, setPopup }) => {
     }, [query, debouncedSetQuery]);
 
     const addMember = (user) => {
-        if (team.length === event.maxMembers) {
+        if (team.length >= event.maxMembers) {
             return toast.error('Maximum team members reached. You cannot add more members.');
         }
         if (!team.find(member => member.id === user.id)) {
@@ -165,7 +165,7 @@ const RegisterPopup = ({ event, setPopup }) => {
 
 
 
-                    {event.minMembers > 1 && event.minMembers > team.length && (
+                    {event.maxMembers > 1 && event.maxMembers >= team.length && (
                         <div className='w-[100%] mb-3'>
                             <h3 className='text-lg font-semibold'>Add Team Members</h3>
                             <form className='flex gap-2 items-center w-[100%] flex-wrap' onSubmit={(e) => e.preventDefault()}>
