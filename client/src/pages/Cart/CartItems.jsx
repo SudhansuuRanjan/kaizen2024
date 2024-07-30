@@ -55,7 +55,7 @@ const CartItem = ({ data, handleDelete, refetch }) => {
     }, [query, debouncedSetQuery]);
 
     const addMember = async (user) => {
-        if (team.length === data.maxMembers) {
+        if (team.length >= data.events.maxMembers) {
             return toast.error('Maximum team members reached. You cannot add more members.');
         }
         if (!team.find(member => member.user_id === user.id)) {
