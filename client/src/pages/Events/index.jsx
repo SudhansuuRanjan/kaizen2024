@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Event.css';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { BsArrowUpRight } from 'react-icons/bs';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { getPaginatedEvents } from '../../services/doc.service';
@@ -8,7 +8,11 @@ import { useInView } from 'react-intersection-observer';
 
 const EventPage = () => {
     document.title = 'Events | KAIZEN 2023';
-    const [selectedEventCat, setSelectedEventCat] = useState("All");
+    const [searchParam, setSearchParams] = useSearchParams({
+        category: "All"
+    });
+
+    const selectedEventCat = searchParam.get('category') || 'All';
 
     const { ref, inView } = useInView();
 
@@ -44,7 +48,10 @@ const EventPage = () => {
                 {
                     ["All", "Literary", "Cultural", "Arts", "Informals", "Sports", "Academics"].map((category) => (
                         <button
-                            onClick={() => setSelectedEventCat(category)}
+                            onClick={() => setSearchParams(prev => {
+                                prev.set('category', category);
+                                return prev;
+                            }, { replace: true })}
                             className={`category-btn ${selectedEventCat === category && "category-btn-active"}`}
                             key={category}
                         >
@@ -82,7 +89,7 @@ const EventPage = () => {
                 {isFetchingNextPage && <div>Loading more...</div>}
                 {!hasNextPage && !isFetchingNextPage && data && <div className='font-bold text-2xl'>. . .</div>}
             </div>
-        </main>
+        </main >
     );
 };
 

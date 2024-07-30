@@ -1,7 +1,8 @@
-export const Input = ({ id, require, label, type, placeholder, title, reactHookForm, className, errors, ...rest }) => {
+export const Input = ({ id, require, label, type, placeholder, title, reactHookForm, className, errors, labelStyles, ...rest }) => {
     return (
         <div className='flex-1'>
-            <label htmlFor={id} className='text-gray-300'>{label}</label> {require && <span className='text-rose-500 text-xl'>*</span>}
+            <label htmlFor={id} className={labelStyles ? labelStyles : 'text-gray-300'}>{label}</label> 
+            {require && <span className='text-rose-500 text-xl'>*</span>}
             <input
                 {...rest}
                 id={id}
