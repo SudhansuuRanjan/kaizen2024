@@ -240,7 +240,7 @@ const CartPage = () => {
                             </button>
                         </div>
 
-                        {Math.round((cartItems.reduce((acc, item) => acc + Number(item.events.price), 0) * discount).toFixed(0)) < 50 && <p className='text-rose-500 lg:text-base mt-10 font-semibold text-sm lg:w-fit md:w-fit w-[5rem]'>
+                        {Math.round((cartItems.reduce((acc, item) => acc + Number(item.events.price), 0) * discount).toFixed(0)) < 50 && <p className='text-rose-500 lg:text-base mt-10 font-semibold px-5'>
                             Note: Minimum Payable Amount is ₹ 50.
                         </p>}
                     </div>
