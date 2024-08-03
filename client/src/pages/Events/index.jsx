@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import './Event.css';
 import { Link, useSearchParams } from 'react-router-dom';
 import { BsArrowUpRight } from 'react-icons/bs';

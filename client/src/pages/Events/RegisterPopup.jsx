@@ -51,7 +51,7 @@ const RegisterPopup = ({ event, setPopup }) => {
                 };
             });
 
-            await addEventToCart(data, user.user_id, members);
+            await addEventToCart(data, user.user_id, members, user.id);
             toast.success('Event added to cart successfully');
             setPopup(false);
             navigate('/cart');

@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import RegisterPopup from './RegisterPopup';
 import useAuth from '../../hooks/useAuth';
 import { useState } from 'react';
+import './Event.css';
 
 const EventDetails = () => {
     const [popup, setPopup] = useState(false);
@@ -60,7 +61,7 @@ const EventDetails = () => {
                                         <div>
                                             <div className='flex gap-5 items-center'>
                                                 <img src="https://ragam.co.in/images/assets/circle%20selected.svg" alt="wsw" />
-                                                <h3 className='font-bold text-2xl'>About the event</h3>
+                                                <h3 className='font-bold lg:text-2xl text-xl'>About the event</h3>
                                             </div>
                                             <p className='details-text'>
                                                 {data.description}
@@ -79,7 +80,7 @@ const EventDetails = () => {
                                                         })
                                                     }
                                                 </div>
-                                                <div className='flex items-center gap-2 justify-center'>
+                                                <div className='flex items-center gap-2 justify-center lg:text-2xl text-xl'>
                                                     <h3>Team Size:</h3>
                                                     <span className='text-yellow-500'>{data.minMembers == '1' && data.maxMembers == '1' ? 'Solo' : data.minMembers} </span>
                                                     {data.maxMembers != data.minMembers && <><span className='text-yellow-500'>to</span>
@@ -88,11 +89,11 @@ const EventDetails = () => {
                                                 </div>
                                             </div>
                                             <div className='flex py-10 pt-6 lg:flex-row md:flex-row flex-col justify-between items-start gap-4 text-xl w-[100%] font-medium border-bottom'>
-                                                <div className='flex items-center gap-2 justify-center'>
+                                                <div className='flex items-center gap-2 justify-center lg:text-2xl text-xl'>
                                                     <h3>Prize Pool:</h3>
-                                                    <span className='text-yellow-500 font-bold text-2xl'> {data.prizes}</span>
+                                                    <span className='text-yellow-500 font-bold'> {data.prizes}</span>
                                                 </div>
-                                                <div className='flex items-center gap-2 justify-center'>
+                                                <div className='flex items-center gap-2 justify-center lg:text-2xl text-xl'>
                                                     <h3>Registration Fee:</h3>
                                                     <span className='text-yellow-500'> ₹{data.price}</span>
                                                 </div>

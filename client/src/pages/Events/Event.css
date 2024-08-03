@@ -282,6 +282,22 @@
         flex-direction: column;
     }
 
+    .category-btn {
+        border-radius: 0.6rem;
+        padding: 0.3rem 0.8rem;
+        margin: 0.3rem;
+        font-size: 1.1rem;
+    }
+
+    .event-category-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0.5rem;
+        padding-bottom: 3rem;
+        flex-wrap: wrap;
+    }
 }
 
 
@@ -292,7 +308,7 @@
     }
 
     .event-page-head h1 {
-        font-size: 4rem;
+        font-size: 3.2rem;
         font-weight: 600;
         line-height: 4rem;
         margin: 0;
@@ -333,6 +349,18 @@
         display: flex;
         flex-direction: column;
     }
+
+    .register-btn {
+        border-radius: 0.6rem;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    .rulebook-btn {
+        border-radius: 0.6rem;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -342,7 +370,7 @@
     }
 
     .event-page-head h1 {
-        font-size: 3.3rem;
+        font-size: 2.8rem;
         font-weight: 600;
         line-height: 3.5rem;
         margin: 0;
@@ -383,5 +411,17 @@
         display: flex;
         flex-direction: column;
         max-width: calc(100% - 3rem);
+    }
+
+    .register-btn {
+        border-radius: 0.6rem;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    .rulebook-btn {
+        border-radius: 0.6rem;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
     }
 }
