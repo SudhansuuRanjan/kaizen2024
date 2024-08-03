@@ -99,12 +99,13 @@ const CartPage = () => {
 
         try {
             const txnId = generateTxnId();
+            const final_amount = Math.round(cartItems.reduce((acc, item) => acc + Number(item.events.price), 0) * discount);
 
             const data = {
                 user_id: user.id,
                 clientTxnId: txnId,
                 user_email: email,
-                amount: (cartItems.reduce((acc, item) => acc + Number(item.events.price), 0) * discount).toFixed(0),
+                amount: final_amount > 50 ? final_amount : 50,
                 cart_data: cartItems
             }
 
@@ -220,10 +221,10 @@ const CartPage = () => {
                                         <span className='text-red-500 text-base' style={{
                                             textDecoration: 'line-through',
                                         }}>
-                                            ₹ {cartItems.reduce((acc, item) => acc + Number(item.events.price), 0).toFixed(0)}
+                                            ₹ {Math.round(cartItems.reduce((acc, item) => acc + Number(item.events.price), 0))}
                                         </span>
                                         <span className='font-bold'>
-                                            ₹  {(cartItems.reduce((acc, item) => acc + Number(item.events.price), 0) * discount).toFixed(0)}
+                                            ₹  {Math.round((cartItems.reduce((acc, item) => acc + Number(item.events.price), 0) * discount).toFixed(0))}
                                         </span>
                                     </span>
                                     <p className='text-green-500 lg:text-base text-sm lg:w-fit md:w-fit w-[5rem]'>
@@ -238,6 +239,10 @@ const CartPage = () => {
                                 Proceed to Pay
                             </button>
                         </div>
+
+                        {Math.round((cartItems.reduce((acc, item) => acc + Number(item.events.price), 0) * discount).toFixed(0)) < 50 && <p className='text-rose-500 lg:text-base mt-10 font-semibold text-sm lg:w-fit md:w-fit w-[5rem]'>
+                            Note: Minimum Payable Amount is ₹ 50.
+                        </p>}
                     </div>
                 }
             </div>

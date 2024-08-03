@@ -77,26 +77,19 @@ export const updateUserDoc = async (COLLECTION_ID, DOCUMENT_ID, data) => {
 }
 
 
-export const addEventToCart = async (data, user_id, team_members, uid) => {
+export const addEventToCart = async (user, data, team_members) => {
     // Check if the user has already added the event to cart
     try {
         const { data: cartExist } = await supabase
             .from('cart')
             .select('*')
             .eq('event_id', data.event_id)
-            .eq('user_id', user_id)
+            .eq('user_id', user.id)
 
 
         if (cartExist.length > 0) {
             throw new Error('Event already added to cart');
         }
-
-        // const { data: eventPurchased } = await supabase
-        //     .from('purchased_events')
-        //     .select('*')
-        //     .eq('event_id', data.event_id)
-        //     .eq('user_id', user_id)
-
 
         const { data: eventPurchased } = await supabase
             .from('purchased_events_members')
@@ -105,7 +98,7 @@ export const addEventToCart = async (data, user_id, team_members, uid) => {
             self:profiles(*),
             purchased_events_members(*,profiles(*)))
             `)
-            .eq('user_id', uid)
+            .eq('user_id', user.user_id)
 
         if (eventPurchased.length > 0) {
             for (let i = 0; i < eventPurchased.length; i++) {
@@ -122,10 +115,10 @@ export const addEventToCart = async (data, user_id, team_members, uid) => {
 
 
         team_members = team_members.map(member => {
-            return { ...member, cart_id: cart[0].id, uid: user_id }
+            return { ...member, cart_id: cart[0].id, uid: user.user_id }
         })
 
-        const { data: members, error: memberError } = await supabase
+        const { data: members } = await supabase
             .from('members')
             .insert(team_members)
             .select('*')
@@ -133,6 +126,7 @@ export const addEventToCart = async (data, user_id, team_members, uid) => {
 
         return { cart, members };
     } catch (error) {
+        console.log(error);
         throw new Error(error.message);
     }
 }
