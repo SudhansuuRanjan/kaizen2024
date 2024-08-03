@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { day1, day2, day3, day4, day5 } from '../../utils/Schedule'
 import { MdLocationPin, MdAccessTimeFilled } from 'react-icons/md'
 import "./Schedule.scss"
@@ -6,10 +6,13 @@ import "./Schedule.scss"
 
 const Schedule = () => {
     const [day, setDay] = useState(day1);
-    document.title = 'Schedule | Kaisen 2023';
+
+    useEffect(() => {
+        document.title = 'Schedule | Kaizen 2024';
+    },[])
 
     return (
-        <div className='bg-black pb-24 min-h-screen'>
+        <div className='pb-24 min-h-screen'>
             <div className='cart-banner'>
                 <h1 className='cart-head lg:mx-0 md:mx-0 mx-5'>Schedule</h1>
             </div>
