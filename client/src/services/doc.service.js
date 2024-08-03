@@ -76,7 +76,8 @@ export const updateUserDoc = async (COLLECTION_ID, DOCUMENT_ID, data) => {
     }
 }
 
-export const addEventToCart = async (data, user_id, team_members) => {
+
+export const addEventToCart = async (data, user_id, team_members, uid) => {
     // Check if the user has already added the event to cart
     try {
         const { data: cartExist } = await supabase
@@ -85,15 +86,26 @@ export const addEventToCart = async (data, user_id, team_members) => {
             .eq('event_id', data.event_id)
             .eq('user_id', user_id)
 
+
         if (cartExist.length > 0) {
             throw new Error('Event already added to cart');
         }
 
+        // const { data: eventPurchased } = await supabase
+        //     .from('purchased_events')
+        //     .select('*')
+        //     .eq('event_id', data.event_id)
+        //     .eq('user_id', user_id)
+
+
         const { data: eventPurchased } = await supabase
-            .from('purchased_events')
-            .select('*')
-            .eq('event_id', data.event_id)
-            .eq('user_id', user_id)
+            .from('purchased_events_members')
+            .select(`*,
+            cart:purchased_events(*,
+            self:profiles(*),
+            purchased_events_members(*,profiles(*)))
+            `)
+            .eq('user_id', uid)
 
         if (eventPurchased.length > 0) {
             throw new Error('Event already purchased');
@@ -236,8 +248,6 @@ export const getPurchasedEvents = async (table, user_id) => {
             purchased_events_members(*,profiles(*))
             `)
             .eq('user_id', user_id)
-
-        console.log(data);
 
         if (error) {
             throw new Error(error.message);

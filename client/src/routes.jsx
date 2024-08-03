@@ -18,6 +18,9 @@ const Profile = lazy(() => import('./pages/User/Profile'));
 const Cart = lazy(() => import('./pages/Cart/CartPage'));
 const Events = lazy(() => import('./pages/Events'));
 const EditProfile = lazy(() => import('./pages/User/EditProfile'));
+const BasicRegistration = lazy(() => import('./pages/basicregistration/BasicRegistration'));
+const Pass = lazy(() => import('./pages/basicregistration/Pass'));
+const BasicRegistrationLandingPage = lazy(() => import('./pages/basicregistration/PassLandingPage'));
 
 const routes = () => {
     return (
@@ -40,6 +43,9 @@ const routes = () => {
                 <Route path='/cart' element={<PrivateRoute><Cart /></PrivateRoute>} />
                 <Route path='/profile' element={<PrivateRoute><Profile /></PrivateRoute>} />
                 <Route path='/edit-profile' element={<PrivateRoute><EditProfile /></PrivateRoute>} />
+                <Route path='/basic-registration' element={<PrivateRoute><BasicRegistration /></PrivateRoute>} />
+                <Route path='/pass' element={<Pass />} />
+                <Route path='/basicregistration' element={<BasicRegistrationLandingPage />} />
             </Route>
 
             <Route path="/signin" element={<SignIn />} />
