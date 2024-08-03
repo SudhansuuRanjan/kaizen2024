@@ -74,7 +74,7 @@ const GetPass = () => {
                 toast.error('Some error occurred! Please try again later!');
             } finally {
                 setVerifyingPayment(false);
-                // navigate('/basicregistration');
+                navigate('/basicregistration');
             }
         }
     }
