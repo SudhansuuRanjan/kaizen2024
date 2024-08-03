@@ -60,7 +60,7 @@ const EventDetails = () => {
                                     <div className='event-details-container'>
                                         <div>
                                             <div className='flex gap-5 items-center'>
-                                                <img src="https://ragam.co.in/images/assets/circle%20selected.svg" alt="wsw" />
+                                                <img src="circle-selected.svg" alt="wsw" />
                                                 <h3 className='font-bold lg:text-2xl text-xl'>About the event</h3>
                                             </div>
                                             <p className='details-text'>
