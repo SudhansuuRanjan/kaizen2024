@@ -52,7 +52,7 @@ router.post("/check-promo-code", checkApiKey, async (req, res) => {
         const totalAmount = persons.length * price;
 
         // apply 10% discount if group has 10 or more members
-        if (persons.length > groupDiscountReqMembers) {
+        if (persons.length >= groupDiscountReqMembers) {
             let discountAmount = (totalAmount * 10) / 100;
             amounts.grp_discount = discountAmount;
             amounts.final_amount = totalAmount - amounts.grp_discount;
@@ -97,7 +97,7 @@ router.post("/create-pass-purchase-payment", checkApiKey, async (req, res) => {
     const totalAmount = members.length * price;
 
     // apply 10% discount if group has 10 or more members
-    if (members.length > groupDiscountReqMembers) {
+    if (members.length >= groupDiscountReqMembers) {
         let discountAmount = (totalAmount * 10) / 100;
         amounts.grp_discount = discountAmount;
     }

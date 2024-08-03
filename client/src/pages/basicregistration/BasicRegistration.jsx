@@ -130,7 +130,6 @@ const GetPass = () => {
         }
         try {
             const res = await applyPromoCode(promoCode, peoples);
-            console.log(res);
             if (res.status === 'success') {
                 toast.success(res.message);
                 setDiscountedPrice(res.amounts);
@@ -138,12 +137,6 @@ const GetPass = () => {
             }
         } catch (error) {
             toast.error(error.response.data.message);
-            setDiscountedPrice({
-                total_amount: 0,
-                grp_discount: 0,
-                promo_discount: 0,
-                final_amount: 0
-            });
             setIsPromoCodeApplied(false);
         }
     }
