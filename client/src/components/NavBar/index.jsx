@@ -121,7 +121,7 @@ const NavBar = () => {
                                 setMenu(false);
                             }
                         }}
-                        className="animate-pulse md:hidden text-gray-900 bg-yellow-50 hover:bg-yellow-50 border border-gray-200 focus:ring-[2.5px] focus:outline-none focus:ring-yellow-200 font-medium rounded-lg text-lg px-2.5 py-2.5 text-center items-center dark:focus:ring-gray-400 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 mr-2"
+                        className="animate-pulse md:hidden border focus:ring-[2.5px] focus:outline-none font-medium rounded-lg text-lg px-2.5 py-2.5 text-center items-center focus:ring-gray-400 bg-gray-800 border-gray-700 text-white hover:bg-gray-700 mr-2"
                     >
                         {!menu ? <HiMenuAlt3 /> : <FiX />}
                     </button>
