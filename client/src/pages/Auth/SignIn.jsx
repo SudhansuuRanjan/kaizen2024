@@ -1,14 +1,16 @@
 import React, { useEffect } from 'react';
 import useAuth from '../../hooks/useAuth';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 const SignIn = () => {
   const { session, signIn } = useAuth();
+  const { redirect_url } = useSearchParams();
   const navigate = useNavigate();
+
 
   useEffect(() => {
     if (session) {
-      navigate('/profile');
+      navigate(redirect_url ? redirect_url : '/profile');
     }
   }, [session, navigate]);
 
@@ -19,7 +21,7 @@ const SignIn = () => {
       <p className='lg:text-4xl text-3xl my-5 text-sky-500 font-semibold stylysed'>Enchated <span className='text-white'>Woods.</span></p>
       <button
         className='text-gray-700 px-6 rounded-full flex items-center py-2 bg-white lg:text-base text-sm font-semibold shadow-lg hover:bg-gray-100 transition-all duration-200 my-5 mt-20'
-        onClick={() => signIn('google')}
+        onClick={() => signIn('google', redirect_url ? redirect_url : '/profile')}
       >
         <img src="google-logo.svg" alt="google" className='h-6 mr-4' />
         <p>Sign In with Google</p>

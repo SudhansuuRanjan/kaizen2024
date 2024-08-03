@@ -41,11 +41,11 @@ const AuthProvider = ({ children }) => {
     const contextData = {
         session,
         user,
-        signIn: async (provider) => {
+        signIn: async (provider, redirect_url) => {
             await supabase.auth.signInWithOAuth({
                 provider,
                 options: {
-                    redirectTo: import.meta.env.VITE_APP_SUPABASE_REDIRECT_URI + '/auth/success',
+                    redirectTo: import.meta.env.VITE_APP_SUPABASE_REDIRECT_URI + '/auth/success?redirect_url=' + redirect_url,
                     queryParams: {
                         access_type: 'offline',
                         prompt: 'consent',
@@ -55,6 +55,7 @@ const AuthProvider = ({ children }) => {
         },
         signOut: async () => {
             await supabase.auth.signOut();
+            setUser(null);
             navigate('/');
         }
     }

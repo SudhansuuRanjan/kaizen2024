@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import useAuth from '../../hooks/useAuth'
 import ConfettiExplosion from 'react-confetti-explosion';
-import { getCurrentUserProfile, getPurchasedEvents, getPurchasedSharedEvents } from '../../services/doc.service';
+import { getCurrentUserProfile, getPurchasedSharedEvents } from '../../services/doc.service';
 import { useQuery } from '@tanstack/react-query';
 import EventItem from './EventItem';
 import { Link } from 'react-router-dom';
@@ -78,14 +78,15 @@ const Profile = () => {
                                 <p className='text-yellow-500 mt-4'>Gender: <span className='text-white'>{user.gender}</span></p>
                                 <p className='text-yellow-500'>Contact No.: <span className='text-white'>{user.mobile}</span></p>
                                 <p className='text-yellow-500'>Email: <span className='text-white'>{user.email}</span></p>
-                                <p className='text-yellow-500'>City: <span className='text-white'>{user.address}</span></p>
+                                
                             </div>
 
                             <div className='flex flex-col gap-2 lg:w-[50%] md:w-[50%]'>
                                 <p className='text-xl font-semibold text-yellow-400'>College Details</p>
                                 <p className='text-yellow-500 mt-4'>College: <span className='text-white'>{user.college}</span></p>
-                                <p className='text-yellow-500'>Year of Study: <span className='text-white'>{user.year}</span></p>
-                                <p className='text-yellow-500'>Course: <span className='text-white'>{user.course}</span></p>
+                                <p className='text-yellow-500'>City: <span className='text-white'>{user.address}</span></p>
+                                {/* <p className='text-yellow-500'>Year of Study: <span className='text-white'>{user.year}</span></p>
+                                <p className='text-yellow-500'>Course: <span className='text-white'>{user.course}</span></p> */}
                             </div>
                         </div>
 

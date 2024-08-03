@@ -4,12 +4,13 @@ import { updateUserProfile, createProfile } from '../../services/doc.service';
 import { toast } from 'react-toastify';
 import { Input, Select } from '../../components/Form';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import generateRandomID from '../../utils/generateRandomID';
 
 const AuthSuccess = () => {
   const { session, user } = useAuth();
   const navigate = useNavigate();
+  const { redirect_url } = useSearchParams();
   const { register, reset, handleSubmit, formState: { errors }, setValue } = useForm({ trim: true });
 
   useEffect(() => {
@@ -39,7 +40,7 @@ const AuthSuccess = () => {
     try {
       await updateUserProfile('profiles', session.user.id, data);
       toast.success('User updated successfully');
-      navigate('/profile');
+      navigate(redirect_url);
     } catch (error) {
       console.log(error);
       toast.error('An error occurred while updating user');

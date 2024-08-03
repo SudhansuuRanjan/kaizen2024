@@ -1,12 +1,12 @@
 import { Navigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
-import supabase from '../../config/supabase';
 
 const PrivateRoute = ({ children }) => {
   const { session } = useAuth();
 
   if (!session) {
-    return <Navigate to="/signin" />;
+    const url = window.location.pathname;
+    return <Navigate to={`/signin?redirect_url=${url}`} />;
   }
 
   return children;
