@@ -52,16 +52,6 @@ const NavBar = () => {
                             }
 
                         >
-                            <Link to="/profile">Profile</Link>
-                        </li>
-                        <li
-                            className={
-                                focus === 1
-                                    ? "hover:underline mx-3 border-yellow-300  border-[3px]  bg-yellow-50 dark:bg-[#7b2c5d] px-2 py-1"
-                                    : "hover:underline px-2 py-1 mx-3 border-[3px] border-none dark:border-gray-800"
-                            }
-
-                        >
                             <Link to="/pronite">Pronite</Link>
                         </li>
                         <li
@@ -83,6 +73,16 @@ const NavBar = () => {
 
                         >
                             <Link to="/schedule">Schedule</Link>
+                        </li>
+                        <li
+                            className={
+                                focus === 1
+                                    ? "hover:underline mx-3 border-yellow-300  border-[3px]  bg-yellow-50 dark:bg-[#7b2c5d] px-2 py-1"
+                                    : "hover:underline px-2 py-1 mx-3 border-[3px] border-none dark:border-gray-800"
+                            }
+
+                        >
+                            <Link to="/profile">Profile</Link>
                         </li>
                         {/* {session && <li
                             className={
