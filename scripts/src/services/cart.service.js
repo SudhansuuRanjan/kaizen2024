@@ -19,6 +19,65 @@ const getUserEventCart = async (table, user_id) => {
     }
 }
 
+const addFreeEventToPurchased = async (user, event, team_members) => {
+    try {
+        const { data, error } = await supabase
+            .from('purchased_events')
+            .insert({
+                event_id: event.event_id,
+                user_id: user.user_id,
+                user_email: user.user_email,
+            })
+            .select(`id`)
+
+        if (error) {
+            throw new Error(error);
+        }
+
+        const members = team_members.map((member) => {
+            return {
+                event_id: member.event_id,
+                user_id: member.user_id,
+                cart_id: data[0].id,
+                uid: user.user_id,
+            }
+        })
+
+        const { error: memberError } = await supabase
+            .from('purchased_events_members')
+            .insert(members)
+
+        if (memberError) {
+            throw new Error(memberError);
+        }
+
+    } catch (error) {
+        throw error;
+    }
+}
+
+const getFreeEventFromProfile = async (user_id, event_id) => {
+    try {
+        const { data: registrationData, error } = await supabase
+            .from('purchased_events_members')
+            .select(`*,
+            cart:purchased_events(*,
+            events(*),
+            purchased_events_members(*,profiles(*)))
+            `)
+            .eq('event_id', event_id)
+            .eq('uid', user_id)
+
+        if (error) {
+            throw error;
+        }
+
+        return registrationData;
+    } catch (error) {
+        throw error;
+    }
+}
+
 
 const addEventsToPurchased = async (user_id, event, team_members) => {
     // Check if the user has already added the event to cart
@@ -130,5 +189,7 @@ module.exports = {
     clearUserCart,
     createCartPaymentTransaction,
     getCartPaymentTransaction,
-    updateCartPaymentTransaction
+    updateCartPaymentTransaction,
+    addFreeEventToPurchased,
+    getFreeEventFromProfile
 }

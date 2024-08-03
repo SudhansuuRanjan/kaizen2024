@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import useAuth from "../../hooks/useAuth";
-import { addEventToCart, searchUserProfiles } from '../../services/doc.service';
+import { addEventToCart, searchUserProfiles, checkEventAlreadyPurchased } from '../../services/doc.service';
+import { handleFreeEvent } from '../../services/payment.service';
 import { useState, useEffect, useCallback } from 'react';
 import { FiPlusCircle } from "react-icons/fi";
 import { FaTrash } from "react-icons/fa";
@@ -51,7 +52,21 @@ const RegisterPopup = ({ event, setPopup }) => {
                 };
             });
 
-            await addEventToCart(data, user.user_id, members, user.id);
+            if (event.price == 0) {
+                data.price = event.price;
+                const eventAlreadyExist = await checkEventAlreadyPurchased(user.id, event.id);
+                if (eventAlreadyExist) {
+                    toast.warn('You have already registered for this event.');
+                    setPopup(false);
+                    return navigate('/profile');
+                }
+                await handleFreeEvent(user, data, members);
+                toast.success('This event is free, you have been registered successfully');
+                setPopup(false);
+                return navigate('/profile');
+            }
+
+            await addEventToCart(user, data, members);
             toast.success('Event added to cart successfully');
             setPopup(false);
             navigate('/cart');

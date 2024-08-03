@@ -115,7 +115,7 @@ export const addEventToCart = async (data, user_id, team_members, uid) => {
             }
         }
 
-        const { data: cart} = await supabase
+        const { data: cart } = await supabase
             .from('cart')
             .insert(data)
             .select('*')
@@ -276,8 +276,6 @@ export const getPurchasedSharedEvents = async (table, user_id) => {
             `)
             .eq('user_id', user_id)
 
-        console.log(data);
-
         if (error) {
             console.log(error);
             throw new Error(error.message);
@@ -400,4 +398,22 @@ export const updateInternalTransaction = async (table, txnid, data) => {
     }
 
     return transaction;
-}    
+}
+
+export const checkEventAlreadyPurchased = async (user_id, event_id) => {
+    try {
+        const { data: eventPurchased } = await supabase
+            .from('purchased_events_members')
+            .select(`*`)
+            .eq('event_id', event_id)
+            .eq('user_id', user_id)
+
+        if (eventPurchased.length > 0) {
+            return true;
+        }
+
+        return false;
+    } catch (error) {
+        throw new Error(error.message);
+    }
+}

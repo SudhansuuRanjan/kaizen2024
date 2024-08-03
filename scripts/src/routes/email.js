@@ -23,7 +23,7 @@ router.post('/internal-payment-confirmation', checkApiKey, async (req, res) => {
     }
 })
 
-router.post('/send-pass-mail', async (req, res) => {
+router.post('/process-mail-queue', async (req, res) => {
     try {
         const mailQueue = await getMailQueue();
 
