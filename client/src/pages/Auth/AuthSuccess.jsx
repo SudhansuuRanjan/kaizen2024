@@ -51,6 +51,7 @@ const AuthSuccess = () => {
 
   useEffect(() => {
     if (user && user.mobile && user.college && user.address) {
+      navigate(redirect_url ? redirect_url : '/profile');
       navigate('/profile');
     }
   }, [user, navigate]);
