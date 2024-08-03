@@ -103,8 +103,7 @@ const CartItem = ({ data, refetch }) => {
                 </div>
                 <div className='flex items-center justify-between w-[100%] lg:w-[auto] md:w-[auto]'>
                     <div className='flex gap-10'>
-                        <h3 className='event-members'><span className='font-semibold text-green-500'>Min:</span> {data.events.minMembers + " member(s)"}</h3>
-                        <h3 className='event-members'><span className='font-semibold text-rose-500'>Max:</span> {data.events.maxMembers + " member(s)"}</h3>
+                        <h3 className='event-members'><span className='font-semibold text-green-500'>Team Size:</span> {data.events.maxMembers == data.events.minMembers ? data.events.minMembers : data.events.minMembers+  " - " + data.events.maxMembers}</h3>
                         <h1 className='event-price text-yellow-400 font-medium text-lg'>₹ {data.events.price}</h1>
                     </div>
                     <div className='pl-5'>

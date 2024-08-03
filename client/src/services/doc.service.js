@@ -110,7 +110,7 @@ export const addEventToCart = async (data, user_id, team_members, uid) => {
         if (eventPurchased.length > 0) {
             for (let i = 0; i < eventPurchased.length; i++) {
                 if (eventPurchased[i].event_id === data.event_id) {
-                    throw new Error('Event already purchased1');
+                    throw new Error('Event already purchased!');
                 }
             }
         }

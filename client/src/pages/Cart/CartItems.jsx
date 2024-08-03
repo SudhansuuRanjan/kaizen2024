@@ -106,8 +106,7 @@ const CartItem = ({ data, handleDelete, refetch }) => {
                 </div>
                 <div className='flex flex-wrap items-center justify-between w-[100%] lg:w-[auto] md:w-[auto]'>
                     <div className='flex lg:gap-10 gap-4'>
-                        <h3 className='event-members'><span className='font-semibold text-green-500'>Min:</span> {data.events.minMembers}</h3>
-                        <h3 className='event-members'><span className='font-semibold text-rose-500'>Max:</span> {data.events.maxMembers}</h3>
+                        <h3 className='event-members'><span className='font-semibold text-green-500'>Team Size:</span> {data.events.maxMembers == data.events.minMembers ? data.events.minMembers : data.events.minMembers+  " - " + data.events.maxMembers}</h3>
                         <h1 className='event-price text-yellow-400 font-medium text-lg'>₹ {data.events.price}</h1>
                     </div>
                     <div className='pl-5'>
@@ -122,7 +121,7 @@ const CartItem = ({ data, handleDelete, refetch }) => {
             <div className="card-down w-[100%]">
                 <div className='add-members-form w-full'>
                     <div className='flex flex-col gap-2 w-full'>
-                        <h1 className='font-medium text-gray-500'>Added Participants</h1>
+                        <h1 className='font-medium text-gray-500'>Participants</h1>
 
                         {
                             data.minMembers > 1 && members.length === 0 && <div className='text-red-500 font-light text-sm'> You haven't added any members yet.</div>
