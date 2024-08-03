@@ -104,7 +104,7 @@ const CartPage = () => {
                 user_id: user.id,
                 clientTxnId: txnId,
                 user_email: email,
-                amount: cartItems.reduce((acc, item) => acc + Number(item.events.price), 0) * discount,
+                amount: (cartItems.reduce((acc, item) => acc + Number(item.events.price), 0) * discount).toFixed(0),
                 cart_data: cartItems
             }
 
@@ -220,10 +220,10 @@ const CartPage = () => {
                                         <span className='text-red-500 text-base' style={{
                                             textDecoration: 'line-through',
                                         }}>
-                                            ₹ {cartItems.reduce((acc, item) => acc + Number(item.events.price), 0)}
+                                            ₹ {cartItems.reduce((acc, item) => acc + Number(item.events.price), 0).toFixed(0)}
                                         </span>
                                         <span className='font-bold'>
-                                            ₹  {cartItems.reduce((acc, item) => acc + Number(item.events.price), 0) * discount}
+                                            ₹  {(cartItems.reduce((acc, item) => acc + Number(item.events.price), 0) * discount).toFixed(0)}
                                         </span>
                                     </span>
                                     <p className='text-green-500'>
