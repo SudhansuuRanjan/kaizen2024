@@ -59,7 +59,7 @@ const GetPass = () => {
             setVerifyingPayment(true);
             try {
                 const response = await updatePassPaymentTransaction({ clientTxnId: params.clientTxnId });
-
+                console.log(response);
                 if (response.status === 'SUCCESS') {
                     toast.success('Payment Successful! Your basic registration pass will be sent to your email shortly.');
                 } else if (response.status === 'FAILED') {
@@ -70,10 +70,11 @@ const GetPass = () => {
                     toast.error('If the amount has been deducted from your account, please wait for 24 hours for payment verification.');
                 }
             } catch (error) {
+                console.log(error);
                 toast.error('Some error occurred! Please try again later!');
             } finally {
                 setVerifyingPayment(false);
-                navigate('/basicregistration');
+                // navigate('/basicregistration');
             }
         }
     }
