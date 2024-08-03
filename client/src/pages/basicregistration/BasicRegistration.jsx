@@ -89,6 +89,13 @@ const GetPass = () => {
             setGt10(false);
         }
         setIsPromoCodeApplied(false);
+        setDiscountedPrice({
+            ...discountedPrice,
+            total_amount: newData.length * currentPrice,
+            grp_discount: newData.length >= 10 ? newData.length * currentPrice * 0.1 : 0,
+            promo_discount: 0,
+            final_amount: newData.length * currentPrice - discountedPrice.grp_discount
+        });
     }
 
     const handleDelete = (id) => {
@@ -97,6 +104,14 @@ const GetPass = () => {
         setPeoples(newPeoples);
         setIsPromoCodeApplied(false);
         setPromoCode('');
+
+        setDiscountedPrice({
+            ...discountedPrice,
+            total_amount: newPeoples.length * currentPrice,
+            grp_discount: newPeoples.length >= 10 ? newPeoples.length * currentPrice * 0.1 : 0,
+            promo_discount: 0,
+            final_amount: newPeoples.length * currentPrice - discountedPrice.grp_discount
+        });
 
         if (newPeoples.length < 10) {
             setGt10(false);
@@ -195,7 +210,7 @@ const GetPass = () => {
                 final_amount: peoples.length * currentPrice - (peoples.length >= 10 ? peoples.length * currentPrice * 0.1 : 0)
             })
         }
-    }, [user])
+    }, [user, peoples])
 
 
     return (
