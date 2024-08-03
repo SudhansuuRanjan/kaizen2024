@@ -17,7 +17,7 @@ const GetPass = () => {
     const { register, reset, handleSubmit, formState: { errors }, setValue } = useForm({ trim: true });
 
     const navigate = useNavigate();
-
+    const [totalAmount, setTotalAmount] = useState(0);
     const [peoples, setPeoples] = useState([]);
     const [hasPromoCode, setHasPromoCode] = useState(false);
     const [promoCode, setPromoCode] = useState('');

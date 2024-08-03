@@ -71,7 +71,7 @@ const RegisterPopup = ({ event, setPopup }) => {
             setPopup(false);
             navigate('/cart');
         } catch (error) {
-            toast.error('Error adding event to cart.');
+            toast.error(error.message);
         } finally {
             setLoading(false);
         }

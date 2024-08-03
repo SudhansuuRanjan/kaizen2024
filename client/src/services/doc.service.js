@@ -84,8 +84,7 @@ export const addEventToCart = async (user, data, team_members) => {
             .from('cart')
             .select('*')
             .eq('event_id', data.event_id)
-            .eq('user_id', user.id)
-
+            .eq('user_id', user.user_id)
 
         if (cartExist.length > 0) {
             throw new Error('Event already added to cart');
@@ -98,7 +97,9 @@ export const addEventToCart = async (user, data, team_members) => {
             self:profiles(*),
             purchased_events_members(*,profiles(*)))
             `)
-            .eq('user_id', user.user_id)
+            .eq('user_id', user.id)
+
+        console.log(eventPurchased);
 
         if (eventPurchased.length > 0) {
             for (let i = 0; i < eventPurchased.length; i++) {
@@ -126,8 +127,7 @@ export const addEventToCart = async (user, data, team_members) => {
 
         return { cart, members };
     } catch (error) {
-        console.log(error);
-        throw new Error(error.message);
+        throw new Error(error);
     }
 }
 
