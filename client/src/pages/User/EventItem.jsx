@@ -118,7 +118,7 @@ const CartItem = ({ data, refetch }) => {
             <div className="card-down w-[100%]">
                 <div className='add-members-form w-full'>
                     <div className='flex flex-col gap-2 w-full'>
-                        <h1 className='font-medium text-gray-500'>Added Participants</h1>
+                        <h1 className='font-medium text-gray-500'>Participants</h1>
 
                         {
                             data.minMembers > 1 && members.length === 0 && <div className='text-red-500 font-light text-sm'> You haven't added any members yet.</div>

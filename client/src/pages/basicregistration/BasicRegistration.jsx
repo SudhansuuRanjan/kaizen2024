@@ -8,6 +8,7 @@ import { Input } from '../../components/Form';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../hooks/useAuth';
 import { applyPromoCode, createPassTransaction } from '../../services/br.service';
+const currentPrice = 5;
 
 const GetPass = () => {
     document.title = "Kaizen | Basic Registration";
@@ -112,7 +113,7 @@ const GetPass = () => {
             }
         } catch (error) {
             toast.error(error.response.data.message);
-            setDiscountedPrice(peoples.length * 1200);
+            setDiscountedPrice(peoples.length * currentPrice);
             setIsPromoCodeApplied(false);
         }
     }
@@ -375,7 +376,7 @@ const GetPass = () => {
                                 </div>
                                 <div className='flex flex-col items-end justify-between'>
                                     <button onClick={() => handleDelete(people.id)} className='text-red-500 cursor-pointer' type="submit"><AiFillDelete size={25} /></button>
-                                    <h6 className='text-blue-500 font-semibold'>₹1200</h6>
+                                    <h6 className='text-blue-500 font-semibold'>₹{currentPrice}</h6>
                                 </div>
                             </div>
                         ))}
@@ -403,7 +404,7 @@ const GetPass = () => {
                         {peoples.length < 10 ? <h1 className='text-2xl font-semibold text-green-500'>
                             <span className={`${isPromoCodeApplied && 'line-through text-lg mr-3 text-red-500'}`}>
                                 {
-                                    peoples.length === 0 ? '₹0' : `₹${peoples.length * 1200}`
+                                    peoples.length === 0 ? '₹0' : `₹${peoples.length * currentPrice}`
                                 }
                             </span>
                             <span>
@@ -415,7 +416,7 @@ const GetPass = () => {
                             <h1 className='text-2xl font-semibold text-green-500'>
                                 <span className={`${isPromoCodeApplied && 'line-through text-lg mr-3 text-red-500'}`}>
                                     {
-                                        `₹${peoples.length * 1200 - 1200}`
+                                        `₹${peoples.length * currentPrice - currentPrice}`
                                     }
                                 </span>
                                 <span>
