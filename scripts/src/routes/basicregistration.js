@@ -42,7 +42,7 @@ router.post("/check-promo-code", checkApiKey, async (req, res) => {
             });
         }
 
-        const total = persons.length * 1200;
+        const total = persons.length * price;
         const discountAmount = (total * promocode.discount) / 100;
         const totalAmountAfterDiscount = (total - discountAmount).toFixed(0);
 
