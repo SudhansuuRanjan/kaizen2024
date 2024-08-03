@@ -40,7 +40,7 @@ const AuthSuccess = () => {
     try {
       await updateUserProfile('profiles', session.user.id, data);
       toast.success('User updated successfully');
-      navigate(redirect_url);
+      navigate(redirect_url ? redirect_url : '/profile');
     } catch (error) {
       console.log(error);
       toast.error('An error occurred while updating user');
