@@ -180,21 +180,21 @@ const RegisterPopup = ({ event, setPopup }) => {
                                 />
                             </form>
 
-                            <div className='bg-slate-800 rounded-md mt-2'>
+                            <div className='rounded-md mt-2 flex flex-col gap-1'>
                                 {isPending ? (
                                     <div>Loading...</div>
                                 ) : isError ? (
                                     <div>Error loading users.</div>
                                 ) : (
                                     data.map((user, id) => (
-                                        <div key={id} className='flex gap-2 text-sm items-center p-1 rounded-lg flex-wrap bg-opacity-20'>
+                                        <div key={id} className='flex border gap-1 border-green-500  text-sm items-center p-1 rounded-lg flex-wrap'>
                                             <input
                                                 required
                                                 value={user.name}
                                                 type="text"
                                                 name="name"
                                                 id="name"
-                                                className='border-2 border-gray-600 bg-gray-900 font-medium rounded-md px-2 py-0.5 flex-1'
+                                                className='border border-gray-600 bg-gray-900 font-medium rounded-md px-2 py-0.5'
                                                 placeholder='Name'
                                                 disabled
                                             />
@@ -204,7 +204,7 @@ const RegisterPopup = ({ event, setPopup }) => {
                                                 type="email"
                                                 name="email"
                                                 id="email"
-                                                className='border-2 border-gray-600 bg-gray-900 text-white rounded-md px-2 py-0.5'
+                                                className='border border-gray-600 bg-gray-900 text-white rounded-md px-2 py-0.5'
                                                 placeholder='Email'
                                                 disabled
                                             />
@@ -214,7 +214,7 @@ const RegisterPopup = ({ event, setPopup }) => {
                                                 type="email"
                                                 name="email"
                                                 id="email"
-                                                className='border-2 border-gray-600 bg-gray-900 text-white rounded-md px-2 py-0.5 flex-1'
+                                                className='border border-gray-600 bg-gray-900 text-white rounded-md px-2 py-0.5 flex-1'
                                                 placeholder='Email'
                                                 disabled
                                             />

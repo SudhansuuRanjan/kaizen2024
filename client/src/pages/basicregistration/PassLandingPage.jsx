@@ -26,7 +26,7 @@ const GetPass = () => {
                 <h1 className='cart-head lg:mx-0 md:mx-0 mx-5'>Basic Registration</h1>
             </div>
             <p className='text-center text-yellow-500 text-lg mb-[7rem] lg:max-w-[55rem] md:max-w-[40rem] w-full px-6 m-auto'>
-                Your basic registration <span className='text-red-500 font-medium'>DOES NOT</span> include participation in cultural, literary, arts, informals and sports competitions. To participate in them, register seperately by <Link to="/events" className='text-blue-400 font-medium'>clicking here</Link>.
+                Your basic registration <span className='text-red-500 font-medium'>DOES NOT</span> include participation in cultural, literary, arts, informals and sports competitions. To participate in them, register seperately <Link to="/events" className='text-blue-400 font-medium'>here</Link>.
             </p>
             <div className='lg:w-[37rem] md:w-[32rem] w-[90%] bg-white rounded-2xl text-gray-700 m-auto mt-5'>
                 <div className='px-5 py-5'>

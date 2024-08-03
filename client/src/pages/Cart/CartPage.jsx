@@ -226,7 +226,7 @@ const CartPage = () => {
                                             ₹  {(cartItems.reduce((acc, item) => acc + Number(item.events.price), 0) * discount).toFixed(0)}
                                         </span>
                                     </span>
-                                    <p className='text-green-500'>
+                                    <p className='text-green-500 lg:text-base text-sm lg:w-fit md:w-fit w-[5rem]'>
                                         AIIMS Patna exclusive 80% discount applied!
                                     </p>
                                 </div>
