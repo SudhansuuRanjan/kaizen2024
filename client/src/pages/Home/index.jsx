@@ -22,7 +22,7 @@ const Home = () => {
       <ArtistLineup />
       <About />
       <Highlights />
-      <CAPopup />
+      {/* <CAPopup /> */}
       <ChiefPatron />
       <Sponsors />
       <FAQs />
