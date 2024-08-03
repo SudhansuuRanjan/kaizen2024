@@ -28,7 +28,7 @@ router.post('/process-mail-queue', async (req, res) => {
         const mailQueue = await getMailQueue();
 
         if (mailQueue.length === 0) {
-            return res.status(404).json({ message: 'No emails in queue' });
+            return res.status(200).json({ message: 'No emails in queue' });
         }
 
         for (let i = 0; i < mailQueue.length; i++) {
