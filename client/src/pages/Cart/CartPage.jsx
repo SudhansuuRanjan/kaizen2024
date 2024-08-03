@@ -153,7 +153,7 @@ const CartPage = () => {
                 }
 
             } catch (error) {
-                console.log(error);
+                // console.log(error);
                 toast.error('Some error occurred! Please try again later!');
             } finally {
                 setVerifyingPayment(false);

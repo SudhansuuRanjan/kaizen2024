@@ -8,6 +8,7 @@ import { Input } from '../../components/Form';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../hooks/useAuth';
 import { applyPromoCode, createPassTransaction } from '../../services/br.service';
+import { updatePassPaymentTransaction } from '../../services/payment.service';
 const currentPrice = 5;
 
 const GetPass = () => {
@@ -48,16 +49,32 @@ const GetPass = () => {
         env: 'prod'
     });
     const [self, setSelf] = useState(false);
+    const [verifyingPayment, setVerifyingPayment] = useState(false);
 
     const getQueryParams = async () => {
         let params = getJsonFromUrl();
         if (!params.status) return;
-        if (params.status === 'SUCCESS') {
-            await handlePurchase(params);
-            navigate('/');
-        } else if (params.status === 'FAILED') {
-            toast.error('Payment Failed! Err code 3');
-            navigate('/')
+
+        if (params.status) {
+            setVerifyingPayment(true);
+            try {
+                const response = await updatePassPaymentTransaction({ clientTxnId: params.clientTxnId });
+
+                if (response.status === 'SUCCESS') {
+                    toast.success('Payment Successful! Your basic registration pass will be sent to your email shortly.');
+                } else if (response.status === 'FAILED') {
+                    toast.error('Payment Failed! Please try again.');
+                    toast.error('If the amount has been deducted from your account, please wait for 24 hours for payment verification.');
+                } else {
+                    toast.error('Some error occurred! Please try again later!');
+                    toast.error('If the amount has been deducted from your account, please wait for 24 hours for payment verification.');
+                }
+            } catch (error) {
+                toast.error('Some error occurred! Please try again later!');
+            } finally {
+                setVerifyingPayment(false);
+                navigate('/basicregistration');
+            }
         }
     }
 
@@ -176,10 +193,6 @@ const GetPass = () => {
         }
     }
 
-    const handlePurchase = async (params) => {
-        console.log("params", params);
-    }
-
     useEffect(() => {
         getPeoples();
         getQueryParams();
@@ -220,6 +233,14 @@ const GetPass = () => {
                     </p>
                 </div>
             }
+
+            {verifyingPayment && (
+                <div className='fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 flex justify-center items-center flex-col gap-3'>
+                    <div className='animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-yellow-500'></div>
+                    <p>Verifying Payment...</p>
+                    <p>Please do not close this window or press back button.</p>
+                </div>
+            )}
 
             <div className='cart-banner'>
                 <h1 className='cart-head lg:mx-0 md:mx-0 mx-5'>Basic Registration</h1>

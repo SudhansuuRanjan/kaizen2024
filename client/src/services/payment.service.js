@@ -79,10 +79,27 @@ const handleFreeEvent = async (user, data, members) => {
     }
 }
 
+const updatePassPaymentTransaction = async (data) => {
+    try {
+        const response = await axios.put(`${import.meta.env.VITE_APP_API_URL}/basicreg/update-pass-purchase-payment`, data, {
+            headers: {
+                'Content-Type': 'application/json',
+                'x-api-key': import.meta.env.VITE_APP_ACCESS_KEY
+            }
+        });
+
+        return response.data;
+    }
+    catch (error) {
+        throw new Error(error.message);
+    }
+}
+
 export {
     createInternalPaymentTransaction,
     updateInternalPaymentTransaction,
     createCartPaymentTransaction,
     updateCartPaymentTransaction,
-    handleFreeEvent
+    handleFreeEvent,
+    updatePassPaymentTransaction
 };
