@@ -11,7 +11,7 @@ import { generateTxnId } from '../../utils/generateRandomID';
 const Alumni = () => {
   document.title = 'Internal Collection | KAIZEN 2024';
   const navigate = useNavigate();
-  const { register, handleSubmit, formState: { errors } } = useForm({ trim: true });
+  const { register, handleSubmit, formState: { errors }, setValue } = useForm({ trim: true });
   const [paymentCredentials, setPaymentCredentials] = useState({
     isOpen: false,
     clientCode: import.meta.env.VITE_PAYMENT_CLIENT_CODE,
@@ -223,9 +223,16 @@ const Alumni = () => {
               require={true}
               options={[
                 { name: 'Resident Doctor', value: 'Resident Doctor' },
+                { name: "Intern", value: "Intern" },
+                { name: "Nursing Officer", value: "Nursing Officer" },
               ]}
               reactHookForm={register('designation', {
                 required: 'Designation is required',
+                onChange: (value) => {
+                  if (value === 'Intern' || value === 'Nursing Officer') {
+                    setValue('department', 'None');
+                  }
+                }
               })}
               className='bg-gray-950 rounded-lg px-3 py-2 mt-1 w-full text-gray-300'
               errors={errors.designation}
@@ -316,6 +323,10 @@ const Alumni = () => {
                 {
                   name: "Others",
                   value: "Others"
+                },
+                {
+                  name: "None",
+                  value: "None"
                 }
               ]
               }
