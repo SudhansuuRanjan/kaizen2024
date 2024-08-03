@@ -17,17 +17,19 @@ const GetPass = () => {
     const { register, reset, handleSubmit, formState: { errors }, setValue } = useForm({ trim: true });
 
     const navigate = useNavigate();
-    const [totalAmount, setTotalAmount] = useState(0);
     const [peoples, setPeoples] = useState([]);
     const [hasPromoCode, setHasPromoCode] = useState(false);
     const [promoCode, setPromoCode] = useState('');
     const [isPromoCodeApplied, setIsPromoCodeApplied] = useState(false);
-    const [discountedPrice, setDiscountedPrice] = useState(0);
+    const [discountedPrice, setDiscountedPrice] = useState({
+        total_amount: 0,
+        grp_discount: 0,
+        promo_discount: 0,
+        final_amount: 0
+    });
     const [tnc, setTnc] = useState(false);
     const [loading, setLoading] = useState(false);
-    const [paymentStatus, setPaymentStatus] = useState("UPDATING");
     const [gt10, setGt10] = useState(false);
-    const [generatingPass, setGeneratingPass] = useState(false);
     const [paymentCredentials, setPaymentCredentials] = useState({
         isOpen: false,
         clientCode: import.meta.env.VITE_PAYMENT_CLIENT_CODE,
@@ -56,7 +58,6 @@ const GetPass = () => {
         } else if (params.status === 'FAILED') {
             toast.error('Payment Failed! Err code 3');
             navigate('/')
-            setPaymentStatus("FAILED");
         }
     }
 
@@ -114,14 +115,20 @@ const GetPass = () => {
         }
         try {
             const res = await applyPromoCode(promoCode, peoples);
+            console.log(res);
             if (res.status === 'success') {
                 toast.success(res.message);
-                setDiscountedPrice(res.totalAmountAfterDiscount);
+                setDiscountedPrice(res.amounts);
                 setIsPromoCodeApplied(true);
             }
         } catch (error) {
             toast.error(error.response.data.message);
-            setDiscountedPrice(peoples.length * currentPrice);
+            setDiscountedPrice({
+                total_amount: 0,
+                grp_discount: 0,
+                promo_discount: 0,
+                final_amount: 0
+            });
             setIsPromoCodeApplied(false);
         }
     }
@@ -145,7 +152,7 @@ const GetPass = () => {
                 setPaymentCredentials({
                     ...paymentCredentials,
                     isOpen: true,
-                    amount: data.data.finalAmount,
+                    amount: Math.round(data.amounts.final_amount),
                     txtnId: txnId,
                     name: user.name,
                     email: user.email,
@@ -179,6 +186,17 @@ const GetPass = () => {
         }
     }, [user])
 
+    useEffect(() => {
+        if (user) {
+            setDiscountedPrice({
+                total_amount: peoples.length * currentPrice,
+                grp_discount: peoples.length >= 10 ? peoples.length * currentPrice * 0.1 : 0,
+                promo_discount: 0,
+                final_amount: peoples.length * currentPrice - (peoples.length >= 10 ? peoples.length * currentPrice * 0.1 : 0)
+            })
+        }
+    }, [user])
+
 
     return (
         <div className='bg-black pb-24'>
@@ -188,19 +206,6 @@ const GetPass = () => {
                     </div>
                     <p>
                         Proceeding to Payment...
-                    </p>
-                    <p>
-                        Please do not close this window or press back button.
-                    </p>
-                </div>
-            }
-
-            {
-                generatingPass && <div className='fixed top-0 left-0 text-center px-3 w-full h-full bg-black bg-opacity-50 z-50 flex justify-center items-center flex-col gap-3'>
-                    <div className='animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-yellow-500'>
-                    </div>
-                    <p>
-                        Registering you...
                     </p>
                     <p>
                         Please do not close this window or press back button.
@@ -402,38 +407,48 @@ const GetPass = () => {
                 </div>
                 <div>
                     <h1 className='text-2xl font-semibold text-center'>Total</h1>
-                    <div className='flex justify-between px-6 py-2'>
+                    <div className='flex justify-between px-6 py-1'>
                         <h1 className='text-base font-semibold'>Total Persons</h1>
                         <h1 className='text-base font-semibold'>{peoples.length}</h1>
                     </div>
-                    <div className='flex justify-between px-6 py-2'>
+                    <div className='flex justify-between px-6 py-1'>
                         <h1 className='text-base font-semibold text'>Total Amount</h1>
-                        {peoples.length < 10 ? <h1 className='text-2xl font-semibold text-green-500'>
-                            <span className={`${isPromoCodeApplied && 'line-through text-lg mr-3 text-red-500'}`}>
-                                {
-                                    peoples.length === 0 ? '₹0' : `₹${Math.round(peoples.length * currentPrice)}`
-                                }
+                        <h1 className='font-semibold'>
+                            <span className=' text-gray-900'>
+                                {`₹${discountedPrice.total_amount}`}
                             </span>
+                        </h1>
+                    </div>
+                    {peoples.length >= 10 && <div className='flex justify-between px-6 py-1'>
+                        <h1 className='text-base font-semibold text'>Group Discount</h1>
+                        <h1 className='font-semibold'>
+                            <span className=' text-gray-900'>
+                                {`- ₹${discountedPrice.grp_discount}`}
+                            </span>
+                        </h1>
+                    </div>}
+
+                    {isPromoCodeApplied && <div className='flex justify-between px-6 py-1'>
+                        <h1 className='text-base font-semibold text'>Coupon Discount</h1>
+                        <h1 className='text-2xl font-semibold text-rose-500'>
+                            <span className='text-lg text-gray-900'>
+                                {`- ₹${discountedPrice.promo_discount}`}
+                            </span>
+                        </h1>
+                    </div>}
+
+                    <div className='flex justify-between px-6'>
+                        <h1 className='text-base font-semibold text'>Final Amount</h1>
+                        <h1 className='text-2xl font-semibold text-green-500'>
                             <span>
                                 {
-                                    isPromoCodeApplied && "₹" + Math.round(discountedPrice)
+                                    `₹${discountedPrice.final_amount}`
                                 }
                             </span>
-                        </h1> :
-                            <h1 className='text-2xl font-semibold text-green-500'>
-                                <span className={`${isPromoCodeApplied && 'line-through text-lg mr-3 text-red-500'}`}>
-                                    {
-                                        `₹${Math.round(peoples.length * currentPrice - currentPrice)}`
-                                    }
-                                </span>
-                                <span>
-                                    {
-                                        isPromoCodeApplied && "₹" + discountedPrice
-                                    }
-                                </span>
-                            </h1>
-                        }
+                        </h1>
                     </div>
+
+
 
                     <div className='pb-5'>
                         {
@@ -458,7 +473,12 @@ const GetPass = () => {
                                 if (hasPromoCode) {
                                     setPromoCode('')
                                     setIsPromoCodeApplied(false);
-                                };
+                                    setDiscountedPrice({
+                                        ...discountedPrice,
+                                        promo_discount: 0,
+                                        final_amount: discountedPrice.total_amount - discountedPrice.grp_discount
+                                    });
+                                }
                                 setHasPromoCode(!hasPromoCode);
                             }
                         } type='checkbox' />

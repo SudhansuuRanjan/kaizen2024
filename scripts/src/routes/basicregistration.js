@@ -42,16 +42,31 @@ router.post("/check-promo-code", checkApiKey, async (req, res) => {
             });
         }
 
-        const total = persons.length * price;
-        const discountAmount = (total * promocode.discount) / 100;
-        const totalAmountAfterDiscount = (total - discountAmount).toFixed(0);
+        const amounts = {
+            total_amount: persons.length * price,
+            grp_discount: 0,
+            promo_discount: 0,
+            final_amount: 0
+        }
+
+        const totalAmount = persons.length * price;
+
+        // apply 10% discount if group has 10 or more members
+        if (persons.length > groupDiscountReqMembers) {
+            let discountAmount = (totalAmount * 10) / 100;
+            amounts.grp_discount = discountAmount;
+            amounts.final_amount = totalAmount - amounts.grp_discount;
+        }
+
+        let discountAmount = (amounts.final_amount * promocode.discount) / 100;
+        amounts.promo_discount = discountAmount;
+        amounts.final_amount = Math.round(totalAmount - amounts.grp_discount - amounts.promo_discount);
 
         res.status(200).json({
             message: `Promo code applied! You have got a discount of ${promocode.discount}%`,
             status: 'success',
             discount: promocode.discount,
-            total,
-            totalAmountAfterDiscount
+            amounts
         });
 
     } catch (error) {
@@ -72,12 +87,19 @@ router.post("/create-pass-purchase-payment", checkApiKey, async (req, res) => {
         });
     }
 
+    const amounts = {
+        total_amount: members.length * price,
+        grp_discount: 0,
+        promo_discount: 0,
+        final_amount: 0
+    }
+
     const totalAmount = members.length * price;
-    let discountAmount = 0;
 
     // apply 10% discount if group has 10 or more members
     if (members.length > groupDiscountReqMembers) {
-        discountAmount = (totalAmount * 10) / 100;
+        let discountAmount = (totalAmount * 10) / 100;
+        amounts.grp_discount = discountAmount;
     }
 
     if (coupon_code) {
@@ -103,17 +125,18 @@ router.post("/create-pass-purchase-payment", checkApiKey, async (req, res) => {
             });
         }
 
-        discountAmount = (totalAmount * promocode.discount) / 100;
+        let discountAmount = (amounts.final_amount * promocode.discount) / 100;
+        amounts.promo_discount = discountAmount;
     }
 
-
+    amounts.final_amount = Math.round(totalAmount - amounts.grp_discount - amounts.promo_discount);
 
     const data = {
         clientTxnId,
         members_data: members,
         coupon_code,
         amount: totalAmount,
-        finalAmount: Math.round(discountAmount > 0 ? totalAmount - discountAmount : totalAmount),
+        finalAmount: amounts.final_amount,
         email: user.email,
         name: user.name,
         user_id: user.id,
@@ -126,7 +149,8 @@ router.post("/create-pass-purchase-payment", checkApiKey, async (req, res) => {
         res.status(200).json({
             message: 'Pass purchase payment created successfully!',
             status: 'success',
-            data
+            data,
+            amounts
         });
 
     } catch (error) {
