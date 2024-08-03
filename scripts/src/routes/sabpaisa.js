@@ -3,7 +3,7 @@ const express = require('express');
 const checkApiKey = require('../middlewares/auth.midddleware');
 const { getInternalNonVerifiedTransactions } = require('../services/internaltxn.service');
 const { updateInternalTransaction } = require('../services/internaltxn.service');
-const sendEmail = require('../services/mail.service');
+const { sendMail } = require('../services/mail.service');
 
 const router = express.Router();
 
@@ -40,7 +40,7 @@ router.post('/verifytransactions', checkApiKey, async (req, res) => {
                         amount: data[i].amount,
                         tid: data[i].txnid,
                     };
-                    await sendEmail(emailData.email, emailData, process.env.INTERNAL_COLLECTION);
+                    await sendMail(emailData.email, emailData, process.env.INTERNAL_COLLECTION);
                     console.log('Transaction Updated and Email sent');
                 } else if (txnDetails.status !== data[i].status) {
                     await updateInternalTransaction('internalpayments', data[i].txnid, { paymentVerified: true, status: txnDetails.status, paymentData: txnDetails });

@@ -1,7 +1,7 @@
 const express = require('express');
 const { getUserEventCart, addEventsToPurchased, clearUserCart, createCartPaymentTransaction, getCartPaymentTransaction, updateCartPaymentTransaction } = require('../services/cart.service');
 const checkApiKey = require('../middlewares/auth.midddleware');
-const sendMail = require('../services/mail.service');
+const { sendMail } = require('../services/mail.service');
 const { getTransactionDetailsFromSabpaisa } = require('../services/sabpaisa.service');
 
 const router = express.Router();

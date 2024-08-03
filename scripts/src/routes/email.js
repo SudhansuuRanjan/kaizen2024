@@ -1,6 +1,7 @@
 const express = require('express');
-const sendMail = require('../services/mail.service');
+const { sendMail, getMailQueue, updateMailQueue } = require('../services/mail.service');
 const checkApiKey = require('../middlewares/auth.midddleware');
+const generateAndUploadQRCode = require('../services/qr.service');
 
 const router = express.Router();
 
@@ -19,6 +20,27 @@ router.post('/internal-payment-confirmation', checkApiKey, async (req, res) => {
         res.status(200).json({ message: 'Email sent successfully' });
     } catch (error) {
         res.status(500).json({ message: 'Error sending email', error: error.message });
+    }
+})
+
+router.post('/send-pass-mail', async (req, res) => {
+    try {
+        const mailQueue = await getMailQueue();
+
+        if (mailQueue.length === 0) {
+            return res.status(404).json({ message: 'No emails in queue' });
+        }
+
+        for (let i = 0; i < mailQueue.length; i++) {
+            let { email, data, templateid } = mailQueue[i];
+            data.qrurl = await generateAndUploadQRCode(data.brid, `${data.brid}.png`);
+            await sendMail(email, data, templateid);
+            await updateMailQueue(mailQueue[i].id, { sent: true });
+        }
+
+        res.status(200).json({ message: 'Emails sent successfully' });
+    } catch (error) {
+        res.status(500).json({ message: 'Error generating QR code', error: error.message });
     }
 })
 

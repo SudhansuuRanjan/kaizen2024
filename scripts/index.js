@@ -7,6 +7,7 @@ const emailRoutes = require('./src/routes/email');
 const sabpaisaRoutes = require('./src/routes/sabpaisa');
 const internalPaymentRoutes = require('./src/routes/internalpayment');
 const cartRoutes = require('./src/routes/cart');
+const basicregRoutes = require("./src/routes/basicregistration")
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -35,6 +36,7 @@ app.use('/email', emailRoutes);
 app.use('/sabpaisa', sabpaisaRoutes);
 app.use('/internalpayment', internalPaymentRoutes);
 app.use('/cart', cartRoutes);
+app.use('/basicreg', basicregRoutes)
 
 
 app.get('/', (req, res) => {

@@ -2,7 +2,7 @@ const express = require('express');
 const { getInternalTransactions, deleteInternalTransaction, createInternalTransaction, getInternalTransaction, updateInternalTransaction } = require('../services/internaltxn.service');
 const checkApiKey = require('../middlewares/auth.midddleware');
 const { getTransactionDetailsFromSabpaisa } = require('../services/sabpaisa.service');
-const sendEmail = require('../services/mail.service');
+const { sendMail } = require('../services/mail.service');
 
 const router = express.Router();
 
@@ -39,7 +39,7 @@ router.put('/update', checkApiKey, async (req, res) => {
                 amount: data[0].amount,
                 tid: data[0].txnid,
             }
-            await sendEmail(emailData.email, emailData, process.env.INTERNAL_COLLECTION);
+            await sendMail(emailData.email, emailData, process.env.INTERNAL_COLLECTION);
             // update transaction status to success
             await updateInternalTransaction('internalpayments', txnid, { status: sabpaisaResponse.status, paymentData: sabpaisaResponse, paymentVerified: true, mail_sent: true });
             return res.status(200).json({ message: 'Transaction updated successfully', status: sabpaisaResponse.status });
