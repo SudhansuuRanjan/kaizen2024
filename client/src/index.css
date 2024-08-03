@@ -7,9 +7,9 @@
   line-height: 1.5;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.87);
-  /* background-color: #0b0c14; */
-  background: linear-gradient(0deg, rgba(9, 9, 9, 0.95), rgba(9, 9, 9, 0.95)), url(https://freepik.cdnpk.net/assets/964f58b6a12e1b2e627e8d505958023b.png);
-  scroll-behavior: smooth;
+  background-color: #0b0c14;
+  /* background: linear-gradient(0deg, rgba(9, 9, 9, 0.95), rgba(9, 9, 9, 0.95)), url(https://freepik.cdnpk.net/assets/964f58b6a12e1b2e627e8d505958023b.png);
+  scroll-behavior: smooth; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,6 +19,6 @@
 }
 
 
-.grainy {
+/* .grainy {
   background: linear-gradient(0deg, rgba(9, 9, 9, 0.95), rgba(9, 9, 9, 0.95)), url(https://freepik.cdnpk.net/assets/964f58b6a12e1b2e627e8d505958023b.png);
-}
+} */
