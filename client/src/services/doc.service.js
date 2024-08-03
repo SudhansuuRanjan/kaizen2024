@@ -109,13 +109,13 @@ export const addEventToCart = async (data, user_id, team_members, uid) => {
 
         if (eventPurchased.length > 0) {
             for (let i = 0; i < eventPurchased.length; i++) {
-                if (eventPurchased.event_id === data.event_id) {
-                    throw new Error('Event already purchased');
+                if (eventPurchased[i].event_id === data.event_id) {
+                    throw new Error('Event already purchased1');
                 }
             }
         }
 
-        const { data: cart, error } = await supabase
+        const { data: cart} = await supabase
             .from('cart')
             .insert(data)
             .select('*')
