@@ -219,7 +219,7 @@ router.post("/update-pass-purchase-payment", checkApiKey, async (req, res) => {
 
             res.status(200).json({
                 message: 'Pass purchase payment updated successfully!',
-                status: 'success',
+                status: 'SUCCESS',
                 data
             });
         } else {

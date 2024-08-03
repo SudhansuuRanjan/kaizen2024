@@ -68,7 +68,6 @@ const getPassPurchasePayment = async (clientTxnId) => {
 
 
 const updatePassPurchasePayment = async (clientTxnId, paymentData) => {
-    console.log('clientTxnId:', clientTxnId, 'paymentData:', paymentData);
     try {
         const { data, error } = await supabase
             .from('pass_purchase_info')
