@@ -75,6 +75,11 @@ router.post("/create-pass-purchase-payment", checkApiKey, async (req, res) => {
     const totalAmount = members.length * price;
     let discountAmount = 0;
 
+    // apply 10% discount if group has 10 or more members
+    if (members.length > groupDiscountReqMembers) {
+        discountAmount = (totalAmount * 10) / 100;
+    }
+
     if (coupon_code) {
         const promoCodeData = await getPromoCode(coupon_code);
 
@@ -102,18 +107,13 @@ router.post("/create-pass-purchase-payment", checkApiKey, async (req, res) => {
     }
 
 
-    // apply 10% discount if group has 10 or more members
-    if (members.length > groupDiscountReqMembers) {
-        discountAmount = (totalAmount * 10) / 100;
-    }
-
 
     const data = {
         clientTxnId,
         members_data: members,
         coupon_code,
         amount: totalAmount,
-        finalAmount: discountAmount > 0 ? totalAmount - discountAmount : totalAmount,
+        finalAmount: Math.round(discountAmount > 0 ? totalAmount - discountAmount : totalAmount),
         email: user.email,
         name: user.name,
         user_id: user.id,

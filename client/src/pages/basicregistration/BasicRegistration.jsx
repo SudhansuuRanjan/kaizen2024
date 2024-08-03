@@ -77,12 +77,15 @@ const GetPass = () => {
     const onSubmit = (data) => {
         setSelf(false);
         data.id = generateTxnId();
-        setPeoples([...peoples, data]);
-        localStorage.setItem('peoples', JSON.stringify([...peoples, data]));
+        const newData = [...peoples, data];
+        setPeoples(newData);
+        localStorage.setItem('peoples', JSON.stringify(newData));
         reset();
-        if (peoples.length >= 9) {
+        if (newData.length >= 10) {
             setGt10(true);
             toast.success('Group Discount Applied!');
+        } else {
+            setGt10(false);
         }
         setIsPromoCodeApplied(false);
     }
@@ -93,7 +96,12 @@ const GetPass = () => {
         setPeoples(newPeoples);
         setIsPromoCodeApplied(false);
         setPromoCode('');
+
+        if (newPeoples.length < 10) {
+            setGt10(false);
+        }
     }
+
 
 
     const handlePromoCode = async (e) => {
@@ -133,7 +141,6 @@ const GetPass = () => {
 
         try {
             const data = await createPassTransaction(txnId, peoples, promoCode, user);
-            console.log(data);
             if (data.status === 'success') {
                 setPaymentCredentials({
                     ...paymentCredentials,
@@ -404,19 +411,19 @@ const GetPass = () => {
                         {peoples.length < 10 ? <h1 className='text-2xl font-semibold text-green-500'>
                             <span className={`${isPromoCodeApplied && 'line-through text-lg mr-3 text-red-500'}`}>
                                 {
-                                    peoples.length === 0 ? '₹0' : `₹${peoples.length * currentPrice}`
+                                    peoples.length === 0 ? '₹0' : `₹${Math.round(peoples.length * currentPrice)}`
                                 }
                             </span>
                             <span>
                                 {
-                                    isPromoCodeApplied && "₹" + discountedPrice
+                                    isPromoCodeApplied && "₹" + Math.round(discountedPrice)
                                 }
                             </span>
                         </h1> :
                             <h1 className='text-2xl font-semibold text-green-500'>
                                 <span className={`${isPromoCodeApplied && 'line-through text-lg mr-3 text-red-500'}`}>
                                     {
-                                        `₹${peoples.length * currentPrice - currentPrice}`
+                                        `₹${Math.round(peoples.length * currentPrice - currentPrice)}`
                                     }
                                 </span>
                                 <span>
@@ -425,6 +432,16 @@ const GetPass = () => {
                                     }
                                 </span>
                             </h1>
+                        }
+                    </div>
+
+                    <div className='pb-5'>
+                        {
+                            peoples.length >= 10 && <p className='text-sm text-center font-medium text-green-500'>Group Discount Applied!</p>
+                        }
+
+                        {
+                            promoCode && isPromoCodeApplied && <p className='text-sm text-center font-medium text-green-500'>Promo Code {promoCode} Applied!</p>
                         }
                     </div>
                 </div>
