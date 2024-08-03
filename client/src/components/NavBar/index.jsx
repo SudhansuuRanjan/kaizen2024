@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { FiX } from "react-icons/fi";
 import CartIcon from "./CartIcon";
@@ -18,7 +18,7 @@ const NavBar = () => {
         queryFn: () => {
             if (session) {
                 return getUserEventCart('cart', session.user.id)
-            }else{
+            } else {
                 return []
             }
         },
@@ -128,7 +128,7 @@ const NavBar = () => {
                 </div>
             </div>
             {menu && (
-                <div className="md:hidden fixed top-[4rem] right-0 bg-white rounded-md w-[12rem] py-2 mr-5 shadow-md text-gray-800 dark:text-white dark:bg-gray-700 border-gray-200 dark:border-gray-500 border">
+                <div className="md:hidden fixed top-[4rem] right-0  rounded-lg w-[12rem] py-2 mr-5 shadow-md text-white bg-gray-900  border-gray-500 border">
                     <ul>
                         <li>
                             <Link to="/">
@@ -137,7 +137,7 @@ const NavBar = () => {
                                         setMenu(false);
                                         // setFocus(0);
                                     }}
-                                    className="hover:underline hover:border-yellow-300 dark:hover:border-yellow-300  border-4 border-white dark:border-gray-700 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-yellow-50 dark:hover:bg-gray-400 text-left"
+                                    className="hover:underline hover:border-yellow-300  border-4 border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-gray-700 text-left"
                                 >
                                     Home
                                 </button>
@@ -150,7 +150,7 @@ const NavBar = () => {
                                         setMenu(false);
                                         // setFocus(0);
                                     }}
-                                    className="hover:underline hover:border-yellow-300 dark:hover:border-yellow-300  border-4 border-white dark:border-gray-700 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-yellow-50 dark:hover:bg-gray-400 text-left"
+                                    className="hover:underline hover:border-yellow-300  border-4 border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-gray-700 text-left"
                                 >
                                     Events
                                 </button>
@@ -163,7 +163,7 @@ const NavBar = () => {
                                         setMenu(false);
 
                                     }}
-                                    className="hover:underline hover:border-yellow-300 dark:hover:border-yellow-300  border-4 border-white dark:border-gray-700 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-yellow-50 dark:hover:bg-gray-400 text-left"
+                                    className="hover:underline hover:border-yellow-300  border-4 border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-gray-700 text-left"
                                 >
                                     Profile
                                 </button>
@@ -176,7 +176,7 @@ const NavBar = () => {
                                         setMenu(false);
 
                                     }}
-                                    className="hover:underline hover:border-yellow-300 dark:hover:border-yellow-300  border-4 border-white dark:border-gray-700 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-yellow-50 dark:hover:bg-gray-400 text-left"
+                                    className="hover:underline hover:border-yellow-300  border-4 border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-gray-700 text-left"
                                 >
                                     Cart
                                 </button>
@@ -189,25 +189,25 @@ const NavBar = () => {
                                         setMenu(false);
 
                                     }}
-                                    className="hover:underline hover:border-yellow-300 dark:hover:border-yellow-300  border-4 border-white dark:border-gray-700 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-yellow-50 dark:hover:bg-gray-400 text-left"
+                                    className="hover:underline hover:border-yellow-300  border-4 border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-gray-700 text-left"
                                 >
                                     Pronite
                                 </button>
                             </Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link to="/alumni-connect">
                                 <button
                                     onClick={() => {
                                         setMenu(false);
 
                                     }}
-                                    className="hover:underline hover:border-yellow-300 dark:hover:border-yellow-300  border-4 border-white dark:border-gray-700 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-yellow-50 dark:hover:bg-gray-400 text-left"
+                                    className="hover:underline hover:border-yellow-300  border-4 border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-gray-700 text-left"
                                 >
                                     Alumni Connect
                                 </button>
                             </Link>
-                        </li>
+                        </li> */}
                         <li>
                             <Link to="/schedule">
                                 <button
@@ -215,25 +215,25 @@ const NavBar = () => {
                                         setMenu(false);
 
                                     }}
-                                    className="hover:underline hover:border-yellow-300 dark:hover:border-yellow-300  border-4 border-white dark:border-gray-700 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-yellow-50 dark:hover:bg-gray-400 text-left"
+                                    className="hover:underline hover:border-yellow-300  border-4 border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-gray-700 text-left"
                                 >
                                     Schedule
                                 </button>
                             </Link>
                         </li>
-                        {/* <li>
-                            <Link to="/">
+                        <li>
+                            <Link to="/basicregistration">
                                 <button
                                     onClick={() => {
                                         setMenu(false);
 
                                     }}
-                                    className="hover:underline hover:border-yellow-300 dark:hover:border-yellow-300  border-4 border-white dark:border-gray-700 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-yellow-50 dark:hover:bg-gray-400 text-left"
+                                    className="hover:underline hover:border-yellow-300  border-4 border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-gray-700 text-left"
                                 >
                                     Get Pass
                                 </button>
                             </Link>
-                        </li> */}
+                        </li>
                     </ul>
                 </div>
             )}
