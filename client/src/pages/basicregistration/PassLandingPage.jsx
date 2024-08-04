@@ -42,7 +42,7 @@ const GetPass = () => {
                     <div className='bg-black h-8 w-8 rounded-full mr-[-1rem] z-30'>
                     </div>
                 </div>
-                <img src="https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fbsic-reg.jpg?alt=media&token=d796d016-e48e-419c-9ca7-f3422ad0e28e" alt="event" className='-mt-4' />
+                <img src="pass-banner.webp" alt="event" className='-mt-4' />
                 {/* <div className='z-0'>
                     <img className='w-full h-fit mt-[-1rem]' src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/concert.png" alt="event" />
                 </div> */}

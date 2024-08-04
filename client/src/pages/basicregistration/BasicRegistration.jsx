@@ -263,8 +263,8 @@ const GetPass = () => {
                     <div className='bg-black h-8 w-8 rounded-full mr-[-1rem] z-30'>
                     </div>
                 </div>
-                <div className='bg-[url("https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/images%2Fbsic-reg.jpg?alt=media&token=d796d016-e48e-419c-9ca7-f3422ad0e28e")] mt-[-1rem] bg-cover bg-center w-full h-fit text-sm text-white font-normal'>
-                    <div className='h-full w-full bg-black bg-opacity-80 p-5'>
+                <div className='bg-[url("pass-banner.webp")] mt-[-1rem] bg-cover bg-center w-full h-fit text-sm text-white font-normal'>
+                    <div className='h-full w-full bg-black bg-opacity-40 p-5'>
                         <p className='pb-2 text-yellow-400 text-base'>This Basic Registration includes:</p>
                         <ul className='list-inside'>
                             {/* <li>✅Lunch on all 5 days</li> */}
