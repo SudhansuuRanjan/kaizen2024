@@ -181,6 +181,8 @@ router.post("/update-pass-purchase-payment", checkApiKey, async (req, res) => {
 
         if (!sabpaisaResponse) {
             res.status(400).json({ message: 'Transaction not found in Sabpaisa' });
+        } else if (data.paymentVerified) {
+            res.status(200).json({ message: 'Transaction already verified', status: sabpaisaResponse.status });
         } else if (sabpaisaResponse.status === 'SUCCESS') {
             await updatePassPurchasePayment(clientTxnId, {
                 ...data,

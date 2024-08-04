@@ -31,6 +31,8 @@ router.put('/update', checkApiKey, async (req, res) => {
 
         if (!sabpaisaResponse) {
             res.status(400).json({ message: 'Transaction not found in Sabpaisa' });
+        } else if (data[0].paymentVerified) {
+            res.status(200).json({ message: 'Transaction already verified', status: sabpaisaResponse.status });
         } else if (sabpaisaResponse.status === 'SUCCESS') {
             // send email
             const emailData = {
