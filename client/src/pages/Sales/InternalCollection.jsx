@@ -31,6 +31,7 @@ const Alumni = () => {
   });
   const [loading, setLoading] = useState(false);
   const [verifyingPayment, setVerifyingPayment] = useState(false);
+  const [amountCap, setAmountCap] = useState(1600);
 
   const getJsonFromUrl = () => {
     const queryParams = new URLSearchParams(window.location.search);
@@ -232,6 +233,11 @@ const Alumni = () => {
                   if (value === 'Intern' || value === 'Nursing Officer') {
                     setValue('department', 'None');
                   }
+                  if (value === 'Nursing Officer') {
+                    setAmountCap(1100);
+                  } else {
+                    setAmountCap(1600);
+                  }
                 }
               })}
               className='bg-gray-950 rounded-lg px-3 py-2 mt-1 w-full text-gray-300'
@@ -346,10 +352,10 @@ const Alumni = () => {
               reactHookForm={register('amount', {
                 required: 'Amount is required to proceed',
                 min: {
-                  value: 1600,
-                  message: 'Minimum amount is 1600 INR',
+                  value: amountCap,
+                  message: `Minimum amount is ${amountCap} INR`,
                 },
-                value: 1600
+                value: amountCap
               })}
               className='bg-gray-950 rounded-lg px-3 py-2 mt-1 w-full text-gray-300'
               errors={errors.amount}

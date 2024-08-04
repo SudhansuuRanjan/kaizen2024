@@ -104,11 +104,13 @@ const addEventsToPurchased = async (user_id, event, team_members) => {
             }
         })
 
-
         const { error: memberError } = await supabase
             .from('purchased_events_members')
             .insert(members)
 
+        if (memberError) {
+            throw new Error(memberError);
+        }
     } catch (error) {
         throw error;
     }

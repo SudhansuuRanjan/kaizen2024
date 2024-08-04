@@ -101,7 +101,8 @@ const EventDetails = () => {
                                         </div>
                                         <div className='w-[100%]'>
                                             <a href={data.rulebook} target="_blank" className='w-[100%]'><button className='rulebook-btn'>Rulebook</button></a>
-                                            <button onClick={() => checkAuthNActive(data.status)} disabled={data.status !== 'Active'} className='register-btn w-[100%]'>{data.status === 'Active' ? 'Register Now' : data.status}</button>
+                                            {!data.google_form ? <button onClick={() => checkAuthNActive(data.status)} disabled={data.status !== 'Active'} className='register-btn w-[100%]'>{data.status === 'Active' ? 'Register Now' : data.status}</button>
+                                                : <a href={data.google_form} target="_blank"><button className='register-btn w-[100%]'>Register Now</button></a>}
                                         </div>
                                     </div>
                                 </div>
