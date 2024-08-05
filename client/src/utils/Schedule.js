@@ -453,4 +453,97 @@ const day5 = {
     ]
 };
 
-export { day1, day2, day3, day4, day5 }
+const day6 = {
+    special: [
+        {
+            time: '6:00 PM',
+            name: 'Closing Ceremony',
+            venue: 'KAIZEN ARENA',
+            id: '08'
+        },
+        {
+            time: '6:30 PM',
+            name: 'Acoustic Singer',
+            venue: 'KAIZEN ARENA',
+            id: '09'
+        },
+        {
+            time: '7:00 PM',
+            name: 'Bollywood Singer',
+            venue: 'KAIZEN ARENA',
+            id: '10'
+        },
+        {
+            time: '9:00 PM',
+            name: 'BOLLYWOOD DANCE MUSIC',
+            venue: 'KAIZEN ARENA',
+            id: '11'
+
+        }
+    ],
+    regular: [
+        {
+            time: '9:30 AM',
+            events: [
+
+                {
+                    name: 'Dance (Contemporary)',
+                    venue: 'Auditorium',
+                    id: '01'
+                }
+            ]
+        },
+        {
+            time: '10:00 AM',
+            events: [
+                {
+                    name: 'Canvas painting',
+                    venue: 'Admin Foyer',
+                    id: '02'
+                }
+            ]
+        },
+        {
+            time: '11:00 AM',
+            events: [
+                {
+                    name: 'Fandom Quiz',
+                    venue: 'LT',
+                    id: '03'
+                },
+                {
+                    name: 'JAM',
+                    venue: 'E-classroom',
+                    id: '04'
+                }
+            ]
+        },
+        {
+            time: '2:30 PM',
+            events: [
+                {
+                    name: 'Medathena Advanced',
+                    venue: 'LT',
+                    id: '05'
+                },
+                {
+                    name: 'Speed Dating',
+                    venue: "Boys' Mess",
+                    id: '06'
+                }
+            ]
+        },
+        {
+            time: '4:00 PM',
+            events: [
+                {
+                    name: 'Street Dance',
+                    venue: 'In front of Admin',
+                    id: '07'
+                }
+            ]
+        },
+    ]
+};
+
+export { day1, day2, day3, day4, day5, day6 }

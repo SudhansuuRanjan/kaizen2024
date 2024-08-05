@@ -20,7 +20,7 @@ const Footer = () => {
                         <a target='_blank' href="https://www.facebook.com/aiimspatnafest?mibextid=ZbWKwL" className='transition ease-in delay-50 text-blue-500 hover:text-blue-600 hover:scale-[110%]'>
                             <FaFacebook size={30} />
                         </a>
-                        <a target='_blank' href="https://web.whatsapp.com" className='transition ease-in delay-50 text-green-400 hover:text-green-500 hover:scale-[110%]'>
+                        <a target='_blank' href="https://wa.me/919903878567" className='transition ease-in delay-50 text-green-400 hover:text-green-500 hover:scale-[110%]'>
                             <IoLogoWhatsapp size={30} />
                         </a>
                         <a target='_blank' href="https://www.youtube.com/@kaizen.aiimspatna" className='transition ease-in delay-50 text-red-500 hover:text-red-600 hover:scale-[110%]'>
@@ -55,7 +55,8 @@ const Footer = () => {
                 <div data-aos="fade-up" className='mt-10 w-[100%] md:w-[100%] lg:w-[100%] order-3 md:order-3 lg:order-3 text-base'>
                     <div className='flex items-center justify-start'><h1 className='font-extrabold text-2xl text-red-700 mr-3'>|</h1><h1 className='text-lg font-bold'>Contact Us</h1></div>
                     <p className='max-w-[16rem] pt-4 text'>AIIMS Patna, Phulwarisharif, Patna, Bihar-801507, India</p>
-                    <p className='pt-2'>Ph : <a href="tel:+918207372732" className='text-red-700 ml-2 font-semibold'>+91 82073 72732</a></p>
+                    <p className='pt-2'>Contact : <a href="tel:+919903878567" className='text-red-700 ml-2 font-semibold'>+91 9903878567</a></p>
+                    <p className='pt-2'><a href="tel:+917970987442" className='text-red-700 ml-20 font-semibold'>+91 7970987442</a></p>
                     <p className='pt-2'>Mail : <a href="mailto:kaizen@aiimspatna.org" className='text-red-700 ml-2 font-semibold'>kaizen@aiimspatna.org</a></p>
                 </div>
 

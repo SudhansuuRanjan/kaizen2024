@@ -70,7 +70,7 @@ const AuthProvider = ({ children }) => {
         <AuthContext.Provider value={contextData}>
             {loading ? <div className="flex flex-col gap-16 items-center justify-center min-h-screen">
                 <div className="flex gap-3 items-center">
-                    <img src="android-chrome-192x192.png" alt="Logo" className="w-16" />
+                    <img src="loader_logo.webp" alt="Logo" className="w-16" />
                     <div className="flex divide-x divide-gray-600 gap-3">
                         <p className="text-white text-2xl font-semibold">KAIZEN<br /> 2024</p>
                         <p className="text-2xl font-semibold text-rose-500 pl-2">AIIMS<br /> Patna</p>

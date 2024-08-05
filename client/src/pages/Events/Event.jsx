@@ -46,7 +46,7 @@ const EventDetails = () => {
                                     <h1>{data.name}</h1>
                                     <p className='lg:text-4xl text-3xl font-medium py-2'>{data.tagline}</p>
                                     {
-                                        data.sponsorName !== "" && <div className='py-6 flex flex-col items-center justify-center'><i>Sponsored by <a href={data.sponsorName} className='text-yellow-500 text-lg font-medium'>
+                                        data.sponsorName && <div className='py-6 flex flex-col items-center justify-center'><i>Sponsored by <a href={data.sponsorName} className='text-yellow-500 text-lg font-medium'>
                                             <img className='h-10 m-auto mt-3' src={data.sponsorLogo} alt="sponsor" />
                                         </a></i>
                                         </div>

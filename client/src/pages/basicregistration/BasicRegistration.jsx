@@ -9,7 +9,7 @@ import { useForm } from 'react-hook-form';
 import useAuth from '../../hooks/useAuth';
 import { applyPromoCode, createPassTransaction } from '../../services/br.service';
 import { updatePassPaymentTransaction } from '../../services/payment.service';
-const currentPrice = 5;
+const currentPrice = 1600;
 
 const GetPass = () => {
     document.title = "Kaizen | Basic Registration";
@@ -265,21 +265,19 @@ const GetPass = () => {
                 </div>
                 <div className='bg-[url("pass-banner.webp")] mt-[-1rem] bg-cover bg-center w-full h-fit text-sm text-white font-normal'>
                     <div className='h-full w-full bg-black bg-opacity-40 p-5'>
-                        <p className='pb-2 text-yellow-400 text-base'>This Basic Registration includes:</p>
-                        <ul className='list-inside'>
-                            {/* <li>✅Lunch on all 5 days</li> */}
-                            {/* <li>✅ Kaizen Merchandise & Goodies</li> */}
-                            <li>✅ Access to all the events</li>
-                            <li>✅ A seat in Medical Workshops lead under eminent faculty of AIIMS Patna:</li>
+                        <p className='pb-2 text-rose-500 text-lg font-semibold'>This Basic Registration includes:</p>
+                        <ul className='list-inside font-medium'>
+                            <li>✅ Access to all Kaizen events.</li>
+                            <li>✅ Free Lunch on all Kaizen days.</li>
+                            <li>✅ Free Kaizen Merchandise (caps and glow in the dark bands).</li>
+                            <li>✅ Bus Transportation facilities against designated routes of AIIMS Patna</li>
+                            <li>✅ Complimentary access to Medical Workshops lead under eminent faculty of AIIMS Patna(limited seats):</li>
                             <ul className='list-inside ml-4'>
-                                <li>👉 Basic Life Support (BLS)  Workshop</li>
-                                <li>👉 Workshop on Laporoscopic Surgery</li>
-                                <li>👉 Suturing Workshop</li>
+                                <li>👉 Basic Life Support Workshop (BLS)</li>
+                                <li>👉 Menstrual Hygiene Workshop</li>
                                 <li>👉 Hand Hygiene Skill Station</li>
                             </ul>
-                            <li>✅ Participation in Gully Cricket, Darts, Arm Wrestling and Push-up Challenge</li>
-                            <li>✅ Access to our 360° Selfie Booth</li>
-                            <li>✅ Bus transportation facility against designated routes in Patna</li>
+                            <li>✅ Participation in Arm Wrestling, Musical Chairs, One Word Stories and Push up Challenge</li>
                             <li>✅ Audience viewership across all events held under Kaizen, AIIMS Patna</li>
                         </ul>
                     </div>

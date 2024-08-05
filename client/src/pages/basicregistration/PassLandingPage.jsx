@@ -10,15 +10,15 @@ const GetPass = () => {
     const { user } = useAuth();
     const navigate = useNavigate();
 
-    useEffect(() => {
-        if (user) {
-            if (user.mobile && user.college) {
-                return navigate('/basic-registration');
-            }
-            toast.error('Please complete your profile first');
-            navigate('edit-profile');
-        }
-    }, [user])
+    // useEffect(() => {
+    //     if (user) {
+    //         if (user.mobile && user.college) {
+    //             return navigate('/basic-registration');
+    //         }
+    //         toast.error('Please complete your profile first');
+    //         navigate('edit-profile');
+    //     }
+    // }, [user])
 
     return (
         <div className='bg-black pb-24'>
@@ -42,7 +42,7 @@ const GetPass = () => {
                     <div className='bg-black h-8 w-8 rounded-full mr-[-1rem] z-30'>
                     </div>
                 </div>
-                <img src="pass-banner.webp" alt="event" className='-mt-4' />
+                <img src="pass-banner.webp" alt="event" className='-mt-4 w-full' />
                 {/* <div className='z-0'>
                     <img className='w-full h-fit mt-[-1rem]' src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/concert.png" alt="event" />
                 </div> */}
@@ -50,19 +50,17 @@ const GetPass = () => {
                     <div className='h-full w-full p-5'>
                         <p className='pb-2 text-rose-400 text-lg font-semibold'>This Basic Registration includes:</p>
                         <ul className='list-inside font-medium'>
-                            {/* <li>✅Lunch on all 5 days</li> */}
-                            {/* <li>✅ Kaizen Merchandise & Goodies</li> */}
-                            <li>✅ Access to all the events</li>
-                            <li>✅ A seat in Medical Workshops lead under eminent faculty of AIIMS Patna:</li>
+                            <li>✅ Access to all Kaizen events.</li>
+                            <li>✅ Free Lunch on all Kaizen days.</li>
+                            <li>✅ Free Kaizen Merchandise (caps and glow in the dark bands).</li>
+                            <li>✅ Bus Transportation facilities against designated routes of AIIMS Patna</li>
+                            <li>✅ Complimentary access to Medical Workshops lead under eminent faculty of AIIMS Patna(limited seats):</li>
                             <ul className='list-inside ml-4'>
-                                <li>👉 Basic Life Support (BLS)  Workshop</li>
-                                <li>👉 Workshop on Laporoscopic Surgery</li>
-                                <li>👉 Suturing Workshop</li>
+                                <li>👉 Basic Life Support Workshop (BLS)</li>
+                                <li>👉 Menstrual Hygiene Workshop</li>
                                 <li>👉 Hand Hygiene Skill Station</li>
                             </ul>
-                            <li>✅ Participation in Gully Cricket, Darts, Arm Wrestling and Push-up Challenge</li>
-                            <li>✅ Access to our 360° Selfie Booth</li>
-                            <li>✅ Bus transportation facility against designated routes in Patna</li>
+                            <li>✅ Participation in Arm Wrestling, Musical Chairs, One Word Stories and Push up Challenge</li>
                             <li>✅ Audience viewership across all events held under Kaizen, AIIMS Patna</li>
                         </ul>
                     </div>
@@ -71,7 +69,7 @@ const GetPass = () => {
 
                     <div className='mt-5'>
                         <Link to="/basic-registration">
-                            <button className='text-white bg-rose-500 w-full py-2.5 rounded-lg font-medium hover:bg-rose-600'>
+                            <button className='text-white bg-green-600 w-full py-2.5 rounded-lg font-medium hover:bg-green-700'>
                                 Proceed for Basic Registration
                             </button>
                         </Link>

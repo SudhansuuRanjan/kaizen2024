@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { day1, day2, day3, day4, day5 } from '../../utils/Schedule'
+import { day1, day2, day3, day4, day5, day6 } from '../../utils/Schedule'
 import { MdLocationPin, MdAccessTimeFilled } from 'react-icons/md'
 import "./Schedule.scss"
 
@@ -17,30 +17,35 @@ const Schedule = () => {
                 <h1 className='cart-head lg:mx-0 md:mx-0 mx-5'>Schedule</h1>
             </div>
             <div>
-                <div className='flex lg:w-[40rem] md:w-[35rem] w-[87%] justify-center items-center m-auto flex-wrap lg:gap-10 md:gap-5 gap-6 text-[#ebe6d0]'>
+                <div className='flex lg:w-[40rem] md:w-[35rem] w-[87%] justify-center items-center m-auto flex-wrap lg:gap-10 md:gap-4 gap-3 text-[#ebe6d0]'>
                     <button onClick={() => setDay(day1)} className={`transition-all delay-[20ms] ease-in border border-[#ebe6d0] lg:rounded-2xl md:rounded-2xl rounded-xl flex flex-col justify-center items-center w-fit lg:px-4 md:px-4 px-4 lg:py-3 md:py-3 py-2.5 ${day === day1 && 'bg-[#ebe6d0] border-black text-gray-900'}`}>
-                        <h1 className='font-semibold lg:text-2xl md:text-2xl text-xl'>May</h1>
-                        <p className='font-medium lg:text-xl md:text-xl text-lg'>10<sup>th</sup></p>
+                        <h1 className='font-semibold lg:text-2xl md:text-2xl text-xl'>Sept.</h1>
+                        <p className='font-medium lg:text-xl md:text-xl text-lg'>3<sup>th</sup></p>
                     </button>
 
                     <button onClick={() => setDay(day2)} className={`transition-all delay-[20ms] ease-in border border-[#ebe6d0] lg:rounded-2xl md:rounded-2xl rounded-xl flex flex-col justify-center items-center w-fit lg:px-4 md:px-4 px-4 lg:py-3 md:py-3 py-2.5 ${day === day2 && 'bg-[#ebe6d0] border-black text-gray-900'}`}>
-                        <h1 className='font-semibold lg:text-2xl md:text-2xl text-xl'>May</h1>
-                        <p className='font-medium lg:text-xl md:text-xl text-lg'>11<sup>th</sup></p>
+                        <h1 className='font-semibold lg:text-2xl md:text-2xl text-xl'>Sept.</h1>
+                        <p className='font-medium lg:text-xl md:text-xl text-lg'>4<sup>th</sup></p>
                     </button>
 
                     <button onClick={() => setDay(day3)} className={`transition-all delay-[20ms] ease-in border border-[#ebe6d0] lg:rounded-2xl md:rounded-2xl rounded-xl flex flex-col justify-center items-center w-fit lg:px-4 md:px-4 px-4 lg:py-3 md:py-3 py-2.5 ${day === day3 && 'bg-[#ebe6d0] border-black text-gray-900'}`}>
-                        <h1 className='font-semibold lg:text-2xl md:text-2xl text-xl'>May</h1>
-                        <p className='font-medium lg:text-xl md:text-xl text-lg'>12<sup>th</sup></p>
+                        <h1 className='font-semibold lg:text-2xl md:text-2xl text-xl'>Sept.</h1>
+                        <p className='font-medium lg:text-xl md:text-xl text-lg'>5<sup>th</sup></p>
                     </button>
 
                     <button onClick={() => setDay(day4)} className={`transition-all delay-[20ms] ease-in border border-[#ebe6d0] lg:rounded-2xl md:rounded-2xl rounded-xl flex flex-col justify-center items-center w-fit lg:px-4 md:px-4 px-4 lg:py-3 md:py-3 py-2.5 ${day === day4 && 'bg-[#ebe6d0] border-black text-gray-900'}`}>
-                        <h1 className='font-semibold lg:text-2xl md:text-2xl text-xl'>May</h1>
-                        <p className='font-medium lg:text-xl md:text-xl text-lg'>13<sup>th</sup></p>
+                        <h1 className='font-semibold lg:text-2xl md:text-2xl text-xl'>Sept.</h1>
+                        <p className='font-medium lg:text-xl md:text-xl text-lg'>6<sup>th</sup></p>
                     </button>
 
                     <button onClick={() => setDay(day5)} className={`transition-all delay-[20ms] ease-in border border-[#ebe6d0] lg:rounded-2xl md:rounded-2xl rounded-xl flex flex-col justify-center items-center w-fit lg:px-4 md:px-4 px-4 lg:py-3 md:py-3 py-2.5 ${day === day5 && 'bg-[#ebe6d0] border-black text-gray-900'}`}>
-                        <h1 className='font-semibold lg:text-2xl md:text-2xl text-xl'>May</h1>
-                        <p className='font-medium lg:text-xl md:text-xl text-lg'>14<sup>th</sup></p>
+                        <h1 className='font-semibold lg:text-2xl md:text-2xl text-xl'>Sept.</h1>
+                        <p className='font-medium lg:text-xl md:text-xl text-lg'>7<sup>th</sup></p>
+                    </button>
+                    
+                    <button onClick={() => setDay(day6)} className={`transition-all delay-[20ms] ease-in border border-[#ebe6d0] lg:rounded-2xl md:rounded-2xl rounded-xl flex flex-col justify-center items-center w-fit lg:px-4 md:px-4 px-4 lg:py-3 md:py-3 py-2.5 ${day === day6 && 'bg-[#ebe6d0] border-black text-gray-900'}`}>
+                        <h1 className='font-semibold lg:text-2xl md:text-2xl text-xl'>Sept.</h1>
+                        <p className='font-medium lg:text-xl md:text-xl text-lg'>8<sup>th</sup></p>
                     </button>
                 </div>
 
@@ -48,7 +53,7 @@ const Schedule = () => {
                 <div className='mt-16 mb-24 m-auto'>
                     <h1 className='text-center mb-10 text-4xl font-semibold text-yellow-500'>
                         {
-                            day === day1 && 'May 10' || day === day2 && 'May 11' || day === day3 && 'May 12' || day === day4 && 'May 13' || day === day5 && 'May 14'
+                            day === day1 && 'Sept. 3' || day === day2 && 'Sept. 4' || day === day3 && 'Sept. 5' || day === day4 && 'Sept. 6' || day === day5 && 'Sept. 7' || day === day6 && 'Sept. 8'
                         }
                         <sup>th</sup>
                     </h1>
