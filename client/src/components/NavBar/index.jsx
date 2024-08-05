@@ -230,7 +230,7 @@ const NavBar = () => {
                                     }}
                                     className="hover:underline hover:border-yellow-300  border-4 border-gray-900 py-1.5 w-[100%] pl-4 cursor-pointer hover:bg-gray-700 text-left"
                                 >
-                                    Get Pass
+                                    Basic Registration
                                 </button>
                             </Link>
                         </li>
