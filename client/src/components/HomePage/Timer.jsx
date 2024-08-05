@@ -23,8 +23,8 @@ const Timer = () => {
     }, [parsedDeadline, selectedDate]);
 
     return (
-        <div className="bg-[url('https://firebasestorage.googleapis.com/v0/b/kaisen2023.appspot.com/o/static-images%2Fship1.webp?alt=media&token=c7c8ff3b-42ed-432b-9710-98acb8e18174')] bg-repeat-y  min-h-fit bg-center bg-cover flex relative justify-center items-center">
-            <div data-aos="zoom-in-up" className="flex bg-gray-800 bg-opacity-30 backdrop-blur-md m-auto gap-12 rounded-3xl lg:p-14 md:p-10 p-5 lg:my-32 md:my-26 my-24 border border-gray-500">
+        <div className=" bg-repeat-y  min-h-fit bg-center bg-cover flex relative justify-center items-center">
+            <div data-aos="zoom-in-up" className="flex bg-gray-800 bg-opacity-30 backdrop-blur-md m-auto gap-12 rounded-3xl lg:p-14 md:p-10 p-5 lg:my-32 md:my-26 my-24 border border-gray-800">
                 <img src="/images/kaizen1.png" alt="ship" className="lg:h-[16rem] md:h-[13rem] lg:block md:block hidden" />
                 <div className="flex flex-col items-center justify-center lg:gap-10 md:gap-9 gap-8">
                     <h3 className="font-semibold lg:text-4xl md:text-3xl text-2xl text-pink-600">KAIZEN RETURNS IN</h3>

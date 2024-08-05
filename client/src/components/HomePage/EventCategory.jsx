@@ -11,6 +11,10 @@ const EventCategory = () => {
 
     const categories = [
         {
+            name: 'Explore All',
+            image: "/images/workshops.webp",
+        },
+        {
             name: 'Cultural',
             image: "/images/Cultural.webp",
         },
@@ -27,12 +31,8 @@ const EventCategory = () => {
             image: "/images/Literary.webp",
         },
         {
-            name: 'Fashion',
+            name: 'Informals',
             image: "/images/fashion.webp",
-        },
-        {
-            name: 'Workshop',
-            image: "/images/workshops.webp",
         },
         {
             name: 'Academics',

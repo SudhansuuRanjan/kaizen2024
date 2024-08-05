@@ -117,7 +117,7 @@ const Sponsors = () => {
 
     return (
         <div className="relative bg-no-repeat min-h-fit bg-center bg-cover w-[100%] py-10">
-            <h3 className='text-center font-bold lg:text-5xl md:text-4xl text-4xl py-10' data-aos="fade-up">Our Sponsors</h3>
+            <h3 className='text-center font-bold lg:text-5xl md:text-4xl text-4xl py-10' data-aos="fade-up">Previous Sponsors</h3>
 
             {/* Title Sponsor */}
 
