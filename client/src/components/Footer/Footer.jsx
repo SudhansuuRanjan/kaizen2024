@@ -37,7 +37,7 @@ const Footer = () => {
                     <ul className='mt-4 flex flex-col gap-3 text-base'>
                         <li className='hover:text-red-600 text-gray-500'><Link to="/events">Events</Link></li>
                         <li className='hover:text-red-600 text-gray-500'><Link to="/basicregistration">Basic Registration</Link></li>
-                        <li className=' hover:text-red-600 text-gray-500'><Link to="/alumni-connect">Alumni Connect</Link></li>
+                        <li className=' hover:text-red-600 text-gray-500'><Link to="/schedule">Event Schedule</Link></li>
                         <li className=' hover:text-red-600 text-gray-500'><Link to="/pronite">Pronites</Link></li>
                     </ul>
                 </div>
