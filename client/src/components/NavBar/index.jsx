@@ -108,8 +108,6 @@ const NavBar = () => {
                                 } />
                             </Link>
                         </li>
-
-
                     </ul>
 
                     <button

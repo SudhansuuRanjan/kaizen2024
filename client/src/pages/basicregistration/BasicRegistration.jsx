@@ -9,12 +9,13 @@ import { useForm } from 'react-hook-form';
 import useAuth from '../../hooks/useAuth';
 import { applyPromoCode, createPassTransaction } from '../../services/br.service';
 import { updatePassPaymentTransaction } from '../../services/payment.service';
+import { Loading } from '../../components/Loader/Loader';
 const currentPrice = 1600;
 
 const GetPass = () => {
     document.title = "Kaizen | Basic Registration";
 
-    const { user } = useAuth();
+    const { user, features } = useAuth();
     const { register, reset, handleSubmit, formState: { errors }, setValue } = useForm({ trim: true });
 
     const navigate = useNavigate();
@@ -227,6 +228,16 @@ const GetPass = () => {
             }
         }
     }, [user])
+
+    if (features.isLoading) return <div className='bg-black pb-24 min-h-[80vh]'>
+        <Loading message={"Loading..."} />
+    </div>;
+
+    if (features.data && features.data.basic_registration) return <div className='bg-black flex items-center justify-center min-h-[60vh]'>
+        <p className='mt-48 text-lg font-medium text-yellow-500 text-center max-w-2xl'>
+            {features.data.basic_reg_message}
+        </p>
+    </div>;
 
 
     return (

@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Sponsors = () => {
-
     const associateSponsors = [
         {
             name: "State health Society, Bihar",

@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import Loader from "../components/Loader/Loader";
 import supabase from "../config/supabase";
 import { getCurrentUserProfile } from "../services/doc.service";
+import { getCurrentFeatures } from "../services/feature.service";
+import { useQuery } from '@tanstack/react-query';
 
 const AuthContext = createContext({});
 
@@ -11,6 +13,13 @@ const AuthProvider = ({ children }) => {
     const [session, setSession] = useState(null);
     const [loading, setLoading] = useState(true);
     const [user, setUser] = useState(null);
+
+    const { data: featuresData, isLoading: featuresLoading } = useQuery({
+        queryKey: ['features'],
+        queryFn: getCurrentFeatures,
+        refetchOnWindowFocus: false,
+        staleTime: Infinity,
+    })
 
     useEffect(() => {
 
@@ -57,6 +66,10 @@ const AuthProvider = ({ children }) => {
             await supabase.auth.signOut();
             setUser(null);
             navigate('/');
+        },
+        features: {
+            data: featuresData,
+            isLoading: featuresLoading
         }
     }
 
