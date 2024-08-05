@@ -219,6 +219,15 @@ const GetPass = () => {
         }
     }, [user, peoples])
 
+    useEffect(() => {
+        if (user) {
+            if (!user.mobile || !user.college) {
+                toast.error('Please complete your profile first');
+                return navigate('/edit-profile');
+            }
+        }
+    }, [user])
+
 
     return (
         <div className='bg-black pb-24'>

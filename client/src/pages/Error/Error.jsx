@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Error = () => {
-    document.title = "Error 404 - KAIZEN 2023"
+    document.title = "Error 404 - KAIZEN 2024"
     return (
         <div className='h-screen flex flex-col justify-center items-center'>
             <img src="https://nasgofficialweb.vercel.app/_next/image?url=%2Fimages%2F404.png&w=640&q=75" alt="404" className='lg:h-[17rem]md:h-[17rem] h-[15rem]' />

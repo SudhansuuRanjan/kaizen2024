@@ -62,7 +62,7 @@ const NavBar = () => {
                             }
 
                         >
-                            <Link to="/internal-collection">Internal Collection</Link>
+                            <Link to="/basicregistration">Basic Registration</Link>
                         </li>
                         <li
                             className={
