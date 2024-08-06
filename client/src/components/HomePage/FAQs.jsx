@@ -5,25 +5,30 @@ const FAQs = () => {
 
     const faqs = [
         {
-            question: 'What is the theme of Kaizen 2024?',
-            answer: "Close your eyes and imagine, the sound of waves hitting your ears as you look out to the vast blue sea. The sun in the sky shimmering like a Golden coin you'll find glittering in treasures. \nThe music of Sea chanties and shooting cannons filling the air with fun and frolic. So our theme for Kaizen this year is: ASTER: a sail through errantry! Let this wave immerse you and all of your fellow mateys into the waters of adventure and performance. Just like the mighty pirates, let us rob you off all the boredom, and slice your blues with our glistening swords. So, put on the eyepatch, sail through the ocean of creativity and step off on to the island of Kaizen!",
+            question: 'How can I reach AIIMS Patna?',
+            answer: "You can reach AIIMS Patna by:\n - Train: Arrive at Patna Junction, Rajendranagar Junction, or Danapur station and hire a taxi or cab to reach AIIMS Patna.\n - Flight: Land at Jay Prakash Narayan International Airport and take a taxi or cab to reach AIIMS Patna.",
             color: "yellow",
         },
         {
-            question: 'How do I register?',
-            answer: "You can register by going to the events page from menu. Go through all the events or select the category you're interested in. Finally, select an event matching your interests and talent and click on the register button within that event's page.Add team members in events of team participation.The event is now moved to your event cart. Go to event cart and pay the registration amount.The event will be added to (your events) section of your profile page.",
+            question: 'Will transportation facilities be available?',
+            answer: "Bus services will be provided against designated routes in Patna. These services are included in the Basic Registration. ",
             color: "red",
         },
         {
             question: 'Will accommodation facility be provided?',
-            answer: "Yes! Keep a look out on our Instragram, Facebook pages and website for the link for accommodation registration. Once out, be sure to fill it as fast as possible because we'll be having limited accommodation.",
+            answer: "Accommodation in the institute's campus will be provided on a first come first serve basis. Details of nearby hotels, oyos and air bnbs will be shared.",
             color: "blue",
         },
         {
-            question: "What are the prizes for various competitions?",
-            answer: "We have a very exciting prize pool this year with cash prizes and various gift hampers. Get sailing with us to know more.",
+            question: "Who all can attend the fest? ",
+            answer: "The registration for the fest is open to all above 16 years of age.",
             color: "yellow"
-        }
+        },
+        {
+            question: 'Is Basic Registration necessary for participating in events?',
+            answer: "BR does not include entry to various literary, cultural, art, sports and informal events. It is necessary for one to get their basic registration  and individual event registration done.",
+            color: "red",
+        },
     ]
 
     return (
