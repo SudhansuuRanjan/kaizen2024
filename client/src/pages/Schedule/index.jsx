@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { day1, day2, day3, day4, day5, day6 } from '../../utils/Schedule'
+import { day1, day2, day3, day4 } from '../../utils/Schedule'
 import { MdLocationPin, MdAccessTimeFilled } from 'react-icons/md'
 import "./Schedule.scss"
 
@@ -9,7 +9,7 @@ const Schedule = () => {
 
     useEffect(() => {
         document.title = 'Schedule | Kaizen 2024';
-    },[])
+    }, [])
 
     return (
         <div className='pb-24 min-h-screen bg-black'>
@@ -38,7 +38,7 @@ const Schedule = () => {
                         <p className='font-medium lg:text-xl md:text-xl text-lg'>6<sup>th</sup></p>
                     </button>
 
-                    <button onClick={() => setDay(day5)} className={`transition-all delay-[20ms] ease-in border border-[#ebe6d0] lg:rounded-2xl md:rounded-2xl rounded-xl flex flex-col justify-center items-center w-fit lg:px-4 md:px-4 px-4 lg:py-3 md:py-3 py-2.5 ${day === day5 && 'bg-[#ebe6d0] border-black text-gray-900'}`}>
+                    {/* <button onClick={() => setDay(day5)} className={`transition-all delay-[20ms] ease-in border border-[#ebe6d0] lg:rounded-2xl md:rounded-2xl rounded-xl flex flex-col justify-center items-center w-fit lg:px-4 md:px-4 px-4 lg:py-3 md:py-3 py-2.5 ${day === day5 && 'bg-[#ebe6d0] border-black text-gray-900'}`}>
                         <h1 className='font-semibold lg:text-2xl md:text-2xl text-xl'>Sept.</h1>
                         <p className='font-medium lg:text-xl md:text-xl text-lg'>7<sup>th</sup></p>
                     </button>
@@ -46,14 +46,15 @@ const Schedule = () => {
                     <button onClick={() => setDay(day6)} className={`transition-all delay-[20ms] ease-in border border-[#ebe6d0] lg:rounded-2xl md:rounded-2xl rounded-xl flex flex-col justify-center items-center w-fit lg:px-4 md:px-4 px-4 lg:py-3 md:py-3 py-2.5 ${day === day6 && 'bg-[#ebe6d0] border-black text-gray-900'}`}>
                         <h1 className='font-semibold lg:text-2xl md:text-2xl text-xl'>Sept.</h1>
                         <p className='font-medium lg:text-xl md:text-xl text-lg'>8<sup>th</sup></p>
-                    </button>
+                    </button> */}
                 </div>
 
 
                 <div className='mt-16 mb-24 m-auto'>
                     <h1 className='text-center mb-10 text-4xl font-semibold text-yellow-500'>
                         {
-                            day === day1 && 'Sept. 3' || day === day2 && 'Sept. 4' || day === day3 && 'Sept. 5' || day === day4 && 'Sept. 6' || day === day5 && 'Sept. 7' || day === day6 && 'Sept. 8'
+                            day === day1 && 'Sept. 3' || day === day2 && 'Sept. 4' || day === day3 && 'Sept. 5' || day === day4 && 'Sept. 6'
+                            // || day === day5 && 'Sept. 7' || day === day6 && 'Sept. 8'
                         }
                         <sup>th</sup>
                     </h1>
@@ -87,7 +88,7 @@ const Schedule = () => {
                         ))
                     }
 
-                    <div className='flex flex-col lg:w-[40rem] md:w-[35rem] w-[95%] m-auto mt-2'>
+                    {day.special && <div className='flex flex-col lg:w-[40rem] md:w-[35rem] w-[95%] m-auto mt-2'>
                         <div className='font-semibold lg:text-2xl md:text-2xl text-xl'>
                             SPECIAL EVENTS
                         </div>
@@ -107,7 +108,7 @@ const Schedule = () => {
                                     </div>
                                 ))}
                         </div>
-                    </div>
+                    </div>}
 
                     <div className='flex items-center justify-center gap-3 mt-24'>
                         <div className='h-3 w-3 bg-yellow-500 rotate-45' />

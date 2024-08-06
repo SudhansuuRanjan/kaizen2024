@@ -57,7 +57,7 @@ const Footer = () => {
                     <p className='max-w-[16rem] pt-4 text'>AIIMS Patna, Phulwarisharif, Patna, Bihar-801507, India</p>
                     <p className='pt-2'>Contact : <a href="tel:+919903878567" className='text-red-700 ml-2 font-semibold'>+91 9903878567</a></p>
                     <p className='pt-2'><a href="tel:+917970987442" className='text-red-700 ml-20 font-semibold'>+91 7970987442</a></p>
-                    <p className='pt-2'>Mail : <a href="mailto:kaizen@aiimspatna.org" className='text-red-700 ml-2 font-semibold'>kaizen@aiimspatna.org</a></p>
+                    <p className='pt-2'>Mail : <a href="mailto:kaizen2024.help@gmail.com" className='text-red-700 ml-2 font-semibold'>kaizen2024.help@gmail.com</a></p>
                 </div>
 
             </div>
