@@ -56,7 +56,7 @@ const PrivacyPolicy = () => {
              <div className='pb-10'>
                 <p className='leading-8 text-opacity-60 font-normal my-3'>04/ Cookies and Web Beacons</p>
                 <p className='leading-8 my-6'>
-                    Like all websites, kaizenaiimspatna.com makes use of "cookies". These cookies keep track of information, such as visitor interests and the web pages they access or browse. By altering the content of our web pages based on visitors' browser types and/or other information, the information is used to optimize the users' experience.
+                    Like all websites, kaizenaiims.com makes use of "cookies". These cookies keep track of information, such as visitor interests and the web pages they access or browse. By altering the content of our web pages based on visitors' browser types and/or other information, the information is used to optimize the users' experience.
                 </p>
             </div>
 

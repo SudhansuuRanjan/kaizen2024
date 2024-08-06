@@ -12,7 +12,7 @@ import EventSchedule from '../../components/HomePage/EventSchedule'
 
 
 const Home = () => {
-  document.title = "KAIZEN 2024"
+  document.title = "KAIZEN 2024 | AIIMS Patna"
 
   return (
     <div className="w-[100%] overflow-hidden">

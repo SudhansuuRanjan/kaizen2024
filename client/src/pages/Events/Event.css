@@ -278,6 +278,7 @@
     }
 
     .event-page-event-container {
+        max-width: calc(100% - 76px);
         display: flex;
         flex-direction: column;
     }
@@ -346,6 +347,7 @@
     }
 
     .event-page-event-container {
+        max-width: calc(100% - 56px);
         display: flex;
         flex-direction: column;
     }
@@ -360,6 +362,10 @@
         border-radius: 0.6rem;
         padding: 0.5rem 1rem;
         font-size: 1rem;
+    }
+
+    .event-details-container {
+        padding: 1rem;
     }
 }
 
@@ -410,7 +416,7 @@
     .event-page-event-container {
         display: flex;
         flex-direction: column;
-        max-width: calc(100% - 3rem);
+        max-width: calc(100% - 1rem);
     }
 
     .register-btn {
@@ -423,5 +429,9 @@
         border-radius: 0.6rem;
         padding: 0.5rem 1rem;
         font-size: 1rem;
+    }
+
+    .event-details-container {
+        padding: 1rem;
     }
 }

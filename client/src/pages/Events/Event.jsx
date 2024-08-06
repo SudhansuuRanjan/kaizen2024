@@ -72,7 +72,7 @@ const EventDetails = () => {
                                                     {
                                                         data.eventContacts.map((item, index) => {
                                                             return (
-                                                                <div key={index} className='flex items-center text-base justify-center gap-1'>
+                                                                <div key={index} className='flex items-center justify-center gap-1 lg:text-base text-sm'>
                                                                     <span className='m-0 p-0 font-bold'>{item.name} - </span>
                                                                     <a className='m-0 p-0 text-blue-500'>{item.phone}</a>
                                                                 </div>
@@ -80,7 +80,7 @@ const EventDetails = () => {
                                                         })
                                                     }
                                                 </div>
-                                                <div className='flex items-center gap-2 justify-center lg:text-2xl text-xl'>
+                                                <div className='flex items-center gap-2 justify-center lg:text-2xl md:text-xl text-base'>
                                                     <h3>Team Size:</h3>
                                                     <span className='text-yellow-500'>{data.minMembers == '1' && data.maxMembers == '1' ? 'Solo' : data.minMembers} </span>
                                                     {data.maxMembers != data.minMembers && <><span className='text-yellow-500'>to</span>
@@ -89,11 +89,11 @@ const EventDetails = () => {
                                                 </div>
                                             </div>
                                             <div className='flex py-10 pt-6 lg:flex-row md:flex-row flex-col justify-between items-start gap-4 text-xl w-[100%] font-medium border-bottom'>
-                                                <div className='flex items-center gap-2 justify-center lg:text-2xl text-xl'>
+                                                <div className='flex items-center gap-2 justify-center lg:text-2xl md:text-xl text-base'>
                                                     <h3>Prize Pool:</h3>
                                                     <span className='text-yellow-500 font-bold'> {data.prizes}</span>
                                                 </div>
-                                                <div className='flex items-center gap-2 justify-center lg:text-2xl text-xl'>
+                                                <div className='flex items-center gap-2 justify-center lg:text-2xl md:text-xl text-base'>
                                                     <h3>Registration Fee:</h3>
                                                     <span className='text-yellow-500'> ₹{data.price}</span>
                                                 </div>
