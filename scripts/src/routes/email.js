@@ -32,10 +32,12 @@ router.post('/process-mail-queue', async (req, res) => {
         }
 
         for (let i = 0; i < mailQueue.length; i++) {
-            let { email, data, templateid } = mailQueue[i];
-            if (mailQueue[i].service === 'brpass') {
+            let { email, data, templateid, service } = mailQueue[i];
+            if (service == 'brpass') {
+                console.log('Generating QR code for ', data.brid);
                 data.qrurl = await generateAndUploadQRCode(data.brid, `${data.brid}.png`);
             }
+            console.log('Sending email to ', email, ' with template ', templateid, ' and data ', data);
             await sendMail(email, data, templateid);
             await updateMailQueue(mailQueue[i].id, { sent: true });
         }
