@@ -46,7 +46,7 @@ const EventPage = () => {
 
             <div className='event-category-container'>
                 {
-                    ["All", "Literary", "Cultural", "Arts", "Informals", "Sports", "Academics"].map((category) => (
+                    ["All", "Literary", "Cultural", "Arts", "Informals", "Sports", "Academics", "Workshops"].map((category) => (
                         <button
                             onClick={() => setSearchParams(prev => {
                                 prev.set('category', category);

@@ -70,7 +70,7 @@ const EventDetails = () => {
                                                 <div className='flex flex-col items-start gap-2 justify-center mb-4'>
                                                     <h3 className='details-text m-0 p-0'>For any query contact:</h3>
                                                     {
-                                                        data.eventContacts.map((item, index) => {
+                                                        data.eventContacts && data.eventContacts.map((item, index) => {
                                                             return (
                                                                 <div key={index} className='flex items-center justify-center gap-1 lg:text-base text-sm'>
                                                                     <span className='m-0 p-0 font-bold'>{item.name} - </span>
