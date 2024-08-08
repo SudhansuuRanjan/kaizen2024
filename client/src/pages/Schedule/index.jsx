@@ -53,7 +53,7 @@ const Schedule = () => {
                 <div className='mt-16 mb-24 m-auto'>
                     <h1 className='text-center mb-10 text-4xl font-semibold text-yellow-500'>
                         {
-                            day === day1 && 'Sept. 3' || day === day2 && 'Sept. 4' || day === day3 && 'Sept. 5' || day === day4 && 'Sept. 6'
+                            day === day1 && 'Sept. 5' || day === day2 && 'Sept. 6' || day === day3 && 'Sept. 7' || day === day4 && 'Sept. 8'
                             // || day === day5 && 'Sept. 7' || day === day6 && 'Sept. 8'
                         }
                         <sup>th</sup>
