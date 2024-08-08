@@ -53,7 +53,7 @@ router.put("/handle_free_event", checkApiKey, async (req, res) => {
         await addFreeEventToPurchased(user, data, members);
         const [response] = await getFreeEventFromProfile(user.user_id, data.event_id);
 
-        if(!response) {
+        if (!response) {
             return res.status(400).json({ message: 'Event not found' });
         }
 
@@ -70,7 +70,7 @@ router.put("/handle_free_event", checkApiKey, async (req, res) => {
                 }
             };
         });
-        
+
         await bulkAddtoMailQueue(emailData);
         res.status(200).json({ message: 'Event registered successfully', response });
     } catch (error) {
@@ -83,11 +83,20 @@ router.put('/handle_payment', checkApiKey, async (req, res) => {
     try {
         const paymentData = await getTransactionDetailsFromSabpaisa({ clientCode: 'AIIMSK', clientTxnId });
 
+        if (!paymentData) {
+            res.status(400).json({ message: 'Transaction not found in Sabpaisa' });
+        }
+
         if (paymentData.status !== 'SUCCESS') {
             return res.status(400).json({ message: 'Payment failed' });
         }
 
         const transaction = await getCartPaymentTransaction(clientTxnId);
+
+        if (transaction[0].paymentVerified) {
+            res.status(200).json({ message: 'Transaction already verified', status: sabpaisaResponse.status });
+        }
+
         const cart = transaction[0].cart_data;
 
         if (cart.length === 0) {
