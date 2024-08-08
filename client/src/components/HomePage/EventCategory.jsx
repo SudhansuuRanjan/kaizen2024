@@ -32,7 +32,7 @@ const EventCategory = () => {
         },
         {
             name: 'Informals',
-            image: "/images/fashion.webp",
+            image: "https://firebasestorage.googleapis.com/v0/b/kaizen-5bbc8.appspot.com/o/escape%20room.webp?alt=media&token=a4ef9889-93b7-443e-94fd-cceec5e046e8",
         },
         {
             name: 'Academics',
