@@ -23,5 +23,8 @@
     "open": "^10.1.0",
     "qrcode": "^1.5.3",
     "utf8": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/qrcode": "^1.5.5"
   }
 }
