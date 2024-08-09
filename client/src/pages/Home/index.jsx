@@ -9,6 +9,7 @@ import Sponsors from '../../components/HomePage/Sponsors'
 import ChiefPatron from '../../components/HomePage/ChiefPatron'
 import CAPopup from '../../components/HomePage/CAPopup'
 import EventSchedule from '../../components/HomePage/EventSchedule'
+import Collab from '../../components/HomePage/Collab'
 
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
   return (
     <div className="w-[100%] overflow-hidden">
       <ParallaxComponent />
+      <Collab/>
       <Timer />
       <EventCategory />
       <ArtistLineup />

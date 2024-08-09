@@ -23,7 +23,7 @@ const Timer = () => {
     }, [parsedDeadline, selectedDate]);
 
     return (
-        <div className=" bg-repeat-y  min-h-fit bg-center bg-cover flex relative justify-center items-center">
+        <div className="bg-repeat-y  min-h-fit bg-center bg-cover flex relative justify-center items-center bg-gradient-to-b from-[#0c0c16] to-[#0c0b13]">
             <div data-aos="zoom-in-up" className="flex bg-gray-800 bg-opacity-30 backdrop-blur-md m-auto gap-12 rounded-3xl lg:p-14 md:p-10 p-5 lg:my-32 md:my-26 my-24 border border-gray-800">
                 <img src="/kaizen-logo.webp" alt="ship" className="lg:h-[16rem] border border-gray-800 rounded-full md:h-[13rem] lg:block md:block hidden" />
                 <div className="flex flex-col items-center justify-center lg:gap-10 md:gap-9 gap-8">
