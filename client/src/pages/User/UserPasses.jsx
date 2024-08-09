@@ -50,7 +50,7 @@ const UserPasses = ({ uid }) => {
                                 <div className='flex flex-col gap-2'>
                                     <div className='flex gap-2 items-center'>
                                         <MdDateRange className='text-rose-500' />
-                                        <p className='text-gray-500 text-sm font-semibold'>Date: <span className='text-gray-800 font-semibold'>3rd - 6th Sept. 2024</span></p>
+                                        <p className='text-gray-500 text-sm font-semibold'>Date: <span className='text-gray-800 font-semibold'>5th - 8th Sept. 2024</span></p>
                                     </div>
                                     <div className='flex gap-2 items-center'>
                                         <FaLocationDot className='text-rose-500' />
