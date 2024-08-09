@@ -1,4 +1,5 @@
 import axios from 'axios';
+import supabase from '../config/supabase';
 
 export const applyPromoCode = async (code, persons) => {
     try {
@@ -36,3 +37,22 @@ export const createPassTransaction = async (txnId, peoples, promoCode, user) => 
         throw error;
     }
 }
+
+
+export const getBrPasses = async (uid) => {
+    if (!uid) return [];
+    try {
+        const { data, error } = await supabase
+            .from('brpass')
+            .select('*')
+            .eq('parent_user_id', uid);
+
+        if (error) {
+            throw error;
+        }
+
+        return data;
+    } catch (error) {
+        throw error;
+    }
+} 
