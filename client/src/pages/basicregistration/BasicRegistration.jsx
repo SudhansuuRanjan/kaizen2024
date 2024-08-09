@@ -283,7 +283,7 @@ const GetPass = () => {
                     <div className='bg-black h-8 w-8 rounded-full mr-[-1rem] z-30'>
                     </div>
                 </div>
-                <div className='bg-[url("pass-banner.webp")] mt-[-1rem] bg-cover bg-center w-full h-fit text-sm text-white font-normal'>
+                <div className='bg-[url("https://kaizenaiims.com/pass-banner.webp")] mt-[-1rem] bg-cover bg-center w-full h-fit text-sm text-white font-normal'>
                     <div className='h-full w-full bg-black bg-opacity-40 p-5'>
                         <p className='pb-2 text-rose-500 text-lg font-semibold'>This Basic Registration includes:</p>
                         <ul className='list-inside font-medium'>
