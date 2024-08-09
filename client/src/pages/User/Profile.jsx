@@ -36,8 +36,8 @@ const Profile = () => {
     })
 
     return (
-        <div className="bg-black bg-repeat-y  min-h-screen bg-center bg-cover pt-10 md:pt-12 lg:pt-16 pb-20 relative flex flex-col justify-center items-center">
-            <div className="bg-[#000000] bg-opacity-10 backdrop-blur-sm rounded-xl lg:w-[80%] md:w-[95%] w-full bg-center m-auto mt-5 h-fit ">
+        <div className="bg-black bg-repeat-y min-h-screen bg-center bg-cover pt-10 md:pt-12 lg:pt-16 pb-20 relative flex flex-col justify-center items-center">
+            <div className="bg-[#000000] bg-opacity-10 backdrop-blur-sm rounded-xl lg:w-[85%] md:w-[95%] w-full bg-center m-auto mt-5 h-fit ">
                 {isLargeExploding && <div className='m-auto z-[32136526571] fixed top-0 w-full h-full flex items-center justify-center'>
                     <ConfettiExplosion className='z-100' {...largeProps} />
                 </div>}

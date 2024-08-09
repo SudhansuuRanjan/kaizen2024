@@ -21,14 +21,14 @@ const UserPasses = ({ uid }) => {
     }
 
     return (
-        <div className="flex lg:gap-6 md:gap-6 gap-7 flex-wrap py-10">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-7 py-10">
             {
                 passes.length === 0 ? <div className='text-center text-gray-500 text-lg font-semibold w-full'>
                     No passes found!
                 </div>
                     : passes.map((pass, index) => (
-                        <div key={index} className='rounded-lg overflow-hidden lg:mx-0 md:mx-0 mx-5 lg:w-[20rem] md:w-[22rem] w-full bg-white '>
-                            <img src="pass-banner.webp" alt="pass banner" />
+                        <div key={index} className='rounded-lg overflow-hidden lg:mx-0 md:mx-0 mx-5  bg-white '>
+                            <img src="pass-banner.webp" alt="pass banner" className="w-full" />
                             <div className='p-4'>
                                 <h4 className="text-rose-500 text-lg font-semibold">
                                     KAIZEN 2024
