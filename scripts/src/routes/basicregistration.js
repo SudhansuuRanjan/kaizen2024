@@ -1,4 +1,4 @@
-const { getPromoCode, createPassPurchasePayment, createPass, updatePassPurchasePayment, getPassPurchasePayment, getUnverifiedPaymnents, getPassByBrid } = require('../services/basicreg.service');
+const { getPromoCode, createPassPurchasePayment, createPass, updatePassPurchasePayment, getPassPurchasePayment, getUnverifiedPaymnents, getPassByBrid, updatePass } = require('../services/basicreg.service');
 const generateRandomID = require('../utils/randomId');
 const express = require('express');
 const router = express.Router();
@@ -381,7 +381,7 @@ router.put("/pass/:id", async (req, res) => {
             });
         }
 
-        await updatePassPurchasePayment(id, data);
+        await updatePass(id, data);
 
         res.status(200).json({
             message: 'Pass updated successfully!',
