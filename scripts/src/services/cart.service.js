@@ -185,6 +185,24 @@ const updateCartPaymentTransaction = async (clientTxnId, data) => {
     }
 }
 
+const getNonVerifiedCartPaymentTransactions = async () => {
+    try {
+        const { data, error } = await supabase
+            .from('events_purchase_info')
+            .select('*')
+            .eq('payment_verified', false)
+            .limit(10)
+
+        if (error) {
+            throw error;
+        }
+
+        return data;
+    } catch (error) {
+        throw error;
+    }
+}
+
 module.exports = {
     getUserEventCart,
     addEventsToPurchased,
@@ -193,5 +211,6 @@ module.exports = {
     getCartPaymentTransaction,
     updateCartPaymentTransaction,
     addFreeEventToPurchased,
-    getFreeEventFromProfile
+    getFreeEventFromProfile,
+    getNonVerifiedCartPaymentTransactions
 }
