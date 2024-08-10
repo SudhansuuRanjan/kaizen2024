@@ -68,7 +68,7 @@ const Footer = () => {
                     © {year} Kaizen. All Rights Reserved.
                 </p>
                 <div className='flex lg:flex-row md:flex-row flex-col text-center lg:gap-1 mD:gap-1'>
-                    <p>Designed & Developed by</p> <a className="text-base font-medium text-red-500" href="https://sudhanshur.vercel.app/"> Sudhanshu Ranjan</a>.
+                    <p>Designed & Developed by</p> <a target='_blank' className="text-base font-medium text-red-500" href="https://sudhanshur.vercel.app/"> Sudhanshu Ranjan</a>.
                 </div>
             </div>
         </div>
