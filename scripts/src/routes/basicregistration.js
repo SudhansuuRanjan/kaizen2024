@@ -102,6 +102,7 @@ router.post("/create-pass-purchase-payment", checkApiKey, async (req, res) => {
     if (members.length >= groupDiscountReqMembers) {
         let discountAmount = (totalAmount * 10) / 100;
         amounts.grp_discount = discountAmount;
+        amounts.final_amount = totalAmount - amounts.grp_discount;
     } else {
         amounts.final_amount = totalAmount;
     }
@@ -330,7 +331,11 @@ router.post("/resolve-pass-purchase-payment", checkApiKey, async (req, res) => {
     }
 })
 
-router.get("/pass/:brid", async (req, res) => {
+router.get("/pass", async (req, res) => {
+    res.status(200).json({
+        message: 'Pass API is working!',
+        name: "Rahul"
+    });
     const { brid } = req.params;
 
     if (!brid) {
