@@ -36,7 +36,8 @@ const getTransactionDetailsFromSabpaisa = async (data) => {
 
         return querystring.parse(decryptedData);
     } catch (error) {
-        throw new Error(error.message);
+        console.error('Error in getTransactionDetailsFromSabpaisa:', error.message);
+        return null;
     }
 }
 

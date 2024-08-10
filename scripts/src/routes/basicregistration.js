@@ -1,4 +1,4 @@
-const { getPromoCode, createPassPurchasePayment, createPass, updatePassPurchasePayment, getPassPurchasePayment } = require('../services/basicreg.service');
+const { getPromoCode, createPassPurchasePayment, createPass, updatePassPurchasePayment, getPassPurchasePayment, getUnverifiedPaymnents } = require('../services/basicreg.service');
 const generateRandomID = require('../utils/randomId');
 const express = require('express');
 const router = express.Router();
@@ -226,11 +226,104 @@ router.post("/update-pass-purchase-payment", checkApiKey, async (req, res) => {
             });
         } else {
             // update transaction status to failure
-            await updateInternalTransaction('internalpayments', txnid, { status: sabpaisaResponse.status, paymentData: sabpaisaResponse, paymentVerified: false });
+            await updatePassPurchasePayment(clientTxnId, {
+                ...data,
+                paymentData: sabpaisaResponse,
+                paymentVerified: false,
+                status: sabpaisaResponse.status
+            });
             return res.status(400).json({ message: 'Transaction not successful', status: sabpaisaResponse.status });
         }
     } catch (error) {
         console.error('Error in /update-pass-purchase-payment:', error);
+        res.status(500).json({
+            message: 'Error updating pass purchase payment transaction.'
+        });
+    }
+})
+
+
+
+router.post("/resolve-pass-purchase-payment", checkApiKey, async (req, res) => {
+    try {
+        // get transactions from db where paymentVerified is false
+        const payments = await getUnverifiedPaymnents();
+
+        if (!payments || payments.length === 0) {
+            return res.status(200).json({
+                message: 'No unverified payments found!'
+            });
+        }
+
+
+        for (let i = 0; i < payments.length; i++) {
+            const data = payments[i];
+
+            const sabpaisaResponse = await getTransactionDetailsFromSabpaisa({ clientCode: 'AIIMSK', clientTxnId: data.clientTxnId });
+
+            if (!sabpaisaResponse) {
+                await updatePassPurchasePayment(data.clientTxnId, {
+                    ...data,
+                    paymentVerified: true,
+                    status: 'NOT_FOUND'
+                });
+                continue;
+            } else if (data.paymentVerified) {
+                console.error('Transaction already verified');
+                continue;
+            } else if (sabpaisaResponse.status === 'SUCCESS') {
+                await updatePassPurchasePayment(data.clientTxnId, {
+                    ...data,
+                    paymentData: sabpaisaResponse,
+                    paymentVerified: true,
+                    status: sabpaisaResponse.status
+                });
+
+                let members = data.members_data;
+                members = members.map(member => {
+                    return {
+                        ...member,
+                        brid: generateRandomID(),
+                        registration_mode: 'online',
+                        parent_user_id: data.user_id,
+                    }
+                });
+
+                await createPass(members);
+
+                const emailData = members.map((member) => {
+                    return {
+                        email: member.email,
+                        templateid: 'JT3V640FK7MBKCGH8TWPDDBBGA6X',
+                        name: member.name,
+                        service: 'brpass',
+                        data: {
+                            name: member.name,
+                            qrurl: '',
+                            brid: member.brid,
+                        }
+                    }
+                })
+
+                await bulkAddtoMailQueue(emailData);
+
+                console.log('Pass purchase payment updated successfully!');
+            } else {
+                // update transaction status to failure
+                await updatePassPurchasePayment(data.clientTxnId, {
+                    ...data,
+                    paymentData: sabpaisaResponse,
+                    paymentVerified: true,
+                    status: sabpaisaResponse.status
+                });
+                console.error('Transaction not successful');
+            }
+        }
+
+        res.status(200).json({
+            message: 'Pass purchase payment updated successfully!',
+        })
+    } catch (error) {
         res.status(500).json({
             message: 'Error updating pass purchase payment transaction.'
         });

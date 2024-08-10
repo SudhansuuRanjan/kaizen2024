@@ -93,7 +93,7 @@ const createPass = async (passData) => {
             .insert(passData)
 
         if (error) {
-            console.error('Error creating pass:', error.message);
+            console.error('Error creating pass:', error.message, passData);
             throw error;
         }
 
@@ -103,4 +103,23 @@ const createPass = async (passData) => {
     }
 }
 
-module.exports = { getPromoCode, createPassPurchasePayment, createPass, updatePassPurchasePayment, getPassPurchasePayment };
+const getUnverifiedPaymnents = async () => {
+    try {
+        const { data, error } = await supabase
+            .from('pass_purchase_info')
+            .select('*')
+            .eq('paymentVerified', false)
+
+        if (error) {
+            console.error('Error fetching unverified payments:', error.message);
+            throw error;
+        }
+
+        return data;
+    } catch (error) {
+        console.error('Error in getUnverifiedPaymnents:', error.message);
+        throw error;
+    }
+}
+
+module.exports = { getPromoCode, createPassPurchasePayment, createPass, updatePassPurchasePayment, getPassPurchasePayment, getUnverifiedPaymnents };
