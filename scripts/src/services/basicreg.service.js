@@ -147,6 +147,7 @@ const updatePass = async (id, passData) => {
             .from('brpass')
             .update(passData)
             .eq('id', id)
+            .single();
 
         if (error) {
             console.error('Error updating pass:', error.message);

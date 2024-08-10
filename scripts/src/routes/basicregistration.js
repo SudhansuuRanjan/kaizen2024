@@ -373,19 +373,11 @@ router.put("/pass/:id", async (req, res) => {
     }
 
     try {
-        const pass = await getPassByBrid(id);
-
-        if (!pass || pass.length === 0) {
-            return res.status(404).json({
-                message: "Pass not found!"
-            });
-        }
-
-        await updatePass(id, data);
+        const response = await updatePass(id, data);
 
         res.status(200).json({
             message: 'Pass updated successfully!',
-            data
+            data: response
         });
 
     } catch (error) {
