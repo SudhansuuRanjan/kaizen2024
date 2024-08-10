@@ -50,6 +50,13 @@ router.put("/handle_free_event", checkApiKey, async (req, res) => {
         if (data.price > 0) {
             return res.status(400).json({ message: 'Event is not free' });
         }
+
+        // check if user has already registered for the event
+        const existingEvent = await getFreeEventFromProfile(user.user_id, data.event_id);
+        if (existingEvent.length > 0) {
+            return res.status(400).json({ message: 'You are already registered in this event.' })
+        }
+
         await addFreeEventToPurchased(user, data, members);
         const [response] = await getFreeEventFromProfile(user.user_id, data.event_id);
 
