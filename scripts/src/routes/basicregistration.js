@@ -331,11 +331,7 @@ router.post("/resolve-pass-purchase-payment", checkApiKey, async (req, res) => {
     }
 })
 
-router.get("/pass", async (req, res) => {
-    res.status(200).json({
-        message: 'Pass API is working!',
-        name: "Rahul"
-    });
+router.get("/pass/:brid", async (req, res) => {
     const { brid } = req.params;
 
     if (!brid) {
