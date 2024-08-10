@@ -122,4 +122,23 @@ const getUnverifiedPaymnents = async () => {
     }
 }
 
-module.exports = { getPromoCode, createPassPurchasePayment, createPass, updatePassPurchasePayment, getPassPurchasePayment, getUnverifiedPaymnents };
+const getPassByBrid = async (brid) => {
+    try {
+        const { data, error } = await supabase
+            .from('brpass')
+            .select('*')
+            .eq('brid', brid)
+
+        if (error) {
+            console.error('Error fetching pass by brid:', error.message);
+            throw error;
+        }
+
+        return data;
+    } catch (error) {
+        console.error('Error in getPassByBrid:', error.message);
+        throw error;
+    }
+}
+
+module.exports = { getPromoCode, createPassPurchasePayment, createPass, updatePassPurchasePayment, getPassPurchasePayment, getUnverifiedPaymnents, getPassByBrid };

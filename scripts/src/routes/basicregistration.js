@@ -1,4 +1,4 @@
-const { getPromoCode, createPassPurchasePayment, createPass, updatePassPurchasePayment, getPassPurchasePayment, getUnverifiedPaymnents } = require('../services/basicreg.service');
+const { getPromoCode, createPassPurchasePayment, createPass, updatePassPurchasePayment, getPassPurchasePayment, getUnverifiedPaymnents, getPassByBrid } = require('../services/basicreg.service');
 const generateRandomID = require('../utils/randomId');
 const express = require('express');
 const router = express.Router();
@@ -326,6 +326,37 @@ router.post("/resolve-pass-purchase-payment", checkApiKey, async (req, res) => {
     } catch (error) {
         res.status(500).json({
             message: 'Error updating pass purchase payment transaction.'
+        });
+    }
+})
+
+router.get("/pass/:brid", async (req, res) => {
+    const { brid } = req.params;
+
+    if (!brid) {
+        return res.status(400).json({
+            message: "Please send required parameters"
+        });
+    }
+
+    try {
+        const data = await getPassByBrid(brid);
+
+        if (!data || data.length === 0) {
+            return res.status(404).json({
+                message: "Pass not found!"
+            });
+        }
+
+        res.status(200).json({
+            message: 'Pass found!',
+            data
+        });
+
+    } catch (error) {
+        console.error('Error in /pass/:brid:', error);
+        res.status(500).json({
+            message: 'Error fetching pass.'
         });
     }
 })
