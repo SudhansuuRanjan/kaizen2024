@@ -141,4 +141,23 @@ const getPassByBrid = async (brid) => {
     }
 }
 
-module.exports = { getPromoCode, createPassPurchasePayment, createPass, updatePassPurchasePayment, getPassPurchasePayment, getUnverifiedPaymnents, getPassByBrid };
+const updatePass = async (id, passData) => {
+    try {
+        const { data, error } = await supabase
+            .from('brpass')
+            .update(passData)
+            .eq('id', id)
+
+        if (error) {
+            console.error('Error updating pass:', error.message);
+            throw error;
+        }
+
+        return data;
+    } catch (error) {
+        console.error('Error in updatePass:', error.message);
+        throw error;
+    }
+}
+
+module.exports = { getPromoCode, createPassPurchasePayment, createPass, updatePassPurchasePayment, getPassPurchasePayment, getUnverifiedPaymnents, getPassByBrid, updatePass };

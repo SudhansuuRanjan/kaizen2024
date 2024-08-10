@@ -362,4 +362,40 @@ router.get("/pass/:brid", async (req, res) => {
     }
 })
 
+router.put("/pass/:id", async (req, res) => {
+    const { id } = req.params;
+    const { data } = req.body;
+
+    if (!id || !data) {
+        return res.status(400).json({
+            message: "Please send required parameters"
+        });
+    }
+
+    try {
+        const pass = await getPassByBrid(id);
+
+        if (!pass || pass.length === 0) {
+            return res.status(404).json({
+                message: "Pass not found!"
+            });
+        }
+
+        await updatePassPurchasePayment(id, data);
+
+        res.status(200).json({
+            message: 'Pass updated successfully!',
+            data
+        });
+
+    } catch (error) {
+        console.error('Error in /pass/:id:', error);
+        res.status(500).json({
+            message: 'Error updating pass.'
+        });
+    }
+})
+
+
+
 module.exports = router;
