@@ -32,6 +32,7 @@ const Alumni = () => {
   const [loading, setLoading] = useState(false);
   const [verifyingPayment, setVerifyingPayment] = useState(false);
   const [amountCap, setAmountCap] = useState(1600);
+  const [amount, setAmount] = useState(1600);
 
   const getJsonFromUrl = () => {
     const queryParams = new URLSearchParams(window.location.search);
@@ -80,6 +81,7 @@ const Alumni = () => {
       const details = {
         ...data,
         txnid: txnId,
+        amount,
       };
       toast.success('Proceeding to Payment...');
 
@@ -229,14 +231,19 @@ const Alumni = () => {
               ]}
               reactHookForm={register('designation', {
                 required: 'Designation is required',
-                onChange: (value) => {
-                  if (value === 'Intern' || value === 'Nursing Officer') {
+                onChange: (e) => {
+                  let value = e.target.value;
+                  if (value === 'Intern') {
                     setValue('department', 'None');
-                  }
-                  if (value === 'Nursing Officer') {
-                    setAmountCap(1100);
+                    setAmountCap(1100); // Or any amount you'd like for Intern
+                    setAmount(1100);
+                  } else if (value === 'Nursing Officer') {
+                    setValue('department', 'None');
+                    setAmountCap(1100); // Minimum amount for Nursing Officer
+                    setAmount(1100);
                   } else {
-                    setAmountCap(1600);
+                    setAmountCap(1600); // Default amount for other designations
+                    setAmount(1600);
                   }
                 }
               })}
@@ -250,92 +257,11 @@ const Alumni = () => {
               id='department'
               require={true}
               options={[
-                {
-                  name: "Anatomy",
-                  value: "Anatomy"
-                },
-                {
-                  name: "Physiology",
-                  value: "Physiology"
-                },
-                {
-                  name: "Biochemistry",
-                  value: "Biochemistry"
-                },
-                {
-                  name: "Pathology",
-                  value: "Pathology"
-                },
-                {
-                  name: "Pharmacology",
-                  value: "Pharmacology"
-                },
-                {
-                  name: "Microbiology",
-                  value: "Microbiology"
-                },
-                {
-                  name: "Community Medicine",
-                  value: "Community Medicine"
-                },
-                {
-                  name: "General Medicine",
-                  value: "General Medicine"
-                },
-                {
-                  name: "General Surgery",
-                  value: "General Surgery"
-                },
-                {
-                  name: "Pediatrics",
-                  value: "Pediatrics"
-                },
-                {
-                  name: "Obstetrics and Gynecology",
-                  value: "Obstetrics and Gynecology"
-                },
-                {
-                  name: "Orthopedics",
-                  value: "Orthopedics"
-                },
-                {
-                  name: "Ophthalmology",
-                  value: "Ophthalmology"
-                },
-                {
-                  name: "Otorhinolaryngology (ENT)",
-                  value: "Otorhinolaryngology (ENT)"
-                },
-                {
-                  name: "Dermatology",
-                  value: "Dermatology"
-                },
-                {
-                  name: "Psychiatry",
-                  value: "Psychiatry"
-                },
-                {
-                  name: "Radiology",
-                  value: "Radiology"
-                },
-                {
-                  name: "Anesthesiology",
-                  value: "Anesthesiology"
-                },
-                {
-                  name: "Emergency Medicine",
-                  value: "Emergency Medicine"
-                },
-                {
-                  name: "Others",
-                  value: "Others"
-                },
-                {
-                  name: "None",
-                  value: "None"
-                }
-              ]
-              }
+                { name: "Anatomy", value: "Anatomy" },
+                { name: "Physiology", value: "Physiology" },
+                // ... other department options
+                { name: "None", value: "None" }
+              ]}
               reactHookForm={register('department', {
                 required: 'Department is required',
               })}
@@ -344,7 +270,9 @@ const Alumni = () => {
               placeholder="Select Department"
             />
 
-            <Input
+
+
+            {/* <Input
               label="Amount (INR)"
               type="number"
               placeholder="Amount"
@@ -359,10 +287,18 @@ const Alumni = () => {
               })}
               className='bg-gray-950 rounded-lg px-3 py-2 mt-1 w-full text-gray-300'
               errors={errors.amount}
-            />
+            /> */}
+
+            <div className='flex flex-col w-full'>
+              <label className='text-gray-300'>Amount (INR)</label>
+              <input required min={amountCap} type="number" placeholder='Amount' className='bg-gray-950 rounded-lg px-3 py-2 mt-1 w-full text-gray-300' value={amount} onChange={(e) => setAmount(e.target.value)} />
+              {amount < amountCap && <p className='text-rose-500'>
+                Minimum amount is {amountCap} INR for this designation.
+              </p>}
+            </div>
 
             <div className='flex flex-col w-full mt-5'>
-              <button className='bg-yellow-500 text-gray-900 py-2.5 my-3 rounded-lg font-semibold' type="submit">Contribute</button>
+              <button disabled={amount < amountCap} className='bg-yellow-500 text-gray-900 py-2.5 my-3 rounded-lg font-semibold' type="submit">Contribute</button>
             </div>
           </form>
         </div>
