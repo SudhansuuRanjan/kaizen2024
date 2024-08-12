@@ -12,6 +12,7 @@ async function getPromoCode(code) {
         }
 
         if (!data || data.length === 0) {
+            return null;
             throw new Error('Promo code not found');
         }
 
