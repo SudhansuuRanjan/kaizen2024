@@ -158,17 +158,11 @@ router.put('/handle_payment', checkApiKey, async (req, res) => {
             };
         });
 
-
-        try {
-            await Promise.all([
-                clearUserCart(cart[0].self.user_id),
-                bulkAddtoMailQueue(emailData),
-                updateCartPaymentTransaction(clientTxnId, { status: 'SUCCESS', paymentData, mail_sent: true, payment_verified: true })
-            ]);
-
-        } catch (error) {
-            return res.status(500).json({ message: 'Error processing cart', error: error.message });
-        }
+        await Promise.all([
+            clearUserCart(cart[0].self.user_id),
+            bulkAddtoMailQueue(emailData),
+            updateCartPaymentTransaction(clientTxnId, { status: 'SUCCESS', paymentData, mail_sent: true, payment_verified: true })
+        ]);
 
         res.status(200).json({ message: 'Cart processed successfully', status: 'SUCCESS' });
     } catch (error) {
