@@ -81,7 +81,7 @@ const Alumni = () => {
       const details = {
         ...data,
         txnid: txnId,
-        amount,
+        amount: String(amount),
       };
       toast.success('Proceeding to Payment...');
 
@@ -92,7 +92,7 @@ const Alumni = () => {
         name: data.name,
         email: data.email,
         phone: data.phone,
-        amount: data.amount,
+        amount: String(amount),
         isOpen: true,
         txtnId: txnId,
       });
