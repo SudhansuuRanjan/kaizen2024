@@ -72,9 +72,8 @@ router.post("/check-promo-code", checkApiKey, async (req, res) => {
         });
 
     } catch (error) {
-        console.error('Error in /check-promo-code:', error);
         res.status(500).json({
-            message: 'Error applying Promo Code.'
+            message: 'Error applying Promo Code.',
         });
     }
 });

@@ -8,7 +8,6 @@ async function getPromoCode(code) {
             .eq('code', code);
 
         if (error) {
-            console.error('Error fetching promo code:', error.message);
             throw error;
         }
 
