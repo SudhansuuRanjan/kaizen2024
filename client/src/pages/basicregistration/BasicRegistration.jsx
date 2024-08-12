@@ -269,7 +269,7 @@ const GetPass = () => {
             <p className='text-center text-yellow-500 text-lg mb-[7rem] lg:max-w-[55rem] md:max-w-[40rem] w-full px-6 m-auto'>
                 Your basic registration <span className='text-red-500 font-medium'>DOES NOT</span> include participation in cultural, literary, arts, informals and sports competitions. To participate in them, register seperately <Link to="/events" className='text-blue-400 font-medium'>here</Link>.
             </p>
-            <div className='lg:w-[37rem] md:w-[32rem] w-[90%] bg-white rounded-2xl text-gray-700 m-auto mt-5'>
+            <div className='lg:w-[37rem] md:w-[32rem] w-[calc(100%-2rem)] bg-white rounded-2xl text-gray-700 m-auto mt-5'>
                 <div className='px-5 py-5'>
                     <h1 className='text-xl font-semibold'>KAIZEN AIIMS, Patna</h1>
                     <h2 className='text-base font-medium'>Get your basic registration done!</h2>
@@ -285,7 +285,7 @@ const GetPass = () => {
                 </div>
                 <div className='bg-[url("https://kaizenaiims.com/pass-banner.webp")] mt-[-1rem] bg-cover bg-center w-full h-fit text-sm text-white font-normal'>
                     <div className='h-full w-full bg-black bg-opacity-40 p-5'>
-                        <p className='pb-2 text-rose-500 text-lg font-semibold'>This Basic Registration includes:</p>
+                        <p className='m-2 bg-gray-800 bg-opacity-40 w-fit text-lg font-semibold'>This Basic Registration includes:</p>
                         <ul className='list-inside font-medium'>
                             <li>✅ Access to all Kaizen events.</li>
                             <li>✅ Free Lunch on all Kaizen days.</li>
@@ -302,13 +302,10 @@ const GetPass = () => {
                         </ul>
                     </div>
                 </div>
-                {/* <div className='z-0'>
-                    <img className='w-full h-fit mt-[-1rem]' src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/concert.png" alt="event" />
-                </div> */}
                 <div className='flex p-6'>
                     <p className='font-medium text-red-500 text-center'>*Confirmation mail will be sent to each email separately.</p>
                 </div>
-                <form onSubmit={handleSubmit(onSubmit)} className='flex gap-2 flex-col w-full p-6 pt-0'>
+                <form onSubmit={handleSubmit(onSubmit)} className='flex gap-2 flex-col w-full lg:p-6 md:p-6 p-3 pt-0'>
                     <Input
                         label='Name'
                         type='text'
@@ -425,14 +422,14 @@ const GetPass = () => {
 
                 <div>
                     <h1 className='text-xl font-semibold text-center'>Attendees</h1>
-                    <div className='flex flex-col gap-2 p-6'>
+                    <div className='flex flex-col gap-2 lg:p-6 md:p-6 p-3'>
                         {peoples.length === 0 ? <div className='text-center'>No attendees added.</div> : peoples.map((people, idx) => (
                             <div key={people.id} className='flex justify-between border-gray-200 border p-3 rounded-xl'>
-                                <div className='flex flex-col gap-2'>
-                                    <h1 className='text-base font-semibold'>Name : {people.name}</h1>
-                                    <h2 className='text-sm font-medium'>Email: {people.email}</h2>
-                                    <h2 className='text-sm font-medium'>College : {people.college}</h2>
-                                    <h2 className='text-sm font-medium'>Mobile No. : {people.phone}</h2>
+                                <div className='flex flex-col lg:gap-2 md:gap-2 gap-1.5'>
+                                    <h1 className='lg:text-base md:text-base text-sm font-semibold'>Name : {people.name}</h1>
+                                    <h2 className='lg:text-sm md:text-sm text-xs font-medium'>Email: {people.email}</h2>
+                                    <h2 className='lg:text-sm md:text-sm text-xs font-medium'>College : {people.college}</h2>
+                                    <h2 className='lg:text-sm md:text-sm text-xs font-medium'>Mobile No. : {people.phone}</h2>
                                 </div>
                                 <div className='flex flex-col items-end justify-between'>
                                     <button onClick={() => handleDelete(people.id)} className='text-red-500 cursor-pointer' type="submit"><AiFillDelete size={25} /></button>
@@ -476,7 +473,7 @@ const GetPass = () => {
                         </h1>
                     </div>}
 
-                    {isPromoCodeApplied && <div className='flex justify-between px-6 py-1'>
+                    {isPromoCodeApplied && <div className='flex justify-between lg:px-6 md:px-6 px-3 py-1'>
                         <h1 className='text-base font-semibold text'>Coupon Discount</h1>
                         <h1 className='text-2xl font-semibold text-rose-500'>
                             <span className='text-lg text-gray-900'>
@@ -509,7 +506,7 @@ const GetPass = () => {
                     </div>
                 </div>
 
-                <div className='px-6'>
+                <div className='lg:px-6 md:px-6 px-3'>
 
                     <div className='flex gap-3 items-center pb-2'>
                         <input checked={tnc} type='checkbox' onChange={() => setTnc(!tnc)} />
@@ -538,7 +535,7 @@ const GetPass = () => {
                     </div>}
                 </div>
 
-                <div className='flex flex-col w-full px-6 py-8'>
+                <div className='flex flex-col w-full lg:px-6 md:px-6 px-3 py-8'>
                     <button onClick={handlePaymentInit} className={`bg-yellow-500 text-gray-900 disabled:bg-yellow-600 py-2.5 my-3 rounded-lg font-semibold`}>Proceed to Pay</button>
                 </div>
             </div>
