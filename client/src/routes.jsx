@@ -31,7 +31,7 @@ const routes = () => {
 
             <Route path='/' element={<PageLayout />} >
                 <Route path='*' element={<Error />} />
-                <Route path="/schedule" element={<Schedule />} />
+                {/* <Route path="/schedule" element={<Schedule />} /> */}
                 <Route path="/legals/:pageName" element={<Legals />} />
 
                 <Route path='/events' element={<Events />} />
