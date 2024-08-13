@@ -83,8 +83,8 @@ const Profile = () => {
                             </div>
 
                             <div className='flex flex-col gap-2 lg:w-[50%] md:w-[50%]'>
-                                <p className='text-xl font-semibold text-yellow-400'>College Details</p>
-                                <p className='text-yellow-500 mt-4'>College: <span className='text-white'>{user.college}</span></p>
+                                <p className='text-xl font-semibold text-yellow-400'>Institute Details</p>
+                                <p className='text-yellow-500 mt-4'>Institute: <span className='text-white'>{user.college}</span></p>
                                 <p className='text-yellow-500'>City: <span className='text-white'>{user.address}</span></p>
                                 {/* <p className='text-yellow-500'>Year of Study: <span className='text-white'>{user.year}</span></p>
                                 <p className='text-yellow-500'>Course: <span className='text-white'>{user.course}</span></p> */}
