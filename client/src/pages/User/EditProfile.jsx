@@ -5,16 +5,21 @@ import { Input, Select } from '../../components/Form';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { QueryClient } from '@tanstack/react-query';
+
+const queryClient = new QueryClient();
 
 const AuthSuccess = () => {
-    const { user, session } = useAuth();
+    const { user, session, refetch } = useAuth();
     const navigate = useNavigate();
     const { register, reset, handleSubmit, formState: { errors }, setValue } = useForm({ trim: true });
-
+    const user_id = session.user.id;
 
     const onSubmit = async (data) => {
         try {
             await updateUserProfile('profiles', session.user.id, data);
+            queryClient.invalidateQueries(['user', user_id]);
+            await refetch();
             toast.success('User updated successfully');
             navigate('/profile');
         } catch (error) {

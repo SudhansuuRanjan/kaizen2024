@@ -70,7 +70,8 @@ const AuthProvider = ({ children }) => {
         features: {
             data: featuresData,
             isLoading: featuresLoading
-        }
+        },
+        refetch: getCurrentUser
     }
 
     useEffect(() => {
