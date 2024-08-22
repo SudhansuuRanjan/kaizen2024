@@ -388,5 +388,49 @@ router.put("/pass/:id", async (req, res) => {
 })
 
 
+router.post("/generate-brpass", checkApiKey, async (req, res) => {
+    const { registration_mode, parent_user_id, name, email, college, phone } = req.body;
+    try {
+        let members = [{
+            name,
+            email,
+            college,
+            phone,
+            brid: generateRandomID(),
+            registration_mode,
+            parent_user_id,
+        }]
+
+        await createPass(members);
+
+        const emailData = members.map((member) => {
+            return {
+                email: member.email,
+                templateid: 'JT3V640FK7MBKCGH8TWPDDBBGA6X',
+                name: member.name,
+                service: 'brpass',
+                data: {
+                    name: member.name,
+                    qrurl: '',
+                    brid: member.brid,
+                }
+            }
+        })
+
+        await bulkAddtoMailQueue(emailData);
+        res.status(200).json({
+            message: 'Pass created successfully!',
+            status: 'SUCCESS',
+            data: members
+        })
+    } catch (error) {
+        console.error('Error in /generate-brpass:', error);
+        res.status(500).json({
+            message: 'Error generating pass'
+        });
+    }
+})
+
+
 
 module.exports = router;
