@@ -1,17 +1,12 @@
 const day1 = {
     regular: [
         {
-            time: '9:30 AM',
+            time: '9:00 AM',
             events: [
                 {
                     name: 'Classical Dance-Solo',
                     venue: 'Auditorium',
                     id: "1"
-                },
-                {
-                    name: 'T Shirt Painting',
-                    venue: 'Admin foyer',
-                    id: "2"
                 }
             ]
         },
@@ -19,8 +14,13 @@ const day1 = {
             time: '10:00 AM',
             events: [
                 {
-                    name: 'Medathena Amateur',
+                    name: 'Research Presentation',
                     venue: 'LT 1',
+                    id: "2"
+                },
+                {
+                    name: 'T Shirt Painting',
+                    venue: 'Admin foyer',
                     id: "3"
                 },
                 {
@@ -31,32 +31,32 @@ const day1 = {
             ]
         },
         {
-            time: '10:30 AM',
+            time: '11:00 AM',
             events: [
                 {
                     name: 'Classical Dance-Duet',
                     venue: 'Auditorium',
                     id: "5"
-                }
-            ]
-        },
-        {
-            time: '12:30 PM',
-            events: [
+                },
                 {
-                    name: 'Instrumental Solo',
-                    venue: 'Auditorium',
+                    name: 'Hot-take',
+                    venue: 'E Classroom',
                     id: "6"
                 }
             ]
         },
         {
-            time: '1:00 PM',
+            time: '1:30 PM',
             events: [
                 {
-                    name: 'Pebble Painting',
-                    venue: 'Admin foyer',
+                    name: 'Instrumental Solo',
+                    venue: 'Auditorium',
                     id: "7"
+                },
+                {
+                    name: 'Rhetorica Hindi',
+                    venue: '3 Nursing LTs',
+                    id: "8"
                 }
             ]
         },
@@ -64,9 +64,9 @@ const day1 = {
             time: '2:00 PM',
             events: [
                 {
-                    name: 'English Debate',
-                    venue: 'LT 3',
-                    id: "8"
+                    name: 'Pebble Painting',
+                    venue: 'Admin foyer',
+                    id: "9"
                 },
                 {
                     name: 'One word stories',
@@ -81,12 +81,12 @@ const day1 = {
                 {
                     name: 'Sher-o-Shayari',
                     venue: 'E Classroom',
-                    id: "9"
+                    id: "11"
                 }
             ]
         }
     ]
-};
+}
 
 const day2 = {
     regular: [
@@ -97,11 +97,6 @@ const day2 = {
                     name: 'Classical Singing',
                     venue: 'Auditorium',
                     id: "1"
-                },
-                {
-                    name: 'Watercolour painting',
-                    venue: 'Admin foyer',
-                    id: "2"
                 }
             ]
         },
@@ -109,59 +104,49 @@ const day2 = {
             time: '10:00 AM',
             events: [
                 {
-                    name: 'Medathena Advanced',
+                    name: 'Case Presentation',
                     venue: 'LT 1',
+                    id: "2"
+                },
+                {
+                    name: 'Watercolour painting',
+                    venue: 'Admin foyer',
                     id: "3"
                 },
                 {
                     name: 'War and (no) peace Quiz',
                     venue: 'LT 2',
                     id: "4"
-                }
-            ]
-        },
-        {
-            time: '10:30 AM',
-            events: [
+                },
                 {
                     name: 'Contemporary singing- Solo and Duet',
                     venue: 'Auditorium',
                     id: "5"
-                }
-            ]
-        },
-        {
-            time: '1:00 PM',
-            events: [
+                },
                 {
-                    name: 'Mask painting',
-                    venue: 'Admin foyer',
+                    name: 'JAM',
+                    venue: 'E Classroom',
                     id: "6"
                 }
             ]
         },
         {
-            time: '2:00 PM',
+            time: '1:30 PM',
             events: [
-                {
-                    name: 'Medathena Elite',
-                    venue: 'LT 1',
-                    id: "7"
-                },
                 {
                     name: 'Rhetorica English',
                     venue: 'All LTs',
-                    id: "8"
+                    id: "7"
                 },
                 {
-                    name: 'Rap Battle',
-                    venue: 'Auditorium',
-                    id: "10"
+                    name: 'Mask painting',
+                    venue: 'Admin foyer',
+                    id: "8"
                 },
                 {
                     name: 'Family Feud',
                     venue: 'LT 1',
-                    id: "11"
+                    id: "9"
                 }
             ]
         },
@@ -169,14 +154,16 @@ const day2 = {
             time: '2:30 PM',
             events: [
                 {
-                    name: 'Slam Poetry',
-                    venue: 'E Classroom',
-                    id: "9"
+                    name: 'Rap Battle',
+                    venue: 'Auditorium',
+                    id: "10"
                 }
             ]
         }
     ]
-};
+}
+
+
 
 const day3 = {
     regular: [
@@ -187,11 +174,6 @@ const day3 = {
                     name: 'Western Dance',
                     venue: 'Auditorium',
                     id: "1"
-                },
-                {
-                    name: 'Pencil charcoal sketching',
-                    venue: 'Admin foyer',
-                    id: "2"
                 }
             ]
         },
@@ -199,33 +181,33 @@ const day3 = {
             time: '10:00 AM',
             events: [
                 {
-                    name: 'Research Presentation',
+                    name: 'Pencil charcoal sketching',
+                    venue: 'Admin foyer',
+                    id: "2"
+                },
+                {
+                    name: 'Medathena Advanced',
                     venue: 'LT 1',
                     id: "3"
                 },
                 {
-                    name: 'LAME Quiz',
-                    venue: 'LT 2',
+                    name: 'Slam Poetry',
+                    venue: 'E Classroom',
                     id: "4"
                 }
             ]
         },
         {
-            time: '12:30 PM',
+            time: '1:30 PM',
             events: [
                 {
                     name: 'Stand up and mimicry',
                     venue: 'Auditorium',
                     id: "5"
-                }
-            ]
-        },
-        {
-            time: '1:00 PM',
-            events: [
+                },
                 {
-                    name: 'Origami',
-                    venue: 'Admin foyer',
+                    name: 'Street Dance',
+                    venue: 'Auditorium Entrance',
                     id: "6"
                 }
             ]
@@ -234,24 +216,24 @@ const day3 = {
             time: '2:00 PM',
             events: [
                 {
-                    name: 'Popcorn Please! Quiz',
-                    venue: 'LT 2',
+                    name: 'Origami',
+                    venue: 'Admin foyer',
                     id: "7"
                 },
                 {
-                    name: 'Turncoat Debate- Hindi',
-                    venue: 'LT 3',
+                    name: 'LAME Quiz',
+                    venue: 'LT 2',
                     id: "8"
-                }
-            ]
-        },
-        {
-            time: '3:00 PM',
-            events: [
+                },
                 {
-                    name: 'Street Dance',
-                    venue: 'Avengers/Helipad',
+                    name: 'Medathena Amateur',
+                    venue: 'LT 1',
                     id: "9"
+                },
+                {
+                    name: 'Turncoat Debate-Hindi',
+                    venue: 'LT 3',
+                    id: "10"
                 }
             ]
         },
@@ -261,12 +243,13 @@ const day3 = {
                 {
                     name: 'Escape Room',
                     venue: 'Nursing LTs',
-                    id: "10"
+                    id: "11"
                 }
             ]
         }
     ]
-};
+}
+
 
 const day4 = {
     regular: [
@@ -277,11 +260,6 @@ const day4 = {
                     name: 'Battle of Bands',
                     venue: 'Auditorium',
                     id: "1"
-                },
-                {
-                    name: 'Live nature canvas painting',
-                    venue: 'Admin foyer',
-                    id: "2"
                 }
             ]
         },
@@ -289,35 +267,30 @@ const day4 = {
             time: '10:00 AM',
             events: [
                 {
-                    name: 'Case and Poster Presentation',
+                    name: 'Live nature canvas painting',
+                    venue: 'Admin foyer',
+                    id: "2"
+                },
+                {
+                    name: 'Medathena Elite',
                     venue: 'LT 1',
                     id: "3"
-                },
-                {
-                    name: 'General Quiz',
-                    venue: 'LT 2',
-                    id: "4"
-                },
-                {
-                    name: 'JAM',
-                    venue: 'E Classroom',
-                    id: "5"
-                }
-            ]
-        },
-        {
-            time: '1:30 PM',
-            events: [
-                {
-                    name: 'Rhetorica Hindi',
-                    venue: '3 Nursing LTs',
-                    id: "7"
                 }
             ]
         },
         {
             time: '2:00 PM',
             events: [
+                {
+                    name: 'Popcorn Please! Quiz',
+                    venue: 'LT 2',
+                    id: "4"
+                },
+                {
+                    name: 'General Quiz',
+                    venue: 'LT 2',
+                    id: "5"
+                },
                 {
                     name: 'Nukkad Natak',
                     venue: 'Admin foyer',
@@ -326,21 +299,16 @@ const day4 = {
                 {
                     name: 'Hogathon',
                     venue: 'Intern Mess',
-                    id: "9"
-                }
-            ]
-        },
-        {
-            time: '2:30 PM',
-            events: [
+                    id: "7"
+                },
                 {
-                    name: 'Hot-take',
-                    venue: 'E Classroom',
+                    name: 'Debate English',
+                    venue: 'LT 3',
                     id: "8"
                 }
             ]
         }
     ]
-};
+}
 
 export { day1, day2, day3, day4 };
