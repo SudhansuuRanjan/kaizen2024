@@ -15,6 +15,7 @@ const app = express();
 const allowedOrigins = [
     'http://localhost:5173',
     'https://kaizenaiims.com',
+    'https://kaizen-admin2024.pages.dev'
 ];
 
 app.use(cors({
