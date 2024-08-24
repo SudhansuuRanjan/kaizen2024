@@ -395,8 +395,8 @@ const day3 = {
             events: [
                 {
                     name: 'Classical Dance-Solo',
-                 
-   venue: 'Auditorium',
+
+                    venue: 'Auditorium',
                     id: "1"
                 }
             ]
@@ -674,7 +674,7 @@ const day6 = {
         {
             time: '2:00 PM',
             events: [
-               
+
                 {
                     name: 'General Quiz',
                     venue: 'LT 2',
@@ -700,64 +700,4 @@ const day6 = {
     ]
 }
 
-const day7 = {
-    regular: [
-        {
-            time: '9:00 AM',
-            events: [
-                {
-                    name: 'Battle of Bands',
-                    venue: 'Auditorium',
-                    id: "1"
-                }
-            ]
-        },
-        {
-            time: '10:00 AM',
-            events: [
-                {
-                    name: 'Live nature canvas painting',
-                    venue: 'Admin foyer',
-                    id: "2"
-                },
-                {
-                    name: 'Medathena Elite',
-                    venue: 'LT 1',
-                    id: "3"
-                }
-            ]
-        },
-        {
-            time: '2:00 PM',
-            events: [
-                {
-                    name: 'Popcorn Please! Quiz',
-                    venue: 'LT 2',
-                    id: "4"
-                },
-                {
-                    name: 'General Quiz',
-                    venue: 'LT 2',
-                    id: "5"
-                },
-                {
-                    name: 'Nukkad Natak',
-                    venue: 'Admin foyer',
-                    id: "6"
-                },
-                {
-                    name: 'Hogathon',
-                    venue: 'Intern Mess',
-                    id: "7"
-                },
-                {
-                    name: 'Debate English',
-                    venue: 'LT 3',
-                    id: "8"
-                }
-            ]
-        }
-    ]
-}
-
-export { day1, day2, day3, day4, day5, day6, day7 };
+export { day1, day2, day3, day4, day5, day6 };

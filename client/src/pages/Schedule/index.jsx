@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { day1, day2, day3, day4, day5, day6, day7 } from '../../utils/Schedule'
+import { day1, day2, day3, day4, day5, day6 } from '../../utils/Schedule'
 import { MdLocationPin, MdAccessTimeFilled } from 'react-icons/md'
 import "./Schedule.scss"
 
@@ -47,19 +47,14 @@ const Schedule = () => {
                         <h1 className='font-semibold lg:text-2xl md:text-2xl text-xl'>Sept.</h1>
                         <p className='font-medium lg:text-xl md:text-xl text-lg'>7<sup>th</sup></p>
                     </button>
-
-                    <button onClick={() => setDay(day7)} className={`transition-all delay-[20ms] ease-in border border-[#ebe6d0] lg:rounded-2xl md:rounded-2xl rounded-xl flex flex-col justify-center items-center w-fit lg:px-4 md:px-4 px-4 lg:py-3 md:py-3 py-2.5 ${day === day7 && 'bg-[#ebe6d0] border-black text-gray-900'}`}>
-                        <h1 className='font-semibold lg:text-2xl md:text-2xl text-xl'>Sept.</h1>
-                        <p className='font-medium lg:text-xl md:text-xl text-lg'>8<sup>th</sup></p>
-                    </button>
                 </div>
 
 
                 <div className='mt-16 mb-24 m-auto'>
                     <h1 className='text-center mb-10 text-3xl font-semibold text-yellow-500'>
                         {
-                            day === day1 && 'September 2' || day === day2 && 'September 3' || day === day3 && 'September 4' || day === day4 && 'September 5'
-                            || day === day5 && 'September 6' || day === day6 && 'September 7' || day === day7 && 'September 8'
+                            day === day1 && 'September 3' || day === day2 && 'September 4' || day === day3 && 'September 5' || day === day4 && 'September 6'
+                            || day === day5 && 'September 7' || day === day6 && 'September 8'
                         }
                         {/* <sup>th</sup> */}
                     </h1>
