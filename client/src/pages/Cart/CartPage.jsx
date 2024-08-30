@@ -143,7 +143,7 @@ const CartPage = () => {
                 const respone = await updateCartPaymentTransaction({ clientTxnId: params.clientTxnId });
 
                 if (respone.status === 'SUCCESS') {
-                    toast.success('Payment Successful! Thank you for your contribution!');
+                    toast.success('Payment Successful! Thank you for your participation!');
                 } else if (respone.status === 'FAILED') {
                     toast.error('Payment Failed! Please try again later!');
                     toast.error('If the amount has been deducted from your account, please wait for 24 hours for payment verification.');
