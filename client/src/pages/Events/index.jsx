@@ -76,6 +76,9 @@ const EventPage = () => {
                                             <h4>{event.category}</h4>
                                             <h4 className='text-green-500'>{event.status}</h4>
                                         </div>
+                                        <div className='flex justify-end text-base items-center w-[100%] mt-1'>
+                                            <h2 className='text-right'>Reg. Fee : {event.price ? <span className="text-pink-500">₹{event.price}</span> : <span className='text-green-500'>Free</span>}</h2>
+                                        </div>
                                     </div>
                                     <img src={event.image} alt={event.name} loading='lazy' />
                                 </div>

@@ -24,7 +24,7 @@ const UserPasses = ({ uid }) => {
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-7 py-10">
             {
                 passes.length === 0 ? <div className='text-center text-gray-500 text-lg font-semibold w-full'>
-                    No passes found!
+                    You have done basic registration yet.
                 </div>
                     : passes.map((pass, index) => (
                         <div key={index} className='rounded-lg overflow-hidden lg:mx-0 md:mx-0 mx-5  bg-white '>

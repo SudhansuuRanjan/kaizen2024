@@ -123,7 +123,7 @@ const Profile = () => {
 
 
                 <div className="m-[auto] lg:w-[90%] md:w-[90%] w-[95%] h-fit">
-                    <p className='text-xl font-semibold text-yellow-400'>Your Basic Registration Pass(es)</p>
+                    <p className='text-xl font-semibold text-yellow-400'>Your Basic Registration</p>
                     <UserPasses uid={curruser && curruser.id} />
                 </div>
 
