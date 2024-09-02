@@ -109,6 +109,7 @@ const getUnverifiedPaymnents = async () => {
             .from('pass_purchase_info')
             .select('*')
             .eq('paymentVerified', false)
+            // .eq('status', 'INITIATED');
 
         if (error) {
             console.error('Error fetching unverified payments:', error.message);
