@@ -3,6 +3,7 @@ import { getBrPasses } from "../../services/br.service"
 import QRCode from "react-qr-code";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdDateRange } from "react-icons/md";
+import {Link} from "react-router-dom"
 
 const UserPasses = ({ uid }) => {
     const { data: passes, isLoading: loadingPasses, isError } = useQuery({
@@ -23,8 +24,9 @@ const UserPasses = ({ uid }) => {
     return (
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-7 py-10">
             {
-                passes.length === 0 ? <div className='text-center text-gray-500 text-lg font-semibold w-full'>
-                    You have done basic registration yet.
+                passes.length === 0 ? <div className='text-center flex flex-col items-center justify-center gap-16 text-gray-500 text-lg font-semibold w-full'>
+                    <p>You have done basic registration yet.</p>
+                    <Link to="/basic-registration"><button className="py-3 px-10 bg-orange-500 rounded-lg hover:bg-orange-600">Complete Basic Registration</button></Link>
                 </div>
                     : passes.map((pass, index) => (
                         <div key={index} className='rounded-lg overflow-hidden lg:mx-0 md:mx-0 mx-5  bg-white '>
