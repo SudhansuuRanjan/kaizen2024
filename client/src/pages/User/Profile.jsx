@@ -58,15 +58,18 @@ const Profile = () => {
                             </div>
 
 
-                            <div className='flex items-center justify-center gap-2'>
-                                <Link to="/edit-profile">
-                                    <button className='text-green-500 font-medium py-1 px-5 rounded-full border border-green-500 hover:text-black hover:bg-green-500 hover:border-black'>
-                                        Edit Profile
+                            <div className='flex items-center justify-center flex-col gap-4'>
+                                <Link to="/basic-registration"><button className="hover:bg-yellow-500 hover:text-black font-medium py-1 px-5 rounded-full border-yellow-500 border text-yellow-500">Complete Basic Registration</button></Link>
+                                <div className='flex items-center justify-center gap-2 w-full'>
+                                    <Link to="/edit-profile">
+                                        <button className='text-green-500 font-medium py-1 px-5 rounded-full border border-green-500 hover:text-black hover:bg-green-500 hover:border-black flex-1'>
+                                            Edit Profile
+                                        </button>
+                                    </Link>
+                                    <button className='hover:bg-red-500 hover:text-black font-medium py-1 px-5 rounded-full border-red-500 border text-red-500 flex-1' onClick={signOut}>
+                                        Logout
                                     </button>
-                                </Link>
-                                <button className='hover:bg-red-500 hover:text-black font-medium py-1 px-5 rounded-full border-red-500 border text-red-500' onClick={signOut}>
-                                    Logout
-                                </button>
+                                </div>
                             </div>
 
                         </div>

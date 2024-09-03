@@ -22,11 +22,11 @@ const UserPasses = ({ uid }) => {
     }
 
     return (
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-7 py-10">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-7 py-10 w-full">
             {
                 passes.length === 0 ? <div className='text-center flex flex-col items-center justify-center gap-16 text-gray-500 text-lg font-semibold w-full'>
-                    <p>You have done basic registration yet.</p>
-                    <Link to="/basic-registration"><button className="py-3 px-10 bg-orange-500 rounded-lg hover:bg-orange-600">Complete Basic Registration</button></Link>
+                    <p>You have not done basic registration yet.</p>
+                    <Link className="my-0 mx-0" to="/basic-registration"><button className="py-2 px-6 text-black text-base bg-yellow-500 rounded-lg hover:bg-yellow-600">Complete Basic Registration</button></Link>
                 </div>
                     : passes.map((pass, index) => (
                         <div key={index} className='rounded-lg overflow-hidden lg:mx-0 md:mx-0 mx-5  bg-white '>

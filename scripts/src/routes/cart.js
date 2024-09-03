@@ -91,16 +91,19 @@ router.put('/handle_payment', checkApiKey, async (req, res) => {
         const paymentData = await getTransactionDetailsFromSabpaisa({ clientCode: 'AIIMSK', clientTxnId });
 
         if (!paymentData) {
+            console.log({ message: 'Transaction not found in Sabpaisa' });
             res.status(400).json({ message: 'Transaction not found in Sabpaisa' });
         }
 
         if (paymentData.status !== 'SUCCESS') {
+            console.log({ message: 'Payment failed' });
             return res.status(400).json({ message: 'Payment failed' });
         }
 
         const transaction = await getCartPaymentTransaction(clientTxnId);
 
         if (transaction[0].paymentVerified) {
+            console.log({ message: 'Transaction already verified', status: transaction[0].status });
             res.status(200).json({ message: 'Transaction already verified', status: sabpaisaResponse.status });
         }
 
