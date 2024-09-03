@@ -45,7 +45,7 @@ const Timer = () => {
                     </div>
                     <h2 className="font-semibold  md:text-3xl text-2xl lg:text-4xl">
                         <span className="text-rose-500">STATUS : </span>
-                        <span className="text-green-500">UPCOMING</span>
+                        <span className="text-green-500">LIVE</span>
                     </h2>
                 </div>
             </div>
