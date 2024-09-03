@@ -134,10 +134,16 @@ const TnC = () => {
             </div>
 
             <div className='pb-10'>
-                <p className='leading-8 text-opacity-60 font-normal my-3'>09/ Refund Policy</p>
+                <p className='leading-8 text-opacity-60 font-normal my-3'>09/Accomodation & Lunch</p>
                 <p className='leading-8 my-6'>
-                    No refund will be issued for events, competitions , merchandise , accommodation. Responsibility for attending the competitions, events , and collection of merchandise lies solely on the candidates who paid for them.
+                    Free lunch is only for those who are availing accommodation facilities.
+                </p>
+            </div>
 
+            <div className='pb-10'>
+                <p className='leading-8 text-opacity-60 font-normal my-3'>10/ Refund Policy</p>
+                <p className='leading-8 my-6'>
+                    No refund will be issued for events, competitions , workshop, merchandise and accommodation. Responsibility for attending the competitions, events , workshops and collection of merchandise lies solely on the candidates who paid for them.
                 </p>
             </div>
         </>
