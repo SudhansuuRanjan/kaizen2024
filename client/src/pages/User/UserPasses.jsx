@@ -18,7 +18,7 @@ const UserPasses = ({ uid }) => {
     }
 
     if (isError) {
-        return <div>Error fetching passes</div>
+        return <div>Error fetching basic registration.</div>
     }
 
     return (
@@ -36,7 +36,7 @@ const UserPasses = ({ uid }) => {
                                     KAIZEN 2024
                                 </h4>
                                 <p className='text-gray-800 text-lg font-bold'>
-                                    Basic Registration Pass
+                                    Basic Registration ID
                                 </p>
 
                                 <div className="flex flex-col w-full items-center justify-center py-5">
